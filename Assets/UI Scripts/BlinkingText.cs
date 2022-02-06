@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,7 +21,7 @@ public class BlinkingText : MonoBehaviour
 
         colour.a = lowRange + (transparencyVal * tempVal);
         //Set colour between low range and high range
-        GetComponent<Text>().color = colour;
+        GetComponent<TextMeshProUGUI>().color = colour;
 
     }
 }
