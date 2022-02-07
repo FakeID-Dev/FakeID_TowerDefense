@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 5756805042672763918}
   m_Layer: 0
   m_Name: Ghost
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -220,7 +220,6 @@ MonoBehaviour:
   enemyType: 4
   navMeshAgent: {fileID: 3751528364059540159}
   initialState: 0
-  innerRingWaypoints: {fileID: 0}
   waypoints: []
 --- !u!1 &8152022509506012803
 GameObject:

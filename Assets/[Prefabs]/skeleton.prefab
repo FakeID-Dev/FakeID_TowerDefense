@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6621915754386321444}
   m_Layer: 0
   m_Name: skeleton
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,7 +85,6 @@ MonoBehaviour:
   enemyType: 2
   navMeshAgent: {fileID: 6621915754386321444}
   initialState: 0
-  innerRingWaypoints: {fileID: 0}
   waypoints: []
 --- !u!195 &6621915754386321444
 NavMeshAgent:

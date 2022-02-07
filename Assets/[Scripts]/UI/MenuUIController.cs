@@ -66,6 +66,7 @@ public class MenuUIController : MonoBehaviour
         //Start Game
 
         soundManager.GetComponent<AudioSource>().Play();
+        SceneManager.LoadScene("GameScene");
 
     }
 

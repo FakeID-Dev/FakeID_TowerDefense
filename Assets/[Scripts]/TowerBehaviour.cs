@@ -34,7 +34,7 @@ public class TowerBehaviour : MonoBehaviour
         {
             Fire();
 
-            gameObject.transform.LookAt(new Vector3(target.transform.position.x, 0, target.transform.position.z));
+            //gameObject.transform.LookAt(new Vector3(target.transform.position.x, 0, target.transform.position.z));
         }
 
         //DrawCircle(16, aimRadius);
