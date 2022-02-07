@@ -6,16 +6,16 @@ public class ToggleMapCamera : MonoBehaviour
 {
     [SerializeField] private Camera GameplayCamera; 
     [SerializeField] private Camera MapCamera;
-    [SerializeField] private Canvas GameplayUI;     // to toggle on/off gameplay UI
-    [SerializeField] private Canvas MapUI;          // for turning on any Map UI
+    //[SerializeField] private Canvas GameplayUI;     // to toggle on/off gameplay UI
+    //[SerializeField] private Canvas MapUI;          // for turning on any Map UI
 
     void Start()
     {
         GameplayCamera.enabled = true;
-        GameplayUI.enabled = GameplayCamera.enabled;
+        //GameplayUI.enabled = GameplayCamera.enabled;
 
         MapCamera.enabled = false;
-        MapUI.enabled = MapCamera.enabled;
+        //MapUI.enabled = MapCamera.enabled;
     }
 
     void Update()
@@ -35,8 +35,8 @@ public class ToggleMapCamera : MonoBehaviour
         MapCamera.enabled = !MapCamera.enabled;
 
         // turn off one UI canvas to use the other
-        MapUI.enabled = MapCamera.enabled;
-        GameplayUI.enabled = GameplayCamera.enabled;
+        //MapUI.enabled = MapCamera.enabled;
+        //GameplayUI.enabled = GameplayCamera.enabled;
     }
 
 }
