@@ -521,7 +521,7 @@ GameObject:
   - component: {fileID: 6926222965139724166}
   m_Layer: 0
   m_Name: Zombie
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -613,5 +613,4 @@ MonoBehaviour:
   enemyType: 1
   navMeshAgent: {fileID: 7699592425194884019}
   initialState: 0
-  innerRingWaypoints: {fileID: 0}
   waypoints: []
