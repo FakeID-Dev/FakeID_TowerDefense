@@ -15,6 +15,9 @@ public class TowerBehaviour : MonoBehaviour
     
     public GameObject projectileType;
     private LineRenderer lineRenderer;
+    private TowerPlacement towerPlacement;
+
+    public GameObject bulletSpawnLocation;
 
     bool hasTarget = false;
     public GameObject target;
@@ -25,14 +28,20 @@ public class TowerBehaviour : MonoBehaviour
     private void Start()
     {
         gameObject.GetComponent<SphereCollider>().radius = aimRadius;
-        lineRenderer = gameObject.GetComponent<LineRenderer>();
+        Debug.Log("TOWER BEHAVIOUR STARTING");
+        towerPlacement = gameObject.GetComponent<TowerPlacement>();
+
+        
+
+        ///lineRenderer = gameObject.GetComponent<LineRenderer>();
     }
 
     void Update()
     {
         if (target != null)
         {
-            Fire();
+            if (!towerPlacement.holding)
+                Fire();
 
             //gameObject.transform.LookAt(new Vector3(target.transform.position.x, 0, target.transform.position.z));
         }
@@ -61,9 +70,10 @@ public class TowerBehaviour : MonoBehaviour
     private void Fire()
     {
         if (Time.time > lastAttack + rateOfFire)
-        {
+
+        { 
             lastAttack = Time.time;
-            GameObject firedProjectile = Instantiate(projectileType, gameObject.transform.position, gameObject.transform.rotation);
+            GameObject firedProjectile = Instantiate(projectileType, bulletSpawnLocation.transform.position, gameObject.transform.rotation);
 
             if (firedProjectile.GetComponent<ArrowBehaviour>())
                 firedProjectile.GetComponent<ArrowBehaviour>().target = target;
@@ -73,6 +83,7 @@ public class TowerBehaviour : MonoBehaviour
 
             }
             gameObject.GetComponent<AudioSource>().Play();
+
 
         }
 

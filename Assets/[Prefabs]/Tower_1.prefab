@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 1809855272}
   - component: {fileID: 6848799308255355858}
   - component: {fileID: 3757462964346315199}
+  - component: {fileID: 6092413630747444041}
   m_Layer: 2
   m_Name: towerRound_sampleF
   m_TagString: Untagged
@@ -307,7 +308,21 @@ MonoBehaviour:
   storage: 0
   projectileType: {fileID: 3312545153413225267, guid: c79fd4c7c407e2040a490c338a879457,
     type: 3}
+  bulletSpawnLocation: {fileID: 8509949967498463668}
   target: {fileID: 0}
+--- !u!135 &6092413630747444041
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5418660199876657184}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.76
+  m_Center: {x: 0, y: 0.76, z: 0}
 --- !u!1 &8509949967498463668
 GameObject:
   m_ObjectHideFlags: 0
