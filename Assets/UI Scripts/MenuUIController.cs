@@ -13,6 +13,8 @@ public class MenuUIController : MonoBehaviour
     private GameObject Instructions2Canvas;
     private GameObject OptionsCanvas;
 
+    public GameObject soundManager; 
+
     void Start()
     {
         GameObject[] sceneObjects = UnityEngine.Object.FindObjectsOfType<GameObject>();
@@ -55,11 +57,16 @@ public class MenuUIController : MonoBehaviour
         Instructions1Canvas.SetActive(false);
         Instructions2Canvas.SetActive(false);
         OptionsCanvas.SetActive(false);
+
+        soundManager.GetComponent<AudioSource>().Play();
     }
 
     public void OnStartClicked()
     {
         //Start Game
+
+        soundManager.GetComponent<AudioSource>().Play();
+
     }
 
     public void OnInstructions1Clicked()
@@ -69,6 +76,9 @@ public class MenuUIController : MonoBehaviour
         Instructions1Canvas.SetActive(true);
         Instructions2Canvas.SetActive(false);
         OptionsCanvas.SetActive(false);
+
+        soundManager.GetComponent<AudioSource>().Play();
+
     }
 
     public void OnInstructions2Clicked()
@@ -78,6 +88,9 @@ public class MenuUIController : MonoBehaviour
         Instructions1Canvas.SetActive(false);
         Instructions2Canvas.SetActive(true);
         OptionsCanvas.SetActive(false);
+
+        soundManager.GetComponent<AudioSource>().Play();
+
     }
 
     public void OnOptionsClicked()
@@ -87,6 +100,9 @@ public class MenuUIController : MonoBehaviour
         Instructions1Canvas.SetActive(false);
         Instructions2Canvas.SetActive(false);
         OptionsCanvas.SetActive(true);
+
+        soundManager.GetComponent<AudioSource>().Play();
+
     }
 
 }
