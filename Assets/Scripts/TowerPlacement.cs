@@ -13,12 +13,15 @@ public class TowerPlacement : MonoBehaviour
 {
     public List<Material> met;
     public List<Color> originalMet;
+    public Collider box; 
 
     public bool canBePlaced = false;
     public bool holding = true;
 
     public bool tileBool = false;
     public bool roadBool = false;
+
+    public List<GameObject> objects;
 
     //public MeshCollider mesh;
 
@@ -76,39 +79,46 @@ public class TowerPlacement : MonoBehaviour
         
     }
 
-
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision collision) 
     {
-        if(other.gameObject.tag == "Road")
-        {
-            Debug.Log("can't be Placed");
-            roadBool = true;
-        }
+        objects.Add(collision.gameObject); 
 
-        if (other.gameObject.tag == "tile" )
+        for(int x = 0; x < objects.Count; x++)
         {
-            Debug.Log("can be Placed");
-            tileBool = true;
+            if(objects[x].gameObject.tag == "Road")
+            {
+                roadBool = true;
+            }
         }
 
 
     }
 
-    void OnTriggerExit(Collider other)
+    void OnCollisionExit(Collision other)
     {
         if (other.gameObject.tag == "Road")
         {
-            Debug.Log("can't be Placed");
-            roadBool = false;
-            tileBool = true;
+            objects.Remove(other.gameObject);
         }
 
-        if (other.gameObject.tag == "tile")
+        if (other.gameObject.tag == "Tile")
         {
-            Debug.Log("can be Placed");
-            tileBool = false;
+            objects.Remove(other.gameObject);
         }
+
+        tileBool = true;
+        roadBool = false;
+
+        for (int x = 0; x < objects.Count; x++)
+        {
+            if (objects[x].gameObject.tag == "Road")
+            {
+                roadBool = true;
+            }
+        }
+
     }
+  
 
     public void PlacedTower()
     {
