@@ -2148,7 +2148,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1096541692}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: InvButtonTowerPlace1
+        m_MethodName: InvButtonTowerPlace3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2785,7 +2785,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: TOWER
+  m_Text: Ice
 --- !u!222 &1001133455
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2865,7 +2865,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: TOWER
+  m_Text: Cannon
 --- !u!222 &1041501411
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2983,7 +2983,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tower_1: {fileID: 2662669650694739595, guid: 763e1b82552ad284383de86191905228, type: 3}
-  Tower_2: {fileID: 3443534826755157302, guid: 7ba5c45066e3d0947a98797a1f1e125c, type: 3}
+  Tower_2: {fileID: 3443534826755157302, guid: 4de9dea7ffce7a34bb9ba98c78edf664, type: 3}
+  Tower_3: {fileID: 3443534826755157302, guid: 7ba5c45066e3d0947a98797a1f1e125c, type: 3}
   currentTower: {fileID: 0}
   invPanel: {fileID: 758091154}
   infoPanel: {fileID: 724229221}
@@ -3903,7 +3904,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: TOWER
+  m_Text: Arrow
 --- !u!222 &1388611188
 CanvasRenderer:
   m_ObjectHideFlags: 0
