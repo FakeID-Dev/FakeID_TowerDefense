@@ -7,6 +7,7 @@ public class ArrowBehaviour : MonoBehaviour
     public GameObject target; 
 
     [SerializeField] float flySpeed;
+    [SerializeField] float damage;
 
     void Start()
     {
@@ -15,10 +16,16 @@ public class ArrowBehaviour : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Fly towards target
-
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, flySpeed);
-        transform.LookAt(target.transform);
+        if (!target)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            // Fly towards target
+            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, flySpeed);
+            transform.LookAt(target.transform);
+        }
     }
 
 
@@ -26,13 +33,14 @@ public class ArrowBehaviour : MonoBehaviour
     {
         if (other.gameObject == target)
         {
-            Hit();
+            Hit(other.gameObject);
         }
     }
 
-    private void Hit()
+    private void Hit(GameObject hitObject)
     {
         GetComponent<AudioSource>().Play();
+        hitObject.GetComponent<EnemyController>().TakeDamage(damage);
         Destroy(gameObject);
     }
 

@@ -8,6 +8,7 @@ public class EnemyController : MonoBehaviour
 
     //Enemy Member Variables 
     public EnemyType enemyType;
+    public float health;
 
     //NavMesh Variables 
     public NavMeshAgent navMeshAgent;
@@ -47,6 +48,15 @@ public class EnemyController : MonoBehaviour
         enemyStateMachine.Update();
 
 
+    }
+
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
 
