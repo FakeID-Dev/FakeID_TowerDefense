@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour
 
     //Enemy Member Variables 
     public EnemyType enemyType;
+    public float health;
 
     //NavMesh Variables 
     public NavMeshAgent navMeshAgent;
@@ -58,6 +59,7 @@ public class EnemyController : MonoBehaviour
             DestroyEnemy();
         }
     }
+}
 
 
     //Enemy Die Function 

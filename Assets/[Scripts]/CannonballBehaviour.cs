@@ -9,6 +9,7 @@ public class CannonballBehaviour : MonoBehaviour
     [SerializeField] float flySpeed;
 
     public AudioClip hitSound;
+    public GameObject cannonballExplosion; 
 
 
     void Start()
@@ -29,6 +30,7 @@ public class CannonballBehaviour : MonoBehaviour
 
     private void Detonate()
     {
+        Instantiate(cannonballExplosion, transform.position, transform.rotation);
         AudioSource.PlayClipAtPoint(hitSound, transform.position, 1.0f);
         Destroy(gameObject);
     }

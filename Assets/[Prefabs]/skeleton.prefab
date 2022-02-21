@@ -83,6 +83,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyType: 2
+  health: 3
   navMeshAgent: {fileID: 6621915754386321444}
   initialState: 0
   waypoints: []
