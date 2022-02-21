@@ -5,6 +5,10 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
+    [Header("Enemy Variables")]
+    public float health;
+    public float speed;
+
 
     //Enemy Member Variables 
     public EnemyType enemyType;
@@ -27,9 +31,6 @@ public class EnemyController : MonoBehaviour
         //NavMesh Setup
         navMeshAgent = GetComponent<NavMeshAgent>();
 
-       
-
-
         //State Machine Setup
         enemyStateMachine = new EnemyStateMachine(this);
         enemyStateMachine.RegisterState(new PathfindState());
@@ -46,28 +47,32 @@ public class EnemyController : MonoBehaviour
     {
         //State Machine Update Call
         enemyStateMachine.Update();
-
-
     }
 
+    //Enemy Take Damage Function
     public void TakeDamage(float damage)
     {
         health -= damage;
+
         if (health <= 0)
         {
-            Destroy(gameObject);
+            DestroyEnemy();
         }
     }
 }
 
 
+    //Enemy Die Function 
+    public void DestroyEnemy()
+    {
+        Destroy(gameObject);
+    }
+}
 
 
 //
 // Enemy Type Enum Class Def
 //
-
-
 public enum EnemyType
 {
     NONE,
