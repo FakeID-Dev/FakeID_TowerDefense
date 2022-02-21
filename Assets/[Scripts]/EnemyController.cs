@@ -24,6 +24,9 @@ public class EnemyController : MonoBehaviour
     private GameObject innerRingWaypoints;
     public Transform[] waypoints;
 
+    //Game Manager 
+    public GameObject gameManger; //Erik Added 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,8 +40,11 @@ public class EnemyController : MonoBehaviour
         enemyStateMachine.ChangeState(initialState);
 
         //Setup Patrol Points
-        innerRingWaypoints = GameObject.FindGameObjectWithTag("WayPoints");
+        innerRingWaypoints = GameObject.Find("MapRoad"); ;//Erik added MapRoad to test waypoints
         waypoints = innerRingWaypoints.GetComponentsInChildren<Transform>();
+
+        gameManger = GameObject.Find("GameManager");//Erik add
+
     }
 
     // Update is called once per frame
@@ -55,6 +61,8 @@ public class EnemyController : MonoBehaviour
 
         if (health <= 0)
         {
+            gameManger.GetComponent<Inventory>().coinInt++;
+            gameManger.GetComponent<Inventory>().expInt++;
             DestroyEnemy();
         }
     }

@@ -243,10 +243,12 @@ MonoBehaviour:
   - {r: 0.0000000033557548, g: 4.29e-43, b: 0, a: 0}
   - {r: 4.3877106, g: 4.25e-43, b: 4.6e-44, a: 2.6610439e+23}
   - {r: 0.0000000033557548, g: 4.29e-43, b: 0.0000000033558187, a: 4.29e-43}
+  box: {fileID: 0}
   canBePlaced: 0
   holding: 1
   tileBool: 0
   roadBool: 0
+  objects: []
 --- !u!54 &1809855271
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -271,7 +273,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5418660199876657184}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1.52, z: 1}

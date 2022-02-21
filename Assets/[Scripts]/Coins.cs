@@ -20,7 +20,7 @@ public class Coins : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        coins = 1;
+        coins = 0;
         Inv = GameObject.Find("GameManager");
     }
 

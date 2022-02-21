@@ -12,28 +12,44 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-    
-    private Vector3 pos; 
+
+    private Vector3 pos;
 
     private bool isOpen = false;
-    private bool holding = false;
+    public bool holding = false;
 
     public GameObject Tower_1;
     public GameObject Tower_2;
-    public GameObject Tower_3;
     public GameObject currentTower;
     public GameObject invPanel;
     public GameObject infoPanel;
     public GameObject buildButton;
 
     public Text coinTxt;
+    public Text stoneTxt;
+    public Text crystalTxt;
+
+    public Slider expSlider;
+
     public int coinInt = 0;
+    public int stoneInt = 0;
+    public int crystalInt = 0;
+    public int expInt = 0;
+
+    private int coinTemp = 0;
+    private int stoneTemp = 0;
+    private int crystalTemp = 0;
+    private int expTemp = 0;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        pos = invPanel.transform.position;  
+        coinInt = 2;
+        stoneInt = 6;
+        crystalInt = 0;
+        expInt = 0;
+        pos = invPanel.transform.position;
     }
 
     // Update is called once per frame
@@ -46,6 +62,9 @@ public class Inventory : MonoBehaviour
     public void updateUI()
     {
         coinTxt.text = "GOLD: " + coinInt;
+        stoneTxt.text = "STONE: " + stoneInt;
+        crystalTxt.text = "CRYSTAL: " + crystalInt;
+        expSlider.value = expInt;
     }
 
     public void MousPos()
@@ -60,29 +79,40 @@ public class Inventory : MonoBehaviour
                 currentTower.transform.position = hit.point;
             }
 
-            if(Input.GetMouseButtonDown(0)) {
-                
-                if(currentTower.GetComponentInChildren<TowerPlacement>().canBePlaced == true)
+            if (Input.GetMouseButtonUp(0))
+            {
+
+                if (currentTower.GetComponentInChildren<TowerPlacement>().canBePlaced == true)
                 {
                     holding = false;
                     currentTower.GetComponentInChildren<TowerPlacement>().PlacedTower();
                     currentTower = null;
-                    
 
+
+                }
+                else
+                {
+
+                    Destroy(currentTower);
+                    holding = false;
+                    currentTower = null;
+
+                    stoneInt = stoneTemp;
+                    coinInt = coinTemp;
                 }
             }
 
         }
-       
+
     }
 
-    
+
     //Buttons
     public void InvButtonSlider()
     {
         if (isOpen == false)
         {
-            invPanel.transform.position -= new Vector3(250.0f, 0.0f, 0.0f); //Opens Inv
+            invPanel.transform.position -= new Vector3(200.0f, 0.0f, 0.0f); //Opens Inv
             isOpen = true;
             buildButton.SetActive(false);
         }
@@ -96,27 +126,33 @@ public class Inventory : MonoBehaviour
 
     public void InvButtonTowerPlace1()
     {
-        currentTower = Instantiate(Tower_1, new Vector3(0, 0, 0), Quaternion.identity);
-        holding = true;
-        invPanel.transform.position = pos;
-        buildButton.SetActive(true);
+        if (stoneInt >= 1 && coinInt >= 1)
+        {
+            currentTower = Instantiate(Tower_1, new Vector3(0, 0, 0), Quaternion.identity);
+            holding = true;
+            invPanel.transform.position = pos;
+            buildButton.SetActive(true);
+            stoneTemp = stoneInt;
+            coinTemp = coinInt;
+            stoneInt--;
+            coinInt--;
+        }
+
     }
 
     public void InvButtonTowerPlace2()
     {
-        currentTower = Instantiate(Tower_2, new Vector3(0, 0, 0), Quaternion.identity);
-        holding = true;
-        invPanel.transform.position = pos;
-        buildButton.SetActive(true);
-    }
-
-
-    public void InvButtonTowerPlace3()
-    {
-        currentTower = Instantiate(Tower_3, new Vector3(0, 0, 0), Quaternion.identity);
-        holding = true;
-        invPanel.transform.position = pos;
-        buildButton.SetActive(true);
+        if (stoneInt >= 3 && coinInt >= 2)
+        {
+            currentTower = Instantiate(Tower_2, new Vector3(0, 0, 0), Quaternion.identity);
+            holding = true;
+            invPanel.transform.position = pos;
+            buildButton.SetActive(true);
+            stoneTemp = stoneInt;
+            coinTemp = coinInt;
+            stoneInt -= 3;
+            coinInt -= 2;
+        }
     }
 
     public void onHoverTowerEnter()
