@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3438607562309618737}
   m_Layer: 2
-  m_Name: Tower_1
+  m_Name: Tower-Arrow
   m_TagString: tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

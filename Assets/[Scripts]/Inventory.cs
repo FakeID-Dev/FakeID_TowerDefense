@@ -20,6 +20,7 @@ public class Inventory : MonoBehaviour
 
     public GameObject Tower_1;
     public GameObject Tower_2;
+    public GameObject Tower_3;
     public GameObject currentTower;
     public GameObject invPanel;
     public GameObject infoPanel;
@@ -104,6 +105,15 @@ public class Inventory : MonoBehaviour
     public void InvButtonTowerPlace2()
     {
         currentTower = Instantiate(Tower_2, new Vector3(0, 0, 0), Quaternion.identity);
+        holding = true;
+        invPanel.transform.position = pos;
+        buildButton.SetActive(true);
+    }
+
+
+    public void InvButtonTowerPlace3()
+    {
+        currentTower = Instantiate(Tower_3, new Vector3(0, 0, 0), Quaternion.identity);
         holding = true;
         invPanel.transform.position = pos;
         buildButton.SetActive(true);
