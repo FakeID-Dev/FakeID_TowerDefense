@@ -1,18 +1,20 @@
 //############################################################################################################
-// Pause.sc
-// Erik Enos 100994107
+// Pause.cs
+// Erik Enos #100994107
+// Morgan Ethier #101230557
 // Date: 2022-02-05
 // 
+// Updated 2022-02-22: Pause Functionality Added, Return To Main Menu
 //############################################################################################################
 
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour
 {
-
-    public bool pause = false;
+    public bool isPaused = false;
     public GameObject pausePanel;
 
     // Start is called before the first frame update
@@ -24,7 +26,7 @@ public class Pause : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(pause == true)
+        if(isPaused == true)
         {
             pausePanel.SetActive(true);
         }
@@ -36,15 +38,25 @@ public class Pause : MonoBehaviour
 
     public void OnClickPause()
     {
-        pause = true;
-        //TODO: Pause Game
+        isPaused = true;
         Time.timeScale = 0;
     }
 
     public void OnClickResume()
     {
-        pause = false;
-        //TODO: Unpause Game
+        isPaused = false;
         Time.timeScale = 1;
+    }
+
+    public void OnClickSave()
+    {
+        //TODO: Save Implementation
+        print("Saving!");
+    }
+
+    public void OnClickExit()
+    {
+        print("Returning to Main Menu");
+        SceneManager.LoadScene("MenuUI");
     }
 }
