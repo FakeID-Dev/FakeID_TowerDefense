@@ -22,8 +22,11 @@ public class TowerPlacement : MonoBehaviour
     public bool roadBool = false;
 
     public List<GameObject> objects;
+    //Game Manager 
+    public GameObject gameManger; //Sam added
 
     //public MeshCollider mesh;
+
 
 
 
@@ -35,6 +38,9 @@ public class TowerPlacement : MonoBehaviour
             originalMet[x] = GetComponent<Renderer>().materials[x].color;
             met[x] = GetComponent<Renderer>().materials[x];
         }
+
+        gameManger = GameObject.Find("GameManager");//Sam add
+
     }
 
     // Update is called once per frame
@@ -124,5 +130,6 @@ public class TowerPlacement : MonoBehaviour
     public void PlacedTower()
     {
         holding = false;
+        gameManger.GetComponent<ToggleMapCamera>().ToggleActiveCameraMove();
     }
 }

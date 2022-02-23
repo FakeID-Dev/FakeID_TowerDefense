@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class ToggleMapCamera : MonoBehaviour
 {
-    [SerializeField] private Camera GameplayCamera; 
+    [SerializeField] private Camera GameplayCamera;
     [SerializeField] private Camera MapCamera;
+    private Camera currentCamera;
+
+
     //[SerializeField] private Canvas GameplayUI;     // to toggle on/off gameplay UI
     //[SerializeField] private Canvas MapUI;          // for turning on any Map UI
 
@@ -16,6 +19,8 @@ public class ToggleMapCamera : MonoBehaviour
 
         MapCamera.enabled = false;
         //MapUI.enabled = MapCamera.enabled;
+
+        currentCamera = GameplayCamera;
     }
 
     void Update()
@@ -31,12 +36,31 @@ public class ToggleMapCamera : MonoBehaviour
     public void ToggleMap()
     {
         // turn off one camera to use the other
-        GameplayCamera.enabled = !GameplayCamera.enabled;
-        MapCamera.enabled = !MapCamera.enabled;
+        if (GameplayCamera.enabled)
+        {
+            MapCamera.enabled = true;
+            GameplayCamera.enabled = false;
+            currentCamera = MapCamera;
+        }
+        else
+        {
+            GameplayCamera.enabled = true;
+            MapCamera.enabled = false;
+            currentCamera = GameplayCamera;
+        }
 
         // turn off one UI canvas to use the other
         //MapUI.enabled = MapCamera.enabled;
         //GameplayUI.enabled = GameplayCamera.enabled;
     }
+
+    public void ToggleActiveCameraMove()
+    {
+        bool currentDrag = currentCamera.GetComponent<MoveCamera>().canDragCamera;
+        currentCamera.GetComponent<MoveCamera>().canDragCamera = !currentDrag;
+        Debug.Log("Calling ToggleActiveCameraMove");
+
+    }
+
 
 }
