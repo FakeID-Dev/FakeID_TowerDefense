@@ -37,10 +37,14 @@ public class Pause : MonoBehaviour
     public void OnClickPause()
     {
         pause = true;
+        //TODO: Pause Game
+        Time.timeScale = 0;
     }
 
     public void OnClickResume()
     {
         pause = false;
+        //TODO: Unpause Game
+        Time.timeScale = 1;
     }
 }
