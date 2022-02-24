@@ -1,3 +1,9 @@
+//############################################################################################################
+// MenuUIController.cs
+// Morgan Ethier #101230557
+// 
+// Updated 2022-02-23: Added functionality to swap between main menu UI screens
+//############################################################################################################
 using System.Collections;
 using System.Collections.Generic;
 using JetBrains.Annotations;
@@ -7,42 +13,17 @@ using UnityEngine.SceneManagement;
 public class MenuUIController : MonoBehaviour
 {
     //Canvases
-    private GameObject TitleScreenCanvas;
-    private GameObject MainMenuCanvas;
-    private GameObject Instructions1Canvas;
-    private GameObject Instructions2Canvas;
-    private GameObject OptionsCanvas;
+    public GameObject TitleScreenCanvas;
+    public GameObject MainMenuCanvas;
+    public GameObject Instructions1Canvas;
+    public GameObject Instructions2Canvas;
+    public GameObject OptionsCanvas;
 
     public GameObject soundManager; 
 
     void Start()
     {
-        GameObject[] sceneObjects = UnityEngine.Object.FindObjectsOfType<GameObject>();
-
-        foreach (GameObject go in sceneObjects)
-        {
-            if (go.name == "TitleScreenCanvas")
-            {
-                TitleScreenCanvas = go;
-            }
-            else if (go.name == "MainMenuCanvas")
-            {
-                MainMenuCanvas = go;
-            }
-            else if (go.name == "Instructions-1Canvas")
-            {
-                Instructions1Canvas = go;
-            }
-            else if (go.name == "Instructions-2Canvas")
-            {
-                Instructions2Canvas = go;
-            }
-            else if (go.name == "OptionsCanvas")
-            {
-                OptionsCanvas = go;
-            }
-        }
-
+        TitleScreenCanvas.SetActive(true);
         MainMenuCanvas.SetActive(false);
         Instructions1Canvas.SetActive(false);
         Instructions2Canvas.SetActive(false);
