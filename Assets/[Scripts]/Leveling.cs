@@ -37,6 +37,7 @@ public class Leveling : MonoBehaviour
         gameManager.GetComponent<Initialize>().AddResourceNode();
         levelPanel.SetActive(false);
         gameManager.GetComponent<Inventory>().expSlider.value = 0;
+        gameManager.GetComponent<Inventory>().expInt = 0;
 
     }
 
@@ -45,6 +46,7 @@ public class Leveling : MonoBehaviour
         gameManager.GetComponent<Initialize>().AddMonsterNode();
         levelPanel.SetActive(false);
         gameManager.GetComponent<Inventory>().expSlider.value = 0;
+        gameManager.GetComponent<Inventory>().expInt = 0;
 
     }
 

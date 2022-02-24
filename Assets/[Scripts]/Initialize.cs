@@ -8,11 +8,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Initialize : MonoBehaviour
 {
     public int count;
-
     public GameObject map;
     public GameObject mapRoad;
     public GameObject tile;
@@ -26,6 +26,7 @@ public class Initialize : MonoBehaviour
     public GameObject crystalSpawner;
 
     public List<GameObject> tileList;
+    public GameObject[,] Tiles2D = new GameObject[24,24];
     public List<GameObject> roadList;
     public List<GameObject> NewRoadsList;
 
@@ -93,15 +94,15 @@ public class Initialize : MonoBehaviour
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 1, 4, 4, 4, 4, 4, 4, 4, 4, 1, 0, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 7, 0, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 7, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -129,8 +130,8 @@ public class Initialize : MonoBehaviour
                     GameObject temp = Instantiate(tile, new Vector3(x, 0, y), tile.transform.rotation);
                     temp.GetComponentInChildren<TileOptions>().posX = x;
                     temp.GetComponentInChildren<TileOptions>().posY = y;
-                    tileList.Add(temp);
-                    count++;
+                    Tiles2D[x, y] = temp;
+                    tileList.Add(temp); 
 
                 }
                 else if (Map[x, y] == 4)
@@ -138,6 +139,7 @@ public class Initialize : MonoBehaviour
                     GameObject temp = Instantiate(roadDown, new Vector3(x, 0, y), roadDown.transform.rotation);
                     temp.GetComponentInChildren<RoadCord>().PosX = x;
                     temp.GetComponentInChildren<RoadCord>().PosY = y;
+                    Tiles2D[x, y] = temp;
                     tileList.Add(temp);
                     count++;
                 }
@@ -163,6 +165,7 @@ public class Initialize : MonoBehaviour
                     GameObject temp = Instantiate(roadStr, new Vector3(x, 0, y), roadStr.transform.rotation);
                     temp.GetComponentInChildren<RoadCord>().PosX = x;
                     temp.GetComponentInChildren<RoadCord>().PosY = y;
+                    Tiles2D[x, y] = temp;
                     tileList.Add(temp);
                     count++;
 
@@ -187,14 +190,18 @@ public class Initialize : MonoBehaviour
                 else if (Map[x, y] == 7)
                 {
                     GameObject temp = Instantiate(monsterSpawner, new Vector3(x, 0, y), monsterSpawner.transform.rotation);
+                    temp.GetComponentInChildren<EnemySpawner>().posX = x;
+                    temp.GetComponentInChildren<EnemySpawner>().posY = y;
                     tileList.Add(temp);
                     count++;
+                    Tiles2D[x, y] = temp;
                 }
                 else if (Map[x, y] == 8)
                 {
                     GameObject temp = Instantiate(crystalSpawner, new Vector3(x, 0, y), crystalSpawner.transform.rotation);
                     tileList.Add(temp);
                     count++;
+                    Tiles2D[x, y] = temp;
                 }
             }
         }
@@ -236,7 +243,7 @@ public class Initialize : MonoBehaviour
     {
         roadList[roadList.Count - 1].gameObject.GetComponentInChildren<RoadCord>().PosX = PosX;
         roadList[roadList.Count - 1].gameObject.GetComponentInChildren<RoadCord>().PosY = PosY;
-
+        Tiles2D[PosX, PosY] = roadList[roadList.Count - 1];
         bool nextTo = false;
 
         if (Map[PosX, PosY - 1] == 1)
@@ -295,14 +302,16 @@ public class Initialize : MonoBehaviour
             nextTo = true;
         }
 
-        else if (nextTo == false)
-        {
-            Debug.Log("New Road");
-            GameObject go = new GameObject("Road");
-            go.transform.position = new Vector3(roadList[roadList.Count - 1].gameObject.transform.position.x, roadList[roadList.Count - 1].gameObject.transform.position.y, roadList[roadList.Count - 1].gameObject.transform.position.z);
-            roadList[roadList.Count - 1].gameObject.transform.parent = go.gameObject.transform;
-            NewRoadsList.Add(go);
-        }
+        //else if (nextTo == false)
+        //{
+        //    Debug.Log("New Road");
+        //    GameObject go = new GameObject("Road");
+        //    go.transform.position = new Vector3(roadList[roadList.Count - 1].gameObject.transform.position.x, roadList[roadList.Count - 1].gameObject.transform.position.y, roadList[roadList.Count - 1].gameObject.transform.position.z);
+        //    roadList[roadList.Count - 1].gameObject.transform.parent = go.gameObject.transform;
+        //    NewRoadsList.Add(go);
+        //}
+
+        //roadList[roadList.Count - 1].gameObject.transform.parent = mapRoad.gameObject.transform;
 
     }
 

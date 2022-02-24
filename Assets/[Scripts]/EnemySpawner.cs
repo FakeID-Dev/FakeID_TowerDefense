@@ -12,9 +12,18 @@ public class EnemySpawner : MonoBehaviour
     private float timeBetweenWaves = 5.0f;
     private float countDown = 2.0f;
 
+    public int posX = 0;
+    public int posY = 0;
+
+    private bool canSpawn = false;
+
+    public GameObject gameManager;
+
+
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameObject.Find("GameManager");
         
     }
 
@@ -22,7 +31,12 @@ public class EnemySpawner : MonoBehaviour
     {
         if (countDown <= 0.0f)
         {
-            SpawnEnemy();
+            CheckAvailableRoad();
+
+            if (canSpawn) 
+            {
+                SpawnEnemy();
+            }
             countDown = timeBetweenWaves;
         }
         countDown -= Time.deltaTime;
@@ -31,9 +45,50 @@ public class EnemySpawner : MonoBehaviour
 
     public void  SpawnEnemy()
     {
-        Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        GameObject temp = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        FindStartingRoad(temp);
+        
         
     }
 
+    private void FindStartingRoad(GameObject t)
+    {
+        if(gameManager.GetComponent<Initialize>().Tiles2D[posX-1, posY].tag == "Road")
+        {
+            t.GetComponent<EnemyController>().start = gameManager.GetComponent<Initialize>().Tiles2D[posX - 1, posY];
+        }
+        else if(gameManager.GetComponent<Initialize>().Tiles2D[posX+1, posY].tag == "Road")
+        {
+            t.GetComponent<EnemyController>().start = gameManager.GetComponent<Initialize>().Tiles2D[posX + 1, posY];
+        }
+        else if (gameManager.GetComponent<Initialize>().Tiles2D[posX, posY-1].tag == "Road")
+        {
+            t.GetComponent<EnemyController>().start = gameManager.GetComponent<Initialize>().Tiles2D[posX, posY-1];
+        }
+        else if (gameManager.GetComponent<Initialize>().Tiles2D[posX, posY+1].tag == "Road")
+        {
+            t.GetComponent<EnemyController>().start = gameManager.GetComponent<Initialize>().Tiles2D[posX, posY+1];
+        }
+    }
+
+    private void CheckAvailableRoad()
+    {
+        if (gameManager.GetComponent<Initialize>().Tiles2D[posX - 1, posY].tag == "Road")
+        {
+            canSpawn = true;
+        }
+        else if (gameManager.GetComponent<Initialize>().Tiles2D[posX + 1, posY].tag == "Road")
+        {
+            canSpawn = true;
+        }
+        else if (gameManager.GetComponent<Initialize>().Tiles2D[posX, posY - 1].tag == "Road")
+        {
+            canSpawn = true;
+        }
+        else if (gameManager.GetComponent<Initialize>().Tiles2D[posX, posY + 1].tag == "Road")
+        {
+            canSpawn = true;
+        }
+    }
 
 }
