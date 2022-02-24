@@ -6,9 +6,13 @@ using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
     [Header("Enemy Variables")]
-    public float health;
-    public float speed;
+    public float enemyHealth;
+    public float enemySpeed;
 
+    public int coinReward;
+    public int expReward;
+
+    public int rewardMultiplier;
 
     //Enemy Member Variables 
     public EnemyType enemyType;
@@ -39,6 +43,7 @@ public class EnemyController : MonoBehaviour
 
         //NavMesh Setup
         navMeshAgent = GetComponent<NavMeshAgent>();
+        navMeshAgent.speed = enemySpeed;
 
         //State Machine Setup
         enemyStateMachine = new EnemyStateMachine(this);
@@ -73,12 +78,14 @@ public class EnemyController : MonoBehaviour
     //Enemy Take Damage Function
     public void TakeDamage(float damage)
     {
-        health -= damage;
+        enemyHealth -= damage;
 
-        if (health <= 0)
+        if (enemyHealth <= 0)
         {
-            gameManager.GetComponent<Inventory>().coinInt++;
-            gameManager.GetComponent<Inventory>().expInt++;
+
+            gameManger.GetComponent<Inventory>().coinInt += coinReward;
+            gameManger.GetComponent<Inventory>().expInt += expReward;
+
             DestroyEnemy();
         }
     }
@@ -181,7 +188,26 @@ public class EnemyController : MonoBehaviour
 }
 
 
+    public void SlowEnemySpeed()
+    {
+        navMeshAgent.speed = navMeshAgent.speed * 0.2f;
+    }
 
+    public void RestoreEnemySpeed()
+    {
+        navMeshAgent.speed = enemySpeed;
+    }
+
+    public void IncreaseCoinReward()
+    {
+        coinReward = coinReward * rewardMultiplier;
+    }
+
+    public void IncreaseExpReward()
+    {
+        expReward = expReward * rewardMultiplier;
+    }
+}
 
 //
 // Enemy Type Enum Class Def

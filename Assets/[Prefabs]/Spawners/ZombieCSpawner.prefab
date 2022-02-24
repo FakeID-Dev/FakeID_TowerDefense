@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 8621362995298912572}
   - component: {fileID: 8621362995298912573}
   m_Layer: 0
-  m_Name: GolemSpanwer
+  m_Name: ZombieCSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8621362995298912575}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -32554838642020637, guid: a5ad3aad5e9544846870f5e09c818ecf, type: 3}
 --- !u!23 &8621362995298912571
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -95,7 +95,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8f26b8c6fc7a70d48a73d01484244bcc, type: 2}
+  - {fileID: 2100000, guid: d417811e86127dc40b4e3af41bfdfd44, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -142,6 +143,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48cdef3016d1e434eb16ff9a8d4ea194, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1956667838057914399, guid: 0fa36650c89667042a05cdfabef85358,
+  enemyPrefab: {fileID: 83956058447933189, guid: d6772f9b0ea62424c987e26486355b1f,
     type: 3}
   spawnPoint: {fileID: 8621362995198116546}

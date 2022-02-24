@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6809284223964765312}
   - component: {fileID: 6809284223964765313}
   m_Layer: 0
-  m_Name: RobotSpawner
+  m_Name: CyborgSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6809284223964765315}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 2725568932082414383, guid: 872acc136655de240926966778e257a5, type: 3}
 --- !u!23 &6809284223964765327
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: fb312214e5d699e48a961dfd1d967cc5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
