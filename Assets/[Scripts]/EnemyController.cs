@@ -83,8 +83,8 @@ public class EnemyController : MonoBehaviour
         if (enemyHealth <= 0)
         {
 
-            gameManger.GetComponent<Inventory>().coinInt += coinReward;
-            gameManger.GetComponent<Inventory>().expInt += expReward;
+            gameManager.GetComponent<Inventory>().coinInt += coinReward;
+            gameManager.GetComponent<Inventory>().expInt += expReward;
 
             DestroyEnemy();
         }
@@ -159,11 +159,11 @@ public class EnemyController : MonoBehaviour
             }
         }
     }
-    
-    
+
+
     //private void OnTriggerEnter(Collider other)
     //{
-        
+
     //    if (onMainRoad == false)
     //    {
     //        if(other.transform.parent.transform.parent != null)
@@ -171,7 +171,7 @@ public class EnemyController : MonoBehaviour
     //            if (other.transform.parent.transform.parent.name == "MapRoad")
     //            {
     //                waypoints.Clear();
-                    
+
     //                int children = innerRingWaypoints.transform.childCount;
 
     //                for (int i = 0; i < children; ++i)
@@ -183,10 +183,6 @@ public class EnemyController : MonoBehaviour
     //        }
     //    }     
     //}
-
-
-}
-
 
     public void SlowEnemySpeed()
     {
@@ -207,7 +203,11 @@ public class EnemyController : MonoBehaviour
     {
         expReward = expReward * rewardMultiplier;
     }
+
 }
+
+
+
 
 //
 // Enemy Type Enum Class Def
