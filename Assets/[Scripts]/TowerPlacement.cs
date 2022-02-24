@@ -80,7 +80,6 @@ public class TowerPlacement : MonoBehaviour
             for (int x = 0; x < 3; x++)
             {
                 met[x].color = originalMet[x];
-                Debug.Log(originalMet[x]);
             }
         }
 

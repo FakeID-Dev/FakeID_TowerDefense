@@ -571,11 +571,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7294915807513260649}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.55491936, y: 0.8331784, z: 0.3283682}
-  m_Center: {x: -0.011222303, y: 0.35483164, z: -0.01598692}
+  m_Size: {x: 0.55491936, y: 0.9755919, z: 0.37248707}
+  m_Center: {x: -0.011222303, y: 0.2836249, z: 0.006072521}
 --- !u!195 &7699592425194884019
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -586,7 +586,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 1.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -610,7 +610,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae806618ff6b006498a53392a86a8f13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  speed: 0
   enemyType: 1
   navMeshAgent: {fileID: 7699592425194884019}
   initialState: 0
   waypoints: []
+  pathPoints: []
+  gameManager: {fileID: 0}
+  start: {fileID: 0}
+  onMainRoad: 0

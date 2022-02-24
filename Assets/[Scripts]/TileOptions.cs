@@ -145,7 +145,6 @@ public class TileOptions : MonoBehaviour
                 gameManager.GetComponent<Initialize>().Map[posX, posY] = 1;
             }
         }
-        Debug.Log(posX + " , " + posY);
         gameManager.GetComponent<Initialize>().UpdateRoad(posX, posY);
     }
 
