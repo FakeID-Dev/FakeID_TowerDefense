@@ -273,6 +273,7 @@ GameObject:
   - component: {fileID: -3723609574398727602}
   - component: {fileID: 8478144834395281339}
   - component: {fileID: 6372074414239977528}
+  - component: {fileID: -1699568384814704424}
   m_Layer: 0
   m_Name: Golem
   m_TagString: Enemy
@@ -314,7 +315,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -340,7 +341,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1956667838057914399}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.3
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -349,7 +350,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -365,10 +366,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae806618ff6b006498a53392a86a8f13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyHealth: 200
+  enemySpeed: 0.5
+  coinReward: 10
+  expReward: 30
+  rewardMultiplier: 1
   enemyType: 3
   navMeshAgent: {fileID: 8478144834395281339}
   initialState: 0
   waypoints: []
+  gameManger: {fileID: 0}
+--- !u!95 &-1699568384814704424
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956667838057914399}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 78ff3bb51f2178340a5201de370be0a5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2280530162943637586
 GameObject:
   m_ObjectHideFlags: 0
@@ -1106,6 +1133,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7546889712980440803}
+  - component: {fileID: 1071998971}
   m_Layer: 0
   m_Name: Rig1
   m_TagString: Untagged
@@ -1131,6 +1159,26 @@ Transform:
   m_Father: {fileID: 1183509526116039333}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1071998971
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7038676409777305494}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 78ff3bb51f2178340a5201de370be0a5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7124509726078900207
 GameObject:
   m_ObjectHideFlags: 0
