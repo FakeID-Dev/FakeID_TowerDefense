@@ -2132,7 +2132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae806618ff6b006498a53392a86a8f13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: 3
+  enemyHealth: 8
   enemySpeed: 1
   coinReward: 10
   expReward: 2

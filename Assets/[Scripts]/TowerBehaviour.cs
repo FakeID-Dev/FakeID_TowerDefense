@@ -20,10 +20,11 @@ public class TowerBehaviour : MonoBehaviour
     public GameObject bulletSpawnLocation;
 
     bool hasTarget = false;
-    public GameObject target;
+    //public GameObject target;
 
     private float lastAttack = 0f;
 
+    public List<GameObject> targetList = new List<GameObject>();
 
     private void Start()
     {
@@ -38,7 +39,7 @@ public class TowerBehaviour : MonoBehaviour
 
     void Update()
     {
-        if (target != null)
+        if (targetList[0] != null)
         {
             if (!towerPlacement.holding)
                 Fire();
@@ -54,15 +55,21 @@ public class TowerBehaviour : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            target = other.gameObject;
+            //target = other.gameObject;
+            targetList.Add(other.gameObject);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        //if (other.gameObject == target)
+        //{
+        //    target = null;
+        //}
+
+        if (targetList.Contains(other.gameObject))
         {
-            target = null;
+            targetList.Remove(other.gameObject);
         }
     }
 
@@ -76,10 +83,10 @@ public class TowerBehaviour : MonoBehaviour
             GameObject firedProjectile = Instantiate(projectileType, bulletSpawnLocation.transform.position, gameObject.transform.rotation);
 
             if (firedProjectile.GetComponent<ArrowBehaviour>())
-                firedProjectile.GetComponent<ArrowBehaviour>().target = target;
+                firedProjectile.GetComponent<ArrowBehaviour>().target = targetList[0];
             else if (firedProjectile.GetComponent<CannonballBehaviour>())
             {
-                firedProjectile.GetComponent<CannonballBehaviour>().target = target;
+                firedProjectile.GetComponent<CannonballBehaviour>().target = targetList[0];
 
             }
             gameObject.GetComponent<AudioSource>().Play();
@@ -87,6 +94,18 @@ public class TowerBehaviour : MonoBehaviour
 
         }
 
+    }
+
+    private void FixedUpdate()
+    {
+        foreach(GameObject _target in targetList)
+        {
+            if (_target == null)
+            {
+                targetList.Remove(_target);
+                break;
+            }
+        }
     }
 
 
