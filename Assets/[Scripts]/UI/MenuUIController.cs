@@ -39,7 +39,7 @@ public class MenuUIController : MonoBehaviour
         Instructions2Canvas.SetActive(false);
         OptionsCanvas.SetActive(false);
 
-        soundManager.GetComponent<AudioSource>().Play();
+        soundManager.GetComponent<AudioManager>().Play("Select2");
     }
 
     public void OnStartClicked()
@@ -59,7 +59,7 @@ public class MenuUIController : MonoBehaviour
         Instructions2Canvas.SetActive(false);
         OptionsCanvas.SetActive(false);
 
-        soundManager.GetComponent<AudioSource>().Play();
+        soundManager.GetComponent<AudioManager>().Play("Select2");
 
     }
 
@@ -71,7 +71,7 @@ public class MenuUIController : MonoBehaviour
         Instructions2Canvas.SetActive(true);
         OptionsCanvas.SetActive(false);
 
-        soundManager.GetComponent<AudioSource>().Play();
+        soundManager.GetComponent<AudioManager>().Play("Select2");
 
     }
 
@@ -83,8 +83,7 @@ public class MenuUIController : MonoBehaviour
         Instructions2Canvas.SetActive(false);
         OptionsCanvas.SetActive(true);
 
-        soundManager.GetComponent<AudioSource>().Play();
-
+        soundManager.GetComponent<AudioManager>().Play("Select2");
     }
 
 }
