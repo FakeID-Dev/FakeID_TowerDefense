@@ -24,6 +24,7 @@ public class Initialize : MonoBehaviour
     public GameObject roadDowRight;
     public GameObject monsterSpawner;
     public GameObject crystalSpawner;
+    public GameObject otherSpawner;
 
     public List<GameObject> tileList;
     public GameObject[,] Tiles2D = new GameObject[24, 24];
@@ -94,7 +95,7 @@ public class Initialize : MonoBehaviour
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 1, 4, 4, 4, 4, 4, 4, 4, 4, 1, 0, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
@@ -199,6 +200,15 @@ public class Initialize : MonoBehaviour
                 else if (Map[x, y] == 8)
                 {
                     GameObject temp = Instantiate(crystalSpawner, new Vector3(x, 0, y), crystalSpawner.transform.rotation);
+                    tileList.Add(temp);
+                    count++;
+                    Tiles2D[x, y] = temp;
+                }
+                else if (Map[x, y] == 9)
+                {
+                    GameObject temp = Instantiate(otherSpawner, new Vector3(x, 0, y), crystalSpawner.transform.rotation);
+                    temp.GetComponentInChildren<EnemySpawner>().posX = x;
+                    temp.GetComponentInChildren<EnemySpawner>().posY = y;
                     tileList.Add(temp);
                     count++;
                     Tiles2D[x, y] = temp;

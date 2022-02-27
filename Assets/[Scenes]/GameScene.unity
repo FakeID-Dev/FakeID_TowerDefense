@@ -3865,6 +3865,8 @@ MonoBehaviour:
     type: 3}
   crystalSpawner: {fileID: 4118653062076133367, guid: 69bb408002458d9459d5c0b5e032e27e,
     type: 3}
+  otherSpawner: {fileID: 6809284223964765315, guid: 6bd43bd51d0f6874b9378975430c2651,
+    type: 3}
   tileList: []
   roadList: []
   NewRoadsList: []

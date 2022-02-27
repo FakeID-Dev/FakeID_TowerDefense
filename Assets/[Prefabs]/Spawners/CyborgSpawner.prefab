@@ -111,9 +111,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48cdef3016d1e434eb16ff9a8d4ea194, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 3056609659824541618, guid: adf2f30b05d5c0540951212e8ec6fb01,
+  enemyPrefab: {fileID: 83956058447933189, guid: d6772f9b0ea62424c987e26486355b1f,
     type: 3}
   spawnPoint: {fileID: 6809284224068254785}
+  timeBetweenWaves: 10
+  posX: 0
+  posY: 0
+  gameManager: {fileID: 0}
 --- !u!1 &6809284224068254786
 GameObject:
   m_ObjectHideFlags: 0
