@@ -130,5 +130,8 @@ public class TowerPlacement : MonoBehaviour
     {
         holding = false;
         gameManger.GetComponent<ToggleMapCamera>().ToggleActiveCameraMove();
+        gameManger.GetComponent<Inventory>().isOpen = false;
+        gameManger.GetComponent<Initialize>().toggleTiles();
+
     }
 }

@@ -12,10 +12,9 @@ GameObject:
   - component: {fileID: 5835900078438903428}
   - component: {fileID: 2552938409776538655}
   - component: {fileID: 3884650391114015606}
-  - component: {fileID: 1337542884320768742}
   m_Layer: 0
   m_Name: tile
-  m_TagString: tile
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,27 +98,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.2, z: 1}
   m_Center: {x: 0, y: 0.1, z: 0}
---- !u!114 &1337542884320768742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1555042967654959360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59475c537be1fd142964ece691b033c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  posX: 0
-  posY: 0
-  Panel: {fileID: 0}
-  hovered: {fileID: 1598024152559455927}
-  road1: {fileID: 4853406232502467124, guid: 1413eb04038939a4a9db5405f58ea960, type: 3}
-  road2: {fileID: 2231024263565004558, guid: 5501c002905cb8444a6382ccdb79cdf2, type: 3}
-  isSelected: 0
-  hover: 0
-  gameManager: {fileID: 0}
 --- !u!1 &1598024152559455927
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,7 +175,7 @@ GameObject:
   - component: {fileID: 3630945354480825677}
   m_Layer: 0
   m_Name: Crystal
-  m_TagString: tile
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

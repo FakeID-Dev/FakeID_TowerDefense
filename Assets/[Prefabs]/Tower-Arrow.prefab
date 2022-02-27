@@ -313,7 +313,7 @@ MonoBehaviour:
   projectileType: {fileID: 3312545153413225267, guid: c79fd4c7c407e2040a490c338a879457,
     type: 3}
   bulletSpawnLocation: {fileID: 8509949967498463668}
-  target: {fileID: 0}
+  targetList: []
 --- !u!135 &6092413630747444041
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ public class TileOptions : MonoBehaviour
 {
     public int posX;
     public int posY;
+    public bool canBuild = false; 
     public GameObject Panel;
     public GameObject hovered;
     public GameObject road1;
@@ -55,7 +56,8 @@ public class TileOptions : MonoBehaviour
                     gameManager.GetComponent<Initialize>().tileList.Add(temp);
                     gameManager.GetComponent<Initialize>().roadList.Add(temp);
                     AddToMapArray();
-                    gameObject.SetActive(false);
+                    gameManager.GetComponent<Initialize>().RemoveTile(gameObject.transform.parent.gameObject);
+                    gameObject.GetComponentInParent<TileDestroy>().tileDestroy();
                 }
 
                 if (angle == 90)
@@ -64,7 +66,8 @@ public class TileOptions : MonoBehaviour
                     gameManager.GetComponent<Initialize>().tileList.Add(temp);
                     gameManager.GetComponent<Initialize>().roadList.Add(temp);
                     AddToMapArray();
-                    gameObject.SetActive(false);
+                    gameManager.GetComponent<Initialize>().RemoveTile(gameObject.transform.parent.gameObject);
+                    gameObject.GetComponentInParent<TileDestroy>().tileDestroy();
                 }
 
                 if (angle >= 0 && angle <= 45 && distance == 1)
@@ -73,7 +76,9 @@ public class TileOptions : MonoBehaviour
                     gameManager.GetComponent<Initialize>().tileList.Add(temp);
                     gameManager.GetComponent<Initialize>().roadList.Add(temp);
                     AddToMapArray();
-                    gameObject.SetActive(false);
+                    gameManager.GetComponent<Initialize>().RemoveTile(gameObject.transform.parent.gameObject);
+                    gameObject.GetComponentInParent<TileDestroy>().tileDestroy();
+
                 }
 
             }
@@ -109,7 +114,7 @@ public class TileOptions : MonoBehaviour
 
     public void OnMouseEnter()
     {
-        if(gameManager.GetComponent<Inventory>().holding == false && UIcover == false)
+        if(gameManager.GetComponent<Inventory>().holding == false && UIcover == false && canBuild == true)
         {
             if (isSelected == false)
             {

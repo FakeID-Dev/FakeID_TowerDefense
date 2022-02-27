@@ -112,10 +112,13 @@ MonoBehaviour:
   - {r: 0, g: 0, b: 0, a: 0}
   - {r: 0, g: 0, b: 0, a: 0}
   - {r: 0, g: 0, b: 0, a: 0}
+  box: {fileID: 0}
   canBePlaced: 0
   holding: 1
   tileBool: 0
   roadBool: 0
+  objects: []
+  gameManger: {fileID: 0}
 --- !u!65 &5508971030312161307
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -124,7 +127,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2235531451910202847}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1.66, z: 1}
@@ -179,7 +182,7 @@ MonoBehaviour:
   projectileType: {fileID: 1074240857139583382, guid: 3008e6202301354428edf51c202cc064,
     type: 3}
   bulletSpawnLocation: {fileID: 8840446199671873648}
-  target: {fileID: 0}
+  targetList: []
 --- !u!135 &5350303661793438547
 SphereCollider:
   m_ObjectHideFlags: 0
