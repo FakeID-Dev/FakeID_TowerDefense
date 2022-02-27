@@ -37,12 +37,15 @@ public class TowerBehaviour : MonoBehaviour
 
     void Update()
     {
-        if (targetList[0] != null)
+        if (targetList.Count > 0 )
         {
-            if (!towerPlacement.holding)
-                Fire();
+            if (targetList[0] != null)
+            {
+                if (!towerPlacement.holding)
+                    Fire();
 
-            //gameObject.transform.LookAt(new Vector3(target.transform.position.x, 0, target.transform.position.z));
+                //gameObject.transform.LookAt(new Vector3(target.transform.position.x, 0, target.transform.position.z));
+            }
         }
 
         //DrawCircle(16, aimRadius);
