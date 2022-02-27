@@ -19,7 +19,16 @@ public class MenuUIController : MonoBehaviour
     public GameObject Instructions2Canvas;
     public GameObject OptionsCanvas;
 
-    public GameObject soundManager; 
+    public GameObject soundManager;
+    public GameObject musicManager;
+
+    private bool musicPlaying;
+    private bool sfxPlaying;
+
+    public GameObject musicOn;
+    public GameObject musicOff;
+    public GameObject sfxOn;
+    public GameObject sfxOff;
 
     void Start()
     {
@@ -29,6 +38,34 @@ public class MenuUIController : MonoBehaviour
         Instructions2Canvas.SetActive(false);
         OptionsCanvas.SetActive(false);
 
+        if (PlayerPrefs.GetInt("MusicPlaying") == 0)
+        {
+            musicManager.GetComponent<AudioSource>().Play();
+            musicOn.SetActive(true);
+            musicOff.SetActive(false);
+        }
+        else
+        {
+            musicOn.SetActive(false);
+            musicOff.SetActive(true);
+        }
+
+        if (PlayerPrefs.GetInt("SFXPlaying") == 0)
+        {
+            sfxOn.SetActive(true);
+            sfxOff.SetActive(false);
+        }
+        else
+        {
+            sfxOn.SetActive(false);
+            sfxOff.SetActive(true);
+        }
+    }
+
+    void Update()
+    {
+        musicPlaying = (PlayerPrefs.GetInt("MusicPlaying") == 0);
+        sfxPlaying = (PlayerPrefs.GetInt("SFXPlaying") == 0);
     }
 
     public void OnMainMenuClicked()
@@ -39,14 +76,16 @@ public class MenuUIController : MonoBehaviour
         Instructions2Canvas.SetActive(false);
         OptionsCanvas.SetActive(false);
 
-        soundManager.GetComponent<AudioManager>().Play("Select2");
+        if (sfxPlaying)
+            soundManager.GetComponent<AudioSource>().Play();
     }
 
     public void OnStartClicked()
     {
         //Start Game
 
-        soundManager.GetComponent<AudioSource>().Play();
+        if (sfxPlaying)
+            soundManager.GetComponent<AudioSource>().Play();
         SceneManager.LoadScene("GameScene");
 
     }
@@ -59,7 +98,8 @@ public class MenuUIController : MonoBehaviour
         Instructions2Canvas.SetActive(false);
         OptionsCanvas.SetActive(false);
 
-        soundManager.GetComponent<AudioManager>().Play("Select2");
+        if (sfxPlaying)
+            soundManager.GetComponent<AudioSource>().Play();
 
     }
 
@@ -71,7 +111,8 @@ public class MenuUIController : MonoBehaviour
         Instructions2Canvas.SetActive(true);
         OptionsCanvas.SetActive(false);
 
-        soundManager.GetComponent<AudioManager>().Play("Select2");
+        if (sfxPlaying)
+            soundManager.GetComponent<AudioSource>().Play();
 
     }
 
@@ -83,7 +124,43 @@ public class MenuUIController : MonoBehaviour
         Instructions2Canvas.SetActive(false);
         OptionsCanvas.SetActive(true);
 
-        soundManager.GetComponent<AudioManager>().Play("Select2");
+        if(sfxPlaying)
+            soundManager.GetComponent<AudioSource>().Play();
+    }
+
+    public void OnToggleMusicClicked()
+    {
+        if (PlayerPrefs.GetInt("MusicPlaying") == 0)
+        {
+            PlayerPrefs.SetInt("MusicPlaying", 1);
+            musicManager.GetComponent<AudioSource>().Stop();
+            musicOn.SetActive(false);
+            musicOff.SetActive(true);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("MusicPlaying", 0);
+            musicManager.GetComponent<AudioSource>().Play();
+            musicOn.SetActive(true);
+            musicOff.SetActive(false);
+        }
+    }
+
+    public void OnToggleSFXClicked()
+    {
+        if (PlayerPrefs.GetInt("SFXPlaying") == 0)
+        {
+            PlayerPrefs.SetInt("SFXPlaying", 1);
+            sfxOn.SetActive(false);
+            sfxOff.SetActive(true);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("SFXPlaying", 0);
+            soundManager.GetComponent<AudioSource>().Play();
+            sfxOn.SetActive(true);
+            sfxOff.SetActive(false);
+        }
     }
 
 }

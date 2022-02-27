@@ -1056,7 +1056,7 @@ GameObject:
   - component: {fileID: 250863396}
   - component: {fileID: 250863395}
   m_Layer: 5
-  m_Name: Music-On (1)
+  m_Name: SFX-On
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1535,7 +1535,7 @@ GameObject:
   - component: {fileID: 473127439}
   - component: {fileID: 473127438}
   m_Layer: 5
-  m_Name: Music-Off (1)
+  m_Name: SFX-Off
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2845,7 +2845,12 @@ MonoBehaviour:
   Instructions1Canvas: {fileID: 1267548702}
   Instructions2Canvas: {fileID: 1982446736}
   OptionsCanvas: {fileID: 993344751}
-  soundManager: {fileID: 203697724}
+  soundManager: {fileID: 1461123265}
+  musicManager: {fileID: 1492253829}
+  musicOn: {fileID: 1981881207}
+  musicOff: {fileID: 1715198534}
+  sfxOn: {fileID: 250863393}
+  sfxOff: {fileID: 473127436}
 --- !u!4 &1010549746
 Transform:
   m_ObjectHideFlags: 0
@@ -3711,7 +3716,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1455909985}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1010549745}
+        m_TargetAssemblyTypeName: MenuUIController, Assembly-CSharp
+        m_MethodName: OnToggleMusicClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1455909985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3906,7 +3923,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6270990a72465b4428ad3e8a93f0cb95, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -4404,7 +4421,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1625169774}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1010549745}
+        m_TargetAssemblyTypeName: MenuUIController, Assembly-CSharp
+        m_MethodName: OnToggleSFXClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1625169774
 MonoBehaviour:
   m_ObjectHideFlags: 0
