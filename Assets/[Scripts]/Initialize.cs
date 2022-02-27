@@ -26,7 +26,7 @@ public class Initialize : MonoBehaviour
     public GameObject crystalSpawner;
 
     public List<GameObject> tileList;
-    public GameObject[,] Tiles2D = new GameObject[24,24];
+    public GameObject[,] Tiles2D = new GameObject[24, 24];
     public List<GameObject> roadList;
     public List<GameObject> NewRoadsList;
 
@@ -131,7 +131,7 @@ public class Initialize : MonoBehaviour
                     temp.GetComponentInChildren<TileOptions>().posX = x;
                     temp.GetComponentInChildren<TileOptions>().posY = y;
                     Tiles2D[x, y] = temp;
-                    tileList.Add(temp); 
+                    tileList.Add(temp);
 
                 }
                 else if (Map[x, y] == 4)
@@ -415,5 +415,32 @@ public class Initialize : MonoBehaviour
 
         GameObject temp = Instantiate(monsterSpawner, new Vector3(x, 0, y), monsterSpawner.transform.rotation);
         tileList.Add(temp);
+    }
+
+
+
+    public void toggleTiles()
+    {
+        for (int x = 0; x < tileList.Count; x++)
+        {
+            if (tileList[x].tag == "tile")
+            {
+                bool temp = tileList[x].GetComponentInChildren<TileOptions>().canBuild;
+                tileList[x].GetComponentInChildren<TileOptions>().canBuild = !temp;
+            }
+        }
+    }
+
+
+    public void RemoveTile(GameObject compare)
+    {
+        for (int x = 0; x < tileList.Count; x++)
+        {
+            if (tileList[x].gameObject == compare)
+            {
+                tileList.RemoveAt(x);
+            }
+
+        }
     }
 }
