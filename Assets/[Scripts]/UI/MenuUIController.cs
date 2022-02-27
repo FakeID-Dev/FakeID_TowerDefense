@@ -126,7 +126,6 @@ public class MenuUIController : MonoBehaviour
 
         if(sfxPlaying)
             soundManager.GetComponent<AudioSource>().Play();
-
     }
 
     public void OnToggleMusicClicked()

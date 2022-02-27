@@ -15,11 +15,12 @@ public class Inventory : MonoBehaviour
 
     private Vector3 pos;
 
-    private bool isOpen = false;
+    public bool isOpen = false;
     public bool holding = false;
 
     public GameObject Tower_1;
     public GameObject Tower_2;
+    public GameObject Tower_3;
     public GameObject currentTower;
     public GameObject invPanel;
     public GameObject infoPanel;
@@ -92,6 +93,9 @@ public class Inventory : MonoBehaviour
                 }
                 else
                 {
+                    isOpen = false;
+                    gameObject.GetComponent<Initialize>().toggleTiles();
+                    gameObject.GetComponent<ToggleMapCamera>().ToggleActiveCameraMove();
 
                     Destroy(currentTower);
                     holding = false;
@@ -112,15 +116,15 @@ public class Inventory : MonoBehaviour
     {
         if (isOpen == false)
         {
-            invPanel.transform.position -= new Vector3(200.0f, 0.0f, 0.0f); //Opens Inv
             isOpen = true;
-            buildButton.SetActive(false);
+            invPanel.transform.position -= new Vector3(200.0f, 0.0f, 0.0f); //Opens Inv
+            //buildButton.SetActive(false);
         }
         else if (isOpen)
         {
-            invPanel.transform.position = pos;//closes Inv
             isOpen = false;
-            buildButton.SetActive(true);
+            invPanel.transform.position = pos;//closes Inv  
+            //buildButton.SetActive(true);
         }
     }
 
@@ -131,7 +135,7 @@ public class Inventory : MonoBehaviour
             currentTower = Instantiate(Tower_1, new Vector3(0, 0, 0), Quaternion.identity);
             holding = true;
             invPanel.transform.position = pos;
-            buildButton.SetActive(true);
+            //buildButton.SetActive(true);
             stoneTemp = stoneInt;
             coinTemp = coinInt;
             stoneInt--;
@@ -142,12 +146,25 @@ public class Inventory : MonoBehaviour
 
     public void InvButtonTowerPlace2()
     {
-        if (stoneInt >= 3 && coinInt >= 2)
+        if (stoneInt >= 1 && coinInt >= 1)
         {
             currentTower = Instantiate(Tower_2, new Vector3(0, 0, 0), Quaternion.identity);
             holding = true;
             invPanel.transform.position = pos;
-            buildButton.SetActive(true);
+            stoneTemp = stoneInt;
+            coinTemp = coinInt;
+            stoneInt -= 1;
+            coinInt -= 1;
+        }
+    }
+
+    public void InvButtonTowerPlace3()
+    {
+        if (stoneInt >= 3 && coinInt >= 2)
+        {
+            currentTower = Instantiate(Tower_3, new Vector3(0, 0, 0), Quaternion.identity);
+            holding = true;
+            invPanel.transform.position = pos;
             stoneTemp = stoneInt;
             coinTemp = coinInt;
             stoneInt -= 3;

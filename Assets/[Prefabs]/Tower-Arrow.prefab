@@ -249,6 +249,7 @@ MonoBehaviour:
   tileBool: 0
   roadBool: 0
   objects: []
+  gameManger: {fileID: 0}
 --- !u!54 &1809855271
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -312,7 +313,7 @@ MonoBehaviour:
   projectileType: {fileID: 3312545153413225267, guid: c79fd4c7c407e2040a490c338a879457,
     type: 3}
   bulletSpawnLocation: {fileID: 8509949967498463668}
-  target: {fileID: 0}
+  targetList: []
 --- !u!135 &6092413630747444041
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -338,13 +339,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7a290fa0eb0de0244a3e5f5f1162e89d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 71
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

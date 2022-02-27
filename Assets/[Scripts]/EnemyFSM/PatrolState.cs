@@ -39,13 +39,13 @@ public class PatrolState : EnemyState
 
     public void MoveToNextPoint(EnemyController enemyController)
     {
-        if (enemyController.waypoints.Length == 0)
+        if (enemyController.waypoints.Count == 0)//Switched from waypoints.length to waypoints.Count - Erik
         {
             return;
         }
 
         enemyController.navMeshAgent.destination = enemyController.waypoints[pointIndex].position;
-        pointIndex = (pointIndex + 1) % enemyController.waypoints.Length;
+        pointIndex = (pointIndex + 1) % enemyController.waypoints.Count;//Switched from waypoints.length to waypoints.Count - Erik 
     }
 
 }

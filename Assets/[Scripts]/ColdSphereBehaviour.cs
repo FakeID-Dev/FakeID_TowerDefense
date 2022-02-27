@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class ColdSphereBehaviour : MonoBehaviour
 {
+    /*
     private void OnTriggerEnter(Collider other)
     {
         NavMeshAgent slowedEnemyAgent = other.GetComponent<NavMeshAgent>();
@@ -22,4 +23,23 @@ public class ColdSphereBehaviour : MonoBehaviour
             slowedEnemyAgent.speed = slowedEnemyAgent.speed * 5f;
         }
     }
+    */
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            other.GetComponent<EnemyController>().SlowEnemySpeed();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            other.GetComponent<EnemyController>().RestoreEnemySpeed();
+        }
+    }
+
+
 }

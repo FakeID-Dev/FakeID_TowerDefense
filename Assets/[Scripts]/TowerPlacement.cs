@@ -80,7 +80,6 @@ public class TowerPlacement : MonoBehaviour
             for (int x = 0; x < 3; x++)
             {
                 met[x].color = originalMet[x];
-                Debug.Log(originalMet[x]);
             }
         }
 
@@ -131,5 +130,8 @@ public class TowerPlacement : MonoBehaviour
     {
         holding = false;
         gameManger.GetComponent<ToggleMapCamera>().ToggleActiveCameraMove();
+        gameManger.GetComponent<Inventory>().isOpen = false;
+        gameManger.GetComponent<Initialize>().toggleTiles();
+
     }
 }

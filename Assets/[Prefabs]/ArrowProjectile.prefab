@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  flySpeed: 0.06
+  flySpeed: 0.1
   damage: 1
 --- !u!82 &-5183336082625494142
 AudioSource:
