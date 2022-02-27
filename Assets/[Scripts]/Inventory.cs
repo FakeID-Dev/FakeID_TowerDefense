@@ -118,13 +118,11 @@ public class Inventory : MonoBehaviour
         {
             isOpen = true;
             invPanel.transform.position -= new Vector3(200.0f, 0.0f, 0.0f); //Opens Inv
-            //buildButton.SetActive(false);
         }
         else if (isOpen)
         {
             isOpen = false;
             invPanel.transform.position = pos;//closes Inv  
-            //buildButton.SetActive(true);
         }
     }
 
@@ -135,7 +133,6 @@ public class Inventory : MonoBehaviour
             currentTower = Instantiate(Tower_1, new Vector3(0, 0, 0), Quaternion.identity);
             holding = true;
             invPanel.transform.position = pos;
-            //buildButton.SetActive(true);
             stoneTemp = stoneInt;
             coinTemp = coinInt;
             stoneInt--;
