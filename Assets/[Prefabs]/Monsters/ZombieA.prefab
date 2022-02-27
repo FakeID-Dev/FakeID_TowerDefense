@@ -2133,7 +2133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: 8
-  enemySpeed: 1
+  enemySpeed: 0.5
   coinReward: 10
   expReward: 2
   rewardMultiplier: 1

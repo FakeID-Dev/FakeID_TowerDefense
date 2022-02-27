@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 748043096880035257}
   m_Layer: 0
   m_Name: Cyborg
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,16 +101,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae806618ff6b006498a53392a86a8f13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: 2
-  enemySpeed: 2
-  coinReward: 10
-  expReward: 2
+  enemyHealth: 10
+  enemySpeed: 1
+  coinReward: 30
+  expReward: 5
   rewardMultiplier: 1
   enemyType: 0
   navMeshAgent: {fileID: 748043096880035260}
   initialState: 0
   waypoints: []
-  gameManger: {fileID: 0}
+  pathPoints: []
+  gameManager: {fileID: 0}
+  start: {fileID: 0}
+  onMainRoad: 0
 --- !u!95 &748043096880035257
 Animator:
   serializedVersion: 4
