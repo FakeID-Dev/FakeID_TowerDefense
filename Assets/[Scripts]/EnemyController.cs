@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour
 {
     [Header("Enemy Variables")]
-    public float enemyHealth;
+    public float enemyMaxHealth;
     public float enemySpeed;
+    public float enemyCurrentHealth;
 
     public int coinReward;
     public int expReward;
@@ -36,10 +38,14 @@ public class EnemyController : MonoBehaviour
     public GameObject start;//Erik Added 
     public bool onMainRoad = false;
 
+    // Healthbar
+    public Slider healthSlider; 
+
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameObject.Find("GameManager");//Erik add
+        enemyCurrentHealth = enemyMaxHealth;
 
         //NavMesh Setup
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -78,9 +84,11 @@ public class EnemyController : MonoBehaviour
     //Enemy Take Damage Function
     public void TakeDamage(float damage)
     {
-        enemyHealth -= damage;
+        enemyCurrentHealth -= damage;
 
-        if (enemyHealth <= 0)
+        healthSlider.value = (enemyCurrentHealth / enemyMaxHealth);
+
+        if (enemyCurrentHealth <= 0)
         {
 
             gameManager.GetComponent<Inventory>().coinInt += coinReward;
