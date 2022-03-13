@@ -109,7 +109,8 @@ public class EnemyController : MonoBehaviour
     //Enemy Die Function 
     public void DestroyEnemy()
     {
-        Instantiate(coinPrefab, new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.identity);
+        GameObject coin = Instantiate(coinPrefab, new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.identity);
+        coin.GetComponent<CoinBehaviour>().coinValue = coinReward;
         gameManager.GetComponent<Inventory>().expInt += expReward;
         Destroy(gameObject);
     }

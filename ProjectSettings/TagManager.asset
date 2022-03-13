@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - WayPoints
+  - Road
+  - tower
+  - tile
+  - coin
+  - Tower
   layers:
   - Default
   - TransparentFX
@@ -11,7 +18,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Coins
   - 
   - 
   - 

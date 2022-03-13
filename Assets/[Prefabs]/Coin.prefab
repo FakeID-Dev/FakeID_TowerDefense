@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5560468420595792395}
   - component: {fileID: 5560468420595792394}
   - component: {fileID: 5560468420595792389}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CoinMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,9 +109,9 @@ GameObject:
   - component: {fileID: 5560468421022840495}
   - component: {fileID: 5560468421022840492}
   - component: {fileID: 5560468421022840493}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Coin
-  m_TagString: Untagged
+  m_TagString: coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,6 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spinSpeed: 50
   coinValue: 0
+  duration: 3
 --- !u!135 &5560468421022840493
 SphereCollider:
   m_ObjectHideFlags: 0

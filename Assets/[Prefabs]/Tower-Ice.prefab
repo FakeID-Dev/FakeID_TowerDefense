@@ -124,7 +124,6 @@ GameObject:
   - component: {fileID: 1445337611415716339}
   - component: {fileID: 5508971030312161307}
   - component: {fileID: 6045571667203620908}
-  - component: {fileID: 5188476650267074461}
   - component: {fileID: 5350303661793438547}
   - component: {fileID: 4611887431400483515}
   - component: {fileID: 7601886754343201355}
@@ -228,6 +227,7 @@ MonoBehaviour:
   tileBool: 0
   roadBool: 0
   objects: []
+  gameManger: {fileID: 0}
 --- !u!65 &5508971030312161307
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -257,21 +257,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &5188476650267074461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2235531451910202847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97efbc2da6161d44bba2704855026629, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speedRot: 100
-  coinPre: {fileID: 8162181658199203565}
-  Inv: {fileID: 0}
 --- !u!135 &5350303661793438547
 SphereCollider:
   m_ObjectHideFlags: 0
