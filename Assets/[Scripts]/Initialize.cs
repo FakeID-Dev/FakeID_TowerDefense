@@ -407,6 +407,16 @@ public class Initialize : MonoBehaviour
 
     }
 
+    public void AddResourceNode(int x, int y) //Override for saving/loading
+    {
+
+        Map[x, y] = 8;
+
+        GameObject temp = Instantiate(crystalSpawner, new Vector3(x, 0, y), crystalSpawner.transform.rotation);
+        tileList.Add(temp);
+
+    }
+
 
     public void AddMonsterNode()
     {
@@ -420,6 +430,19 @@ public class Initialize : MonoBehaviour
             x = Random.Range(0, mapSize);
             y = Random.Range(0, mapSize);
         }
+
+        Map[x, y] = 7;
+
+        GameObject temp = Instantiate(monsterSpawner, new Vector3(x, 0, y), monsterSpawner.transform.rotation);
+        temp.GetComponentInChildren<EnemySpawner>().posX = x;
+        temp.GetComponentInChildren<EnemySpawner>().posY = y;
+        Tiles2D[x, y] = temp;
+
+        tileList.Add(temp);
+    }
+
+    public void AddMonsterNode(int x, int y) //Override for saving/loading
+    {
 
         Map[x, y] = 7;
 
