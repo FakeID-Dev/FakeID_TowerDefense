@@ -115,6 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posX: 0
   posY: 0
+  canBuild: 0
   Panel: {fileID: 0}
   hovered: {fileID: 0}
   road1: {fileID: 0}
@@ -149,6 +150,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1566654621120828852}
   - component: {fileID: 3972984156013809895}
+  - component: {fileID: -7121121287837358010}
   m_Layer: 0
   m_Name: tile_straight
   m_TagString: Road
@@ -187,3 +189,19 @@ MonoBehaviour:
   PosX: 0
   PosY: 0
   nodeVisted: 0
+--- !u!114 &-7121121287837358010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2231024263565004558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff

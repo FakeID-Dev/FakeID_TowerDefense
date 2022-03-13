@@ -20,8 +20,6 @@ public class Leveling : MonoBehaviour
         checkLevel();
     }
 
-
-
     public void checkLevel()
     {
         if (gameManager.GetComponent<Inventory>().expSlider.value == gameManager.GetComponent<Inventory>().expSlider.maxValue)

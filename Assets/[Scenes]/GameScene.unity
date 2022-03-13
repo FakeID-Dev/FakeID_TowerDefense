@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 5185a9baf50cbb640a0133ab918344fe, type: 2}
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &12322305
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,7 +788,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &237592021
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2684,7 +2684,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &712385375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3747,6 +3747,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1077310628}
+  - component: {fileID: 1077310629}
   m_Layer: 0
   m_Name: Map
   m_TagString: Untagged
@@ -3769,6 +3770,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1077310629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077310627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 1
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.083333336
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &1096541691
 GameObject:
   m_ObjectHideFlags: 0
@@ -3783,6 +3813,7 @@ GameObject:
   - component: {fileID: 1096541694}
   - component: {fileID: 1096541695}
   - component: {fileID: 1096541697}
+  - component: {fileID: 1096541698}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3846,6 +3877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c15a3192c80bbbb42813bc63c5a54a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  navMeshSurface: {fileID: 1077310629}
   count: 0
   map: {fileID: 1077310627}
   mapRoad: {fileID: 1459522319}
@@ -3912,6 +3944,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   levelPanel: {fileID: 1842413546}
+--- !u!114 &1096541698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096541691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbf057b9fe199d45b638ddae80a81d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  surgeSlider: {fileID: 1868707281}
+  surgeDuration: 30
+  surgeWait: 180
 --- !u!1 &1096983715
 GameObject:
   m_ObjectHideFlags: 0
@@ -5503,7 +5550,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
