@@ -224,7 +224,7 @@ public class Initialize : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
 
@@ -259,56 +259,48 @@ public class Initialize : MonoBehaviour
         if (Map[PosX, PosY - 1] == 1)
         {
             AddToNewRoad(PosX, PosY - 1);
-            Debug.Log("west");
             nextTo = true;
         }
 
         else if (Map[PosX + 1, PosY] == 1)
         {
             AddToNewRoad(PosX + 1, PosY);
-            Debug.Log("south");
             nextTo = true;
         }
 
         else if (Map[PosX, PosY + 1] == 1)
         {
             AddToNewRoad(PosX, PosY + 1);
-            Debug.Log("east");
             nextTo = true;
         }
 
         else if (Map[PosX - 1, PosY] == 1)
         {
             AddToNewRoad(PosX - 1, PosY);
-            Debug.Log("north");
             nextTo = true;
         }
 
         else if (Map[PosX, PosY - 1] == 4)
         {
             AddToNewRoad(PosX, PosY - 1);
-            Debug.Log("west");
             nextTo = true;
         }
 
         else if (Map[PosX + 1, PosY] == 4)
         {
             AddToNewRoad(PosX + 1, PosY);
-            Debug.Log("south");
             nextTo = true;
         }
 
         else if (Map[PosX, PosY + 1] == 4)
         {
             AddToNewRoad(PosX, PosY + 1);
-            Debug.Log("east");
             nextTo = true;
         }
 
         else if (Map[PosX - 1, PosY] == 4)
         {
             AddToNewRoad(PosX - 1, PosY);
-            Debug.Log("north");
             nextTo = true;
         }
 
@@ -456,5 +448,36 @@ public class Initialize : MonoBehaviour
             }
 
         }
+    }
+
+
+    public void checkRoadCorners()
+    {
+        //int tempX, tempY; 
+        //for (int x = 0; x < roadList.Count; x++)
+        //{
+        //    tempX = roadList[x].GetComponent<RoadCord>().PosX;
+        //    tempY = roadList[x].GetComponent<RoadCord>().PosY;
+
+        //    for (int c = 0; c < roadList.Count; c++)
+        //    {
+        //        if (roadList[c].GetComponent<RoadCord>().PosY == tempY + 1)
+        //        {
+
+        //            //GameObject temp = Instantiate(roadRight, new Vector3(tempX, 0, tempY), roadRight.transform.rotation);
+        //            //temp.GetComponent<RoadCord>().PosX = tempX;
+        //            //temp.GetComponent<RoadCord>().PosX = tempY;
+
+        //            //Destroy(roadList[c].gameObject);
+                    
+        //        }
+        //        if (roadList[c].GetComponent<RoadCord>().PosX == tempX + 1)
+        //        {
+
+        //        }
+
+              
+           
+        
     }
 }

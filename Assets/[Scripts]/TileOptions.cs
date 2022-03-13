@@ -47,16 +47,21 @@ public class TileOptions : MonoBehaviour
                 Vector3 targetDir = hit.transform.position - transform.position;
                 angle = Vector3.Angle(targetDir, transform.forward);
 
+               
+
                 float distance = Vector3.Distance(hit.transform.position, transform.position);
                 GameObject temp;
 
-                if (angle == 180)
+                Debug.Log(angle);  
+
+                if (angle > 160 && angle <= 181)
                 {
                     temp = Instantiate(road1, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - 0.2f, gameObject.transform.position.z), road1.transform.rotation);
                     gameManager.GetComponent<Initialize>().tileList.Add(temp);
                     gameManager.GetComponent<Initialize>().roadList.Add(temp);
                     AddToMapArray();
                     gameManager.GetComponent<Initialize>().RemoveTile(gameObject.transform.parent.gameObject);
+                    gameManager.GetComponent<Initialize>().checkRoadCorners();
                     gameObject.GetComponentInParent<TileDestroy>().tileDestroy();
                 }
 
@@ -67,16 +72,20 @@ public class TileOptions : MonoBehaviour
                     gameManager.GetComponent<Initialize>().roadList.Add(temp);
                     AddToMapArray();
                     gameManager.GetComponent<Initialize>().RemoveTile(gameObject.transform.parent.gameObject);
+                    gameManager.GetComponent<Initialize>().checkRoadCorners();
                     gameObject.GetComponentInParent<TileDestroy>().tileDestroy();
                 }
 
-                if (angle >= 0 && angle <= 45 && distance == 1)
+                if (angle >= 0 && angle <= 45 && distance > 0.5f)
                 {
+                    Debug.Log("WORKING ");
+
                     temp = Instantiate(road1, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - 0.2f, gameObject.transform.position.z), road1.transform.rotation);
                     gameManager.GetComponent<Initialize>().tileList.Add(temp);
                     gameManager.GetComponent<Initialize>().roadList.Add(temp);
                     AddToMapArray();
                     gameManager.GetComponent<Initialize>().RemoveTile(gameObject.transform.parent.gameObject);
+                    gameManager.GetComponent<Initialize>().checkRoadCorners();
                     gameObject.GetComponentInParent<TileDestroy>().tileDestroy();
 
                 }
@@ -131,6 +140,7 @@ public class TileOptions : MonoBehaviour
         {
             if (isSelected == false)
             {
+                Debug.Log("EXIT");
                 Vector3 temp1 = transform.position;
                 temp1.y = 0.0f;
                 transform.position = temp1;
