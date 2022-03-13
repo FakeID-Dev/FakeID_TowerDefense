@@ -16,6 +16,8 @@ public class EnemyController : MonoBehaviour
 
     public int rewardMultiplier;
 
+    public GameObject coinPrefab; 
+
     //Enemy Member Variables 
     public EnemyType enemyType;
 
@@ -39,7 +41,8 @@ public class EnemyController : MonoBehaviour
     public bool onMainRoad = false;
 
     // Healthbar
-    public Slider healthSlider; 
+    public Slider healthSlider;
+    public GameObject healthUI;
 
     // Start is called before the first frame update
     void Start()
@@ -78,12 +81,18 @@ public class EnemyController : MonoBehaviour
     {
         //State Machine Update Call
         enemyStateMachine.Update();
-        
+        healthUI.transform.LookAt(Camera.main.transform);
     }
 
     //Enemy Take Damage Function
     public void TakeDamage(float damage)
     {
+
+        if (healthUI.activeInHierarchy == false)
+        {
+            healthUI.SetActive(true);
+        }
+
         enemyCurrentHealth -= damage;
 
         healthSlider.value = (enemyCurrentHealth / enemyMaxHealth);
@@ -91,8 +100,7 @@ public class EnemyController : MonoBehaviour
         if (enemyCurrentHealth <= 0)
         {
 
-            gameManager.GetComponent<Inventory>().coinInt += coinReward;
-            gameManager.GetComponent<Inventory>().expInt += expReward;
+            // gameManager.GetComponent<Inventory>().coinInt += coinReward;
 
             DestroyEnemy();
         }
@@ -101,6 +109,8 @@ public class EnemyController : MonoBehaviour
     //Enemy Die Function 
     public void DestroyEnemy()
     {
+        Instantiate(coinPrefab, new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.identity);
+        gameManager.GetComponent<Inventory>().expInt += expReward;
         Destroy(gameObject);
     }
 
