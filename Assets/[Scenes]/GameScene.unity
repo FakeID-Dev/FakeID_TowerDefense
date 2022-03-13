@@ -2044,7 +2044,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 937282222}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 11.31, y: 11.07, z: -3.62}
+  m_LocalPosition: {x: 11.31, y: 10, z: -3.62}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2063,7 +2063,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3020e7ca8c2b9474abfdc5066fcb60e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heightVar: 5
+  minHeight: 5
+  maxHeight: 15
   canDragCamera: 1
+  touchMode: 0
 --- !u!1 &937311676
 GameObject:
   m_ObjectHideFlags: 0
@@ -4161,30 +4165,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3961401497354502243, guid: 14b188fa2bb01f340aecb8df39f8b1d0,
-        type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 2147483647
-      objectReference: {fileID: 0}
     - target: {fileID: 3961401497354502245, guid: 14b188fa2bb01f340aecb8df39f8b1d0,
         type: 3}
       propertyPath: m_Name
       value: MapCamera
-      objectReference: {fileID: 0}
-    - target: {fileID: 3961401497354502245, guid: 14b188fa2bb01f340aecb8df39f8b1d0,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3961401497354502245, guid: 14b188fa2bb01f340aecb8df39f8b1d0,
-        type: 3}
-      propertyPath: m_TagString
-      value: MainCamera
-      objectReference: {fileID: 0}
-    - target: {fileID: 4445219674813904862, guid: 14b188fa2bb01f340aecb8df39f8b1d0,
-        type: 3}
-      propertyPath: dragSpeed
-      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14b188fa2bb01f340aecb8df39f8b1d0, type: 3}

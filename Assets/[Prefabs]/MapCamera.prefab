@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3961401497354502244}
   m_Layer: 0
   m_Name: MapCamera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,7 +46,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3020e7ca8c2b9474abfdc5066fcb60e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dragSpeed: 2
+  heightVar: 10
+  minHeight: 20
+  maxHeight: 40
+  canDragCamera: 1
+  touchMode: 0
 --- !u!20 &3961401497354502243
 Camera:
   m_ObjectHideFlags: 0
@@ -78,7 +82,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 192
+    m_Bits: 2147483647
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
