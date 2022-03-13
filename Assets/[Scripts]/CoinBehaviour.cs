@@ -6,18 +6,27 @@ public class CoinBehaviour : MonoBehaviour
 {
     public float spinSpeed;
     public int coinValue; 
-    private Inventory inventory; 
+    private Inventory inventory;
 
+    public float duration;
+    private float remainingDuration; 
 
 
     void Start()
     {
         inventory = GameObject.Find("GameManager").GetComponent<Inventory>();
+        remainingDuration = duration;
     }
 
     void Update()
     {
         Spin();
+        remainingDuration -= Time.deltaTime;
+
+        if (remainingDuration <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Spin()
@@ -29,6 +38,8 @@ public class CoinBehaviour : MonoBehaviour
     {
         Collect();
     }
+
+
 
     void Collect()
     {
