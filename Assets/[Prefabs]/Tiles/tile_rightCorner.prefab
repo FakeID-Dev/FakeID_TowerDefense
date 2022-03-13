@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7600376763411700099}
   - component: {fileID: -5850514252019960789}
+  - component: {fileID: 3009518266661392612}
   m_Layer: 0
   m_Name: tile_rightCorner
   m_TagString: Road
@@ -48,6 +49,22 @@ MonoBehaviour:
   PosX: 0
   PosY: 0
   nodeVisted: 0
+--- !u!114 &3009518266661392612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7075760610574189369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &8754807644152143450
 GameObject:
   m_ObjectHideFlags: 0

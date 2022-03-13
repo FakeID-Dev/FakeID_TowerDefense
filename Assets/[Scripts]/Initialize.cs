@@ -12,6 +12,9 @@ using UnityEngine.AI;
 
 public class Initialize : MonoBehaviour
 {
+    //NavMesh
+    public NavMeshSurface navMeshSurface;
+
     public int count;
     public GameObject map;
     public GameObject mapRoad;
@@ -315,6 +318,9 @@ public class Initialize : MonoBehaviour
 
         //roadList[roadList.Count - 1].gameObject.transform.parent = mapRoad.gameObject.transform;
 
+        //Rebuild NavMesh
+        navMeshSurface.BuildNavMesh();
+
     }
 
     public void AddToNewRoad(int psX, int psY)
@@ -374,7 +380,8 @@ public class Initialize : MonoBehaviour
         roadList[12].transform.parent = mapRoad.gameObject.transform;
         roadList[10].transform.parent = mapRoad.gameObject.transform;
 
-
+        //Rebuild NavMesh
+        navMeshSurface.BuildNavMesh();
 
     }
 
