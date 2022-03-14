@@ -12,6 +12,11 @@ class SaveData
 
     public int numTiles;
     public float[,] savedTiles;
+
+    public int gold;
+    public int stone;
+    public int exp;
+    public int surge;
     
     public SaveData(int tiles)
     {
@@ -32,57 +37,58 @@ public class GameSaveManager : MonoBehaviour
         FileStream file = File.Create(Application.persistentDataPath + "/TDSaveData.dat");
         SaveData data = new SaveData(gameManager.GetComponent<Initialize>().tileList.Count);
 
-        for (int i = 0; i < gameManager.GetComponent<Initialize>().tileList.Count; i++)
-        {
-            string tileName = gameManager.GetComponent<Initialize>().tileList[i].name;
-            if (tileName == "tile_Downstraight(Clone)")
-            {
-                data.savedTiles[i, 1] = 1;
-                data.savedTiles[i, 2] = gameManager.GetComponent<Initialize>().tileList[i].GetComponent<RoadCord>().PosX;
-                data.savedTiles[i, 3] = gameManager.GetComponent<Initialize>().tileList[i].GetComponent<RoadCord>().PosY;
-            }
-            else if (tileName == "tile_straight(Clone)")
-            {
-                data.savedTiles[i, 1] = 2;
-                data.savedTiles[i, 2] = gameManager.GetComponent<Initialize>().tileList[i].GetComponent<RoadCord>().PosX;
-                data.savedTiles[i, 3] = gameManager.GetComponent<Initialize>().tileList[i].GetComponent<RoadCord>().PosY;
-            }
-            else if (tileName == "ZombieSpawner(Clone)")
-            {
-                data.savedTiles[i, 1] = 3;
-                data.savedTiles[i, 2] = gameManager.GetComponent<Initialize>().tileList[i].transform.position.x;
-                data.savedTiles[i, 3] = gameManager.GetComponent<Initialize>().tileList[i].transform.position.z;
-            }
-            else if (tileName == "CyborgSpawner(Clone)")
-            {
-                data.savedTiles[i, 1] = 4;
-                data.savedTiles[i, 2] = gameManager.GetComponent<Initialize>().tileList[i].transform.position.x;
-                data.savedTiles[i, 3] = gameManager.GetComponent<Initialize>().tileList[i].transform.position.z;
-            }
-            else if (tileName == "GhostSpawner(Clone)")
-            {
-                data.savedTiles[i, 1] = 5;
-                data.savedTiles[i, 2] = gameManager.GetComponent<Initialize>().tileList[i].transform.position.x;
-                data.savedTiles[i, 3] = gameManager.GetComponent<Initialize>().tileList[i].transform.position.z;
-            }
-            else if (tileName == "Cystal(Clone)")
-            {
-                data.savedTiles[i, 1] = 6;
-                data.savedTiles[i, 2] = gameManager.GetComponent<Initialize>().tileList[i].transform.position.x;
-                data.savedTiles[i, 3] = gameManager.GetComponent<Initialize>().tileList[i].transform.position.z;
-            }
-            else
-            {
-                data.savedTiles[i, 1] = 0;
-                data.savedTiles[i, 2] = 0;
-                data.savedTiles[i, 3] = 0;
-            }
+        data.gold = gameManager.GetComponent<Inventory>().coinInt;
+        data.stone = gameManager.GetComponent<Inventory>().stoneInt;
+        data.exp = gameManager.GetComponent<Inventory>().expInt;
+        data.surge = gameManager.GetComponent<SurgeController>().surgeTimerInt;
 
-        }
-        
+        //for (int i = 0; i < gameManager.GetComponent<Initialize>().tileList.Count; i++)
+        //{
+        //    string tileName = gameManager.GetComponent<Initialize>().tileList[i].name;
+        //    if (tileName == "tile_Downstraight(Clone)")
+        //    {
+        //        data.savedTiles[i, 1] = 1;
+        //        data.savedTiles[i, 2] = gameManager.GetComponent<Initialize>().tileList[i].GetComponent<RoadCord>().PosX;
+        //        data.savedTiles[i, 3] = gameManager.GetComponent<Initialize>().tileList[i].GetComponent<RoadCord>().PosY;
+        //    }
+        //    else if (tileName == "tile_straight(Clone)")
+        //    {
+        //        data.savedTiles[i, 1] = 2;
+        //        data.savedTiles[i, 2] = gameManager.GetComponent<Initialize>().tileList[i].GetComponent<RoadCord>().PosX;
+        //        data.savedTiles[i, 3] = gameManager.GetComponent<Initialize>().tileList[i].GetComponent<RoadCord>().PosY;
+        //    }
+        //    else if (tileName == "ZombieSpawner(Clone)")
+        //    {
+        //        data.savedTiles[i, 1] = 3;
+        //        data.savedTiles[i, 2] = gameManager.GetComponent<Initialize>().tileList[i].transform.position.x;
+        //        data.savedTiles[i, 3] = gameManager.GetComponent<Initialize>().tileList[i].transform.position.z;
+        //    }
+        //    else if (tileName == "CyborgSpawner(Clone)")
+        //    {
+        //        data.savedTiles[i, 1] = 4;
+        //        data.savedTiles[i, 2] = gameManager.GetComponent<Initialize>().tileList[i].transform.position.x;
+        //        data.savedTiles[i, 3] = gameManager.GetComponent<Initialize>().tileList[i].transform.position.z;
+        //    }
+        //    else if (tileName == "GhostSpawner(Clone)")
+        //    {
+        //        data.savedTiles[i, 1] = 5;
+        //        data.savedTiles[i, 2] = gameManager.GetComponent<Initialize>().tileList[i].transform.position.x;
+        //        data.savedTiles[i, 3] = gameManager.GetComponent<Initialize>().tileList[i].transform.position.z;
+        //    }
+        //    else if (tileName == "Cystal(Clone)")
+        //    {
+        //        data.savedTiles[i, 1] = 6;
+        //        data.savedTiles[i, 2] = gameManager.GetComponent<Initialize>().tileList[i].transform.position.x;
+        //        data.savedTiles[i, 3] = gameManager.GetComponent<Initialize>().tileList[i].transform.position.z;
+        //    }
+        //    else
+        //    {
+        //        data.savedTiles[i, 1] = 0;
+        //        data.savedTiles[i, 2] = 0;
+        //        data.savedTiles[i, 3] = 0;
+        //    }
 
-
-
+        //}
 
         bf.Serialize(file, data);
         file.Close();
@@ -112,11 +118,16 @@ public class GameSaveManager : MonoBehaviour
             //player.rotation = Quaternion.Euler(Rotx, Roty, Rotz);
             //player.gameObject.GetComponent<CharacterController>().enabled = true;
 
-            for(int i = 0; i < 5; i++)
-            {
+            //for(int i = 0; i < 5; i++)
+            //{
 
-            }
+            //}
 
+
+            gameManager.GetComponent<Inventory>().coinInt = data.gold;
+            gameManager.GetComponent<Inventory>().stoneInt = data.stone;
+            gameManager.GetComponent<Inventory>().expInt = data.exp;
+            gameManager.GetComponent<SurgeController>().surgeTimerInt = data.surge;
 
 
             Debug.Log("Game data loaded! - Binary File");
