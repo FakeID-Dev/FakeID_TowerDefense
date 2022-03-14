@@ -117,12 +117,14 @@ public class Inventory : MonoBehaviour
         if (isOpen == false)
         {
             isOpen = true;
-            invPanel.transform.position -= new Vector3(200.0f, 0.0f, 0.0f); //Opens Inv
+            invPanel.SetActive(true);
+            buildButton.SetActive(false);
         }
         else if (isOpen)
         {
             isOpen = false;
-            invPanel.transform.position = pos;//closes Inv  
+            invPanel.SetActive(false);
+            buildButton.SetActive(true);
         }
     }
 
