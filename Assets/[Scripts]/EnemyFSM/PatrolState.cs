@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,7 @@ public class PatrolState : EnemyState
 
 
     public EnemyStateId GetId()
-    {  
+    {
         return EnemyStateId.PatrolPath;
     }
 
@@ -39,13 +40,13 @@ public class PatrolState : EnemyState
 
     public void MoveToNextPoint(EnemyController enemyController)
     {
-        if (enemyController.waypoints.Count == 0)//Switched from waypoints.length to waypoints.Count - Erik
+        if (enemyController.waypoints.Length == 0)//Switched from waypoints.length to waypoints.Count - Erik
         {
             return;
         }
 
         enemyController.navMeshAgent.destination = enemyController.waypoints[pointIndex].position;
-        pointIndex = (pointIndex + 1) % enemyController.waypoints.Count;//Switched from waypoints.length to waypoints.Count - Erik 
+        pointIndex = (pointIndex + 1) % enemyController.waypoints.Length;//Switched from waypoints.length to waypoints.Count - Erik 
     }
 
 }
