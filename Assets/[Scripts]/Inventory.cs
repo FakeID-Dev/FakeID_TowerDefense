@@ -13,7 +13,8 @@ using UnityEngine.UI;
 public class Inventory : MonoBehaviour
 {
 
-    private Vector3 pos;
+    private Vector3 posR;
+    private Vector3 posL;
 
     public bool isOpen = false;
     public bool holding = false;
@@ -22,7 +23,8 @@ public class Inventory : MonoBehaviour
     public GameObject Tower_2;
     public GameObject Tower_3;
     public GameObject currentTower;
-    public GameObject invPanel;
+    public GameObject invPanelRight;
+    public GameObject invPanelLeft;
     public GameObject infoPanel;
     public GameObject buildButton;
 
@@ -42,6 +44,11 @@ public class Inventory : MonoBehaviour
     private int crystalTemp = 0;
     private int expTemp = 0;
 
+    [Header("Left/Right bool and offset")]
+    [SerializeField] float LeftHandOffset = -200f;
+    [SerializeField] float RightHandOffset = 200f;
+    public bool LeftHandMode;
+
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +57,8 @@ public class Inventory : MonoBehaviour
         stoneInt = 6;
         crystalInt = 0;
         expInt = 0;
-        pos = invPanel.transform.position;
+        posR = invPanelRight.transform.position;
+        posL = invPanelLeft.transform.position;
     }
 
     // Update is called once per frame
@@ -117,12 +125,14 @@ public class Inventory : MonoBehaviour
         if (isOpen == false)
         {
             isOpen = true;
-            invPanel.transform.position -= new Vector3(200.0f, 0.0f, 0.0f); //Opens Inv
+            invPanelRight.transform.position -= new Vector3(RightHandOffset, 0.0f, 0.0f); //Opens Right Inv to Right Offset
+            invPanelLeft.transform.position -= new Vector3(LeftHandOffset, 0.0f, 0.0f); //Opens Left Inv to Left Offset
         }
         else if (isOpen)
         {
             isOpen = false;
-            invPanel.transform.position = pos;//closes Inv  
+            invPanelRight.transform.position = posR;//closes Inv  
+            invPanelLeft.transform.position = posL;//closes Inv  
         }
     }
 
@@ -132,7 +142,8 @@ public class Inventory : MonoBehaviour
         {
             currentTower = Instantiate(Tower_1, new Vector3(0, 0, 0), Quaternion.identity);
             holding = true;
-            invPanel.transform.position = pos;
+            invPanelRight.transform.position = posR;
+            invPanelLeft.transform.position = posL;
             stoneTemp = stoneInt;
             coinTemp = coinInt;
             stoneInt--;
@@ -147,7 +158,8 @@ public class Inventory : MonoBehaviour
         {
             currentTower = Instantiate(Tower_2, new Vector3(0, 0, 0), Quaternion.identity);
             holding = true;
-            invPanel.transform.position = pos;
+            invPanelRight.transform.position = posR;
+            invPanelLeft.transform.position = posL;
             stoneTemp = stoneInt;
             coinTemp = coinInt;
             stoneInt -= 1;
@@ -161,7 +173,8 @@ public class Inventory : MonoBehaviour
         {
             currentTower = Instantiate(Tower_3, new Vector3(0, 0, 0), Quaternion.identity);
             holding = true;
-            invPanel.transform.position = pos;
+            invPanelRight.transform.position = posR;
+            invPanelLeft.transform.position = posL;
             stoneTemp = stoneInt;
             coinTemp = coinInt;
             stoneInt -= 3;
