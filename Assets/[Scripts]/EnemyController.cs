@@ -16,7 +16,7 @@ public class EnemyController : MonoBehaviour
 
     public int rewardMultiplier;
 
-    public GameObject coinPrefab; 
+    public GameObject coinPrefab;
 
     //Enemy Member Variables 
     public EnemyType enemyType;
@@ -29,16 +29,20 @@ public class EnemyController : MonoBehaviour
     public EnemyStateId initialState;
 
     //Patrol Variables 
-    private GameObject innerRingWaypoints;
-    //public Transform[] waypoints;
+    // private GameObject innerRingWaypoints;
+    public Transform[] waypoints;
 
-    public List<Transform> waypoints;
-    public List<GameObject> pathPoints;//Erik Added
+    public GameObject pathObject;
+
+    // public List<Transform> waypoints;
+    // public List<GameObject> pathPoints;//Erik Added
 
     //Game Manager 
     public GameObject gameManager; //Erik Added 
     public GameObject start;//Erik Added 
     public bool onMainRoad = false;
+
+    //  private SurgeController surgeController;
 
     // Healthbar
     public Slider healthSlider;
@@ -48,6 +52,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.Find("GameManager");//Erik add
+
         enemyCurrentHealth = enemyMaxHealth;
 
         //NavMesh Setup
@@ -60,20 +65,20 @@ public class EnemyController : MonoBehaviour
         enemyStateMachine.RegisterState(new PatrolState());
         enemyStateMachine.ChangeState(initialState);
 
-        Pathfinding();
+        pathObject = GameObject.FindGameObjectWithTag("WayPoints");
 
+        waypoints = pathObject.GetComponentsInChildren<Transform>();
+
+        //Pathfinding();
 
         //Setup Patrol Points
-        innerRingWaypoints = GameObject.Find("MapRoad"); ;//Erik added MapRoad to test waypoints
+        //innerRingWaypoints = GameObject.Find("MapRoad"); ;//Erik added MapRoad to test waypoints
         //waypoints = innerRingWaypoints.GetComponentsInChildren<Transform>();
 
-        for(int x = 0; x < pathPoints.Count; x++)
-        {
-            waypoints.Add(pathPoints[x].transform);
-        }
-        
-        
-
+        // for(int x = 0; x < pathPoints.Count; x++)
+        // {
+        //   waypoints.Add(pathPoints[x].transform);
+        //}
     }
 
     // Update is called once per frame
@@ -117,6 +122,8 @@ public class EnemyController : MonoBehaviour
 
 
 
+
+    /*
     //Enemy A* Pathfinding Algorithm
     public void Pathfinding()
     {
@@ -178,7 +185,7 @@ public class EnemyController : MonoBehaviour
             }
         }
     }
-
+    */
 
     //private void OnTriggerEnter(Collider other)
     //{
@@ -239,5 +246,4 @@ public enum EnemyType
     GOLEM,
     GHOST
 }
-
 

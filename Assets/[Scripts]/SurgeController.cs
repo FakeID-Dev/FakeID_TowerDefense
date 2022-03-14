@@ -15,7 +15,13 @@ public class SurgeController : MonoBehaviour
     public float surgeWait;
     private float tempWait;
 
+    private int surgeNum;
+
     private bool surgeActive;
+
+    public EnemySpawner[] enemySpawners;
+
+    public int availableUnits; //Temp
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +30,8 @@ public class SurgeController : MonoBehaviour
 
         tempWait = 0;
         tempDuration = surgeDuration;
+
+        enemySpawners = FindObjectsOfType<EnemySpawner>();
     }
 
     // Update is called once per frame
@@ -41,19 +49,17 @@ public class SurgeController : MonoBehaviour
 
     private void CountUpToSurge()
     {
-
         surgeSlider.maxValue = surgeWait;
 
         if (tempWait < surgeWait)
         {
             tempWait += Time.deltaTime;
 
-            Debug.Log("Surge Wait : " + tempWait.ToString());
-
             surgeSlider.value = tempWait;
         }
         else
         {
+            SurgeStarted();
             surgeActive = true;
             tempWait = 0;
         }
@@ -68,15 +74,41 @@ public class SurgeController : MonoBehaviour
         {
             tempDuration -= Time.deltaTime;
 
-            Debug.Log("Surge Duration : " + tempDuration.ToString());
-
             surgeSlider.value = tempDuration;
         }
         else
         {
+            SurgeComplete();
             surgeActive = false;
             tempDuration = surgeDuration;
         }
     }
 
+
+    private void SurgeStarted()
+    {
+        foreach (EnemySpawner spawner in enemySpawners)
+        {
+            spawner.ActivateSurgeSpawning();
+        }
+    }
+
+
+    private void SurgeComplete()
+    {
+        surgeNum += 1;
+
+        //Increase Surge Wait
+        //Increase Surge Duration 
+        //Increase Available Units
+
+        enemySpawners = FindObjectsOfType<EnemySpawner>();
+
+        foreach (EnemySpawner spawner in enemySpawners)
+        {
+            spawner.DeactivateSurgeSpawning();
+        }
+    }
+
 }
+
