@@ -11,6 +11,7 @@ TagManager:
   - tile
   - coin
   - Tower
+  - crystal
   layers:
   - Default
   - TransparentFX
