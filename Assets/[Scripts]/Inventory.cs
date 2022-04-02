@@ -21,6 +21,7 @@ public class Inventory : MonoBehaviour
     public GameObject Tower_1;
     public GameObject Tower_2;
     public GameObject Tower_3;
+    public GameObject Tower_4;
     public GameObject currentTower;
     public GameObject invPanel;
     public GameObject infoPanel;
@@ -117,7 +118,7 @@ public class Inventory : MonoBehaviour
         if (isOpen == false)
         {
             isOpen = true;
-            invPanel.transform.position -= new Vector3(200.0f, 0.0f, 0.0f); //Opens Inv
+            invPanel.transform.position -= new Vector3(450.0f, 0.0f, 0.0f); //Opens Inv
         }
         else if (isOpen)
         {
@@ -160,6 +161,20 @@ public class Inventory : MonoBehaviour
         if (stoneInt >= 3 && coinInt >= 2)
         {
             currentTower = Instantiate(Tower_3, new Vector3(0, 0, 0), Quaternion.identity);
+            holding = true;
+            invPanel.transform.position = pos;
+            stoneTemp = stoneInt;
+            coinTemp = coinInt;
+            stoneInt -= 3;
+            coinInt -= 2;
+        }
+    }
+
+    public void InvButtonTowerPlace4()
+    {
+        if (stoneInt >= 3 && coinInt >= 2)
+        {
+            currentTower = Instantiate(Tower_4, new Vector3(0, 0, 0), Quaternion.identity);
             holding = true;
             invPanel.transform.position = pos;
             stoneTemp = stoneInt;

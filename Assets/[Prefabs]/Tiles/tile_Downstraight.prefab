@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5192953756585140366}
   - component: {fileID: -8876210908721535411}
   - component: {fileID: -2757011131582861120}
+  - component: {fileID: -6454019038530723939}
   m_Layer: 0
   m_Name: tile_Downstraight
   m_TagString: Road
@@ -65,6 +66,21 @@ MonoBehaviour:
   m_Area: 0
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!114 &-6454019038530723939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4853406232502467124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf5f82fd24e65a9478774f8d5ce1879e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PosX: 0
+  PosY: 0
+  nodeVisted: 0
 --- !u!1 &4948003206850510664
 GameObject:
   m_ObjectHideFlags: 0
