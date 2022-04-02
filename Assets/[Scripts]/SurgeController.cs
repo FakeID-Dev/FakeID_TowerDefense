@@ -55,6 +55,9 @@ public class SurgeController : MonoBehaviour
         {
             tempWait += Time.deltaTime;
 
+
+            //Debug.Log("Surge Wait : " + tempWait.ToString());
+
             surgeSlider.value = tempWait;
         }
         else

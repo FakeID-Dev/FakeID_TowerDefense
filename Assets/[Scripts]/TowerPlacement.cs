@@ -87,6 +87,7 @@ public class TowerPlacement : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+       
         objects.Add(collision.gameObject);
 
         for (int x = 0; x < objects.Count; x++)
