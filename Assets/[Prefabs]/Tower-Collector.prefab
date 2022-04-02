@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 3618325680789016978}
   - component: {fileID: 8571360249201955825}
   - component: {fileID: 5342839959358589621}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Coin
   m_TagString: coin
   m_Icon: {fileID: 0}
@@ -321,7 +321,7 @@ GameObject:
   - component: {fileID: 6092413630747444041}
   - component: {fileID: 1209609711177476722}
   - component: {fileID: 907067407766059954}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: towerRound_sampleF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -402,7 +402,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5418660199876657184}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 538aacc0c0a013a46a17fcc0a4431faf, type: 3}
   m_Name: 
@@ -447,7 +447,7 @@ BoxCollider:
   m_GameObject: {fileID: 5418660199876657184}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1.52, z: 1}
   m_Center: {x: 0, y: 0.76, z: 0}
@@ -586,7 +586,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5416955889189564298}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: LaunchPoint
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
