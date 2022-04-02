@@ -51,7 +51,7 @@ public class Inventory : MonoBehaviour
         stoneInt = 6;
         crystalInt = 0;
         expInt = 0;
-        pos = invPanel.transform.position;
+        //pos = invPanel.transform.position;
     }
 
     // Update is called once per frame
@@ -118,12 +118,18 @@ public class Inventory : MonoBehaviour
         if (isOpen == false)
         {
             isOpen = true;
+
             invPanel.transform.position -= new Vector3(450.0f, 0.0f, 0.0f); //Opens Inv
+
+            invPanel.SetActive(true);
+            buildButton.SetActive(false);
+
         }
         else if (isOpen)
         {
             isOpen = false;
-            invPanel.transform.position = pos;//closes Inv  
+            invPanel.SetActive(false);
+            buildButton.SetActive(true);
         }
     }
 
@@ -133,7 +139,7 @@ public class Inventory : MonoBehaviour
         {
             currentTower = Instantiate(Tower_1, new Vector3(0, 0, 0), Quaternion.identity);
             holding = true;
-            invPanel.transform.position = pos;
+            InvButtonSlider();
             stoneTemp = stoneInt;
             coinTemp = coinInt;
             stoneInt--;
@@ -148,7 +154,7 @@ public class Inventory : MonoBehaviour
         {
             currentTower = Instantiate(Tower_2, new Vector3(0, 0, 0), Quaternion.identity);
             holding = true;
-            invPanel.transform.position = pos;
+            InvButtonSlider();
             stoneTemp = stoneInt;
             coinTemp = coinInt;
             stoneInt -= 1;
@@ -162,7 +168,7 @@ public class Inventory : MonoBehaviour
         {
             currentTower = Instantiate(Tower_3, new Vector3(0, 0, 0), Quaternion.identity);
             holding = true;
-            invPanel.transform.position = pos;
+            InvButtonSlider();
             stoneTemp = stoneInt;
             coinTemp = coinInt;
             stoneInt -= 3;

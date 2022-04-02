@@ -24,7 +24,6 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.Find("GameManager");
-        
     }
 
     void Update()
@@ -33,7 +32,7 @@ public class EnemySpawner : MonoBehaviour
         {
             CheckAvailableRoad();
 
-            if (canSpawn) 
+            if (canSpawn)
             {
                 SpawnEnemy();
             }
@@ -43,31 +42,30 @@ public class EnemySpawner : MonoBehaviour
     }
 
 
-    public void  SpawnEnemy()
+    public void SpawnEnemy()
     {
         GameObject temp = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
         FindStartingRoad(temp);
-        
-        
+
     }
 
     private void FindStartingRoad(GameObject t)
     {
-        if(gameManager.GetComponent<Initialize>().Tiles2D[posX-1, posY].tag == "Road")
+        if (gameManager.GetComponent<Initialize>().Tiles2D[posX - 1, posY].tag == "Road")
         {
             t.GetComponent<EnemyController>().start = gameManager.GetComponent<Initialize>().Tiles2D[posX - 1, posY];
         }
-        else if(gameManager.GetComponent<Initialize>().Tiles2D[posX+1, posY].tag == "Road")
+        else if (gameManager.GetComponent<Initialize>().Tiles2D[posX + 1, posY].tag == "Road")
         {
             t.GetComponent<EnemyController>().start = gameManager.GetComponent<Initialize>().Tiles2D[posX + 1, posY];
         }
-        else if (gameManager.GetComponent<Initialize>().Tiles2D[posX, posY-1].tag == "Road")
+        else if (gameManager.GetComponent<Initialize>().Tiles2D[posX, posY - 1].tag == "Road")
         {
-            t.GetComponent<EnemyController>().start = gameManager.GetComponent<Initialize>().Tiles2D[posX, posY-1];
+            t.GetComponent<EnemyController>().start = gameManager.GetComponent<Initialize>().Tiles2D[posX, posY - 1];
         }
-        else if (gameManager.GetComponent<Initialize>().Tiles2D[posX, posY+1].tag == "Road")
+        else if (gameManager.GetComponent<Initialize>().Tiles2D[posX, posY + 1].tag == "Road")
         {
-            t.GetComponent<EnemyController>().start = gameManager.GetComponent<Initialize>().Tiles2D[posX, posY+1];
+            t.GetComponent<EnemyController>().start = gameManager.GetComponent<Initialize>().Tiles2D[posX, posY + 1];
         }
     }
 
@@ -89,6 +87,16 @@ public class EnemySpawner : MonoBehaviour
         {
             canSpawn = true;
         }
+    }
+
+    public void ActivateSurgeSpawning()
+    {
+
+    }
+
+    public void DeactivateSurgeSpawning()
+    {
+
     }
 
 }
