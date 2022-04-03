@@ -22,6 +22,7 @@ public class Inventory : MonoBehaviour
     public GameObject Tower_2;
     public GameObject Tower_3;
     public GameObject Tower_4;
+    public GameObject Tower_5;
     public GameObject currentTower;
     public GameObject invPanel;
     public GameObject infoPanel;
@@ -179,6 +180,21 @@ public class Inventory : MonoBehaviour
         if (stoneInt >= 3 && coinInt >= 2)
         {
             currentTower = Instantiate(Tower_4, new Vector3(0, 0, 0), Quaternion.identity);
+            holding = true;
+            //invPanel.transform.position = pos;
+            invPanel.SetActive(false);
+            stoneTemp = stoneInt;
+            coinTemp = coinInt;
+            stoneInt -= 3;
+            coinInt -= 2;
+        }
+    }
+
+    public void InvButtonTowerPlace5()
+    {
+        if (stoneInt >= 3 && coinInt >= 2)
+        {
+            currentTower = Instantiate(Tower_5, new Vector3(0, 0, 0), Quaternion.identity);
             holding = true;
             //invPanel.transform.position = pos;
             invPanel.SetActive(false);

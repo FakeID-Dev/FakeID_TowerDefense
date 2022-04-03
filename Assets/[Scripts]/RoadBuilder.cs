@@ -62,6 +62,7 @@ public class RoadBuilder : MonoBehaviour
 
             if (touch.phase == TouchPhase.Ended)
             {
+                
                 int x, y, size = newRoadList.Count;
                 GameObject temp;
                 bool up = false, down = false, left = false, right = false;
@@ -110,11 +111,13 @@ public class RoadBuilder : MonoBehaviour
                         gameManager.GetComponent<Initialize>().RemoveTile(temp);
                         Destroy(temp);
                     }
+                    CanBuildRoad();
                 }
                 else
                 {
                     //newRoadList.RemoveAt(0);
                 }
+ 
             }
         }
     }
@@ -138,6 +141,10 @@ public class RoadBuilder : MonoBehaviour
         if (RoadSelect == false)
         {
             RoadSelect = true;
+        }
+        else
+        {
+            RoadSelect = false;
         }
     }
 }
