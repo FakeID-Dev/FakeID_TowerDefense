@@ -4603,6 +4603,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower-Drill
       objectReference: {fileID: 0}
+    - target: {fileID: 2662669650694739595, guid: 839eb76154cba504a8e2c105c61a3117,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3438607562309618737, guid: 839eb76154cba504a8e2c105c61a3117,
         type: 3}
       propertyPath: m_RootOrder
@@ -6317,6 +6322,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tower-Collector
+      objectReference: {fileID: 0}
+    - target: {fileID: 2662669650694739595, guid: 4ef0d2600afc51f4c86b9a10d0d2665b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3438607562309618737, guid: 4ef0d2600afc51f4c86b9a10d0d2665b,
         type: 3}

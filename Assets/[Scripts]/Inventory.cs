@@ -201,23 +201,25 @@ public class Inventory : MonoBehaviour
 
     public void loadPlaceTower(float xPos, float zPos, int type)
     {
-        if (type == 1)
+        Debug.Log(type);
+        if (type == 0)
         {
             currentTower = Instantiate(Tower_1, new Vector3(xPos, 0.2f, zPos), Quaternion.identity);
-
         }
-        else if (type == 2)
+        else if (type == 1)
         {
             currentTower = Instantiate(Tower_2, new Vector3(xPos, 0.2f, zPos), Quaternion.identity);
         }
-        else if (type == 3)
+        else if (type == 2)
         {
             currentTower = Instantiate(Tower_3, new Vector3(xPos, 0.2f, zPos), Quaternion.identity);
         }
-        else if (type == 4)
+        else if (type == 3)
         {
             currentTower = Instantiate(Tower_4, new Vector3(xPos, 0.2f, zPos), Quaternion.identity);
         }
+        currentTower.GetComponentInChildren<TowerPlacement>().LoadPlacedTower();
+        holding = false;
     }
 
     public void onHoverTowerEnter()
