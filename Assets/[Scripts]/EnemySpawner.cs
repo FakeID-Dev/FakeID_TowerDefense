@@ -12,12 +12,16 @@ public class EnemySpawner : MonoBehaviour
     public float timeBetweenWaves = 5.0f;
     private float countDown = 2.0f;
 
+    public int enemiesInWave; 
+
     public int posX = 0;
     public int posY = 0;
 
     private bool canSpawn = false;
 
     public GameObject gameManager;
+
+    public SurgeController surgeControllerInstance;
 
 
     // Start is called before the first frame update
@@ -46,6 +50,18 @@ public class EnemySpawner : MonoBehaviour
     {
         GameObject temp = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
         FindStartingRoad(temp);
+    }
+
+    public void SpawnEnemyWave()
+    {
+        int enemyUnitCost = enemyPrefab.GetComponent<EnemyController>().unitCost;
+
+        int waveunitCost = enemyUnitCost * enemiesInWave;
+
+        if (waveunitCost > surgeControllerInstance.GetAvailableUnits())
+        {
+            //Spawn enemy
+        }
 
     }
 
