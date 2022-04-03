@@ -3684,11 +3684,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3020e7ca8c2b9474abfdc5066fcb60e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
   heightVar: 5
   minHeight: 5
-  maxHeight: 15
+  maxHeight: 25
   canDragCamera: 1
-  touchMode: 0
+  touchMode: 1
 --- !u!1 &937311676
 GameObject:
   m_ObjectHideFlags: 0
@@ -6269,7 +6270,7 @@ PrefabInstance:
     - target: {fileID: 3961401497354502242, guid: 14b188fa2bb01f340aecb8df39f8b1d0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.12
+      value: 6.1
       objectReference: {fileID: 0}
     - target: {fileID: 3961401497354502242, guid: 14b188fa2bb01f340aecb8df39f8b1d0,
         type: 3}
@@ -6315,6 +6316,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MapCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 4445219674813904862, guid: 14b188fa2bb01f340aecb8df39f8b1d0,
+        type: 3}
+      propertyPath: maxHeight
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4445219674813904862, guid: 14b188fa2bb01f340aecb8df39f8b1d0,
+        type: 3}
+      propertyPath: minHeight
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4445219674813904862, guid: 14b188fa2bb01f340aecb8df39f8b1d0,
+        type: 3}
+      propertyPath: touchMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14b188fa2bb01f340aecb8df39f8b1d0, type: 3}
