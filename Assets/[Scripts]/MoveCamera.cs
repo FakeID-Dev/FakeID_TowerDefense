@@ -26,18 +26,21 @@ public class MoveCamera : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.O))
-        {
-            ZoomIn();
-        }
-        if(Input.GetKeyDown(KeyCode.I))
-        {
-            ZoomOut();
-        }
 
         if (canDragCamera)
         {
-            if(!touchMode)
+
+            if (Input.GetKeyDown(KeyCode.O))
+            {
+                ZoomIn();
+            }
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                ZoomOut();
+            }
+
+
+            if (!touchMode)
             {
                 if (Input.GetMouseButton(0))
                 {

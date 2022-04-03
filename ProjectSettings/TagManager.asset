@@ -20,11 +20,11 @@ TagManager:
   - Water
   - UI
   - Coins
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Marker
+  - Tower
+  - Enemy
+  - Resource
+  - Spawner
   - 
   - 
   - 
