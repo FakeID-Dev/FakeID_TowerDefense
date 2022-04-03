@@ -22,6 +22,21 @@ public class SurgeController : MonoBehaviour
     public EnemySpawner[] enemySpawners;
 
     public int availableUnits; //Temp
+    public int availableUnitIncrementAmount;
+
+    //Should make surgeController a singleton
+    public static SurgeController surgeControllerInstance;
+
+    //Singleton Setup
+    private void Awake()
+    {
+        if (surgeControllerInstance != null)
+        {
+            return;
+        }
+        surgeControllerInstance = this;
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -101,6 +116,7 @@ public class SurgeController : MonoBehaviour
         //Increase Surge Wait
         //Increase Surge Duration 
         //Increase Available Units
+        IncreaseAvailableEnemyUnits(availableUnitIncrementAmount);
 
         enemySpawners = FindObjectsOfType<EnemySpawner>();
 
@@ -110,4 +126,28 @@ public class SurgeController : MonoBehaviour
         }
     }
 
+    public int GetSurgeLevel()
+    {
+        return surgeNum; 
+    }
+
+    public void SetSurgeLevel(int level)
+    {
+        surgeNum = level;
+    }
+
+    public int GetAvailableUnits()
+    {
+        return availableUnits;
+    }
+
+    public void IncreaseAvailableEnemyUnits(int incrementAmount)
+    {
+        availableUnits += incrementAmount;
+    }
+
+    public void DecreaseAvailableEnemyUnits(int decrementAmount)
+    {
+        availableUnits -= decrementAmount;
+    }
 }

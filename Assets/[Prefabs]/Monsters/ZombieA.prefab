@@ -2632,14 +2632,15 @@ MonoBehaviour:
   enemyCurrentHealth: 0
   coinReward: 10
   expReward: 2
+  unitCost: 0
   rewardMultiplier: 1
   coinPrefab: {fileID: 5560468421022840494, guid: 32933e16fd1b20548a1f8cd3736f2dc7,
     type: 3}
   enemyType: 4
   navMeshAgent: {fileID: 8581705017681515814}
-  initialState: 0
+  initialState: 1
   waypoints: []
-  pathPoints: []
+  pathObject: {fileID: 0}
   gameManager: {fileID: 0}
   start: {fileID: 0}
   onMainRoad: 0
