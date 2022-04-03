@@ -294,16 +294,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae806618ff6b006498a53392a86a8f13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: 150
+  enemyMaxHealth: 0
   enemySpeed: 2
+  enemyCurrentHealth: 0
   coinReward: 10
   expReward: 20
+  unitCost: 0
   rewardMultiplier: 1
+  coinPrefab: {fileID: 0}
   enemyType: 4
   navMeshAgent: {fileID: 3979860775149477226}
-  initialState: 0
+  initialState: 1
   waypoints: []
-  gameManger: {fileID: 0}
+  pathObject: {fileID: 0}
+  gameManager: {fileID: 0}
+  start: {fileID: 0}
+  onMainRoad: 0
+  healthSlider: {fileID: 0}
+  healthUI: {fileID: 0}
 --- !u!95 &8022292056446992976
 Animator:
   serializedVersion: 4
