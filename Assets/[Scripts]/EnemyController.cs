@@ -36,22 +36,18 @@ public class EnemyController : MonoBehaviour
     //Patrol Variables 
     // private GameObject innerRingWaypoints;
     public Transform[] waypoints;
-
     public GameObject pathObject;
-
-    // public List<Transform> waypoints;
-    // public List<GameObject> pathPoints;//Erik Added
 
     //Game Manager 
     public GameObject gameManager; //Erik Added 
     public GameObject start;//Erik Added 
     public bool onMainRoad = false;
 
-    //  private SurgeController surgeController;
-
     // Healthbar
     public Slider healthSlider;
     public GameObject healthUI;
+
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +55,8 @@ public class EnemyController : MonoBehaviour
         gameManager = GameObject.Find("GameManager");//Erik add
 
         enemyCurrentHealth = enemyMaxHealth;
+
+        animator = GetComponent<Animator>();
 
         //NavMesh Setup
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -72,19 +70,6 @@ public class EnemyController : MonoBehaviour
         enemyStateMachine.RegisterState(new PathfindState());
         enemyStateMachine.RegisterState(new PatrolState());
         enemyStateMachine.ChangeState(initialState);
-
-       
-
-        //Pathfinding();
-
-        //Setup Patrol Points
-        //innerRingWaypoints = GameObject.Find("MapRoad"); ;//Erik added MapRoad to test waypoints
-        //waypoints = innerRingWaypoints.GetComponentsInChildren<Transform>();
-
-        // for(int x = 0; x < pathPoints.Count; x++)
-        // {
-        //   waypoints.Add(pathPoints[x].transform);
-        //}
     }
 
     // Update is called once per frame
@@ -110,13 +95,17 @@ public class EnemyController : MonoBehaviour
 
         if (enemyCurrentHealth <= 0)
         {
-            DestroyEnemy();
+            StartCoroutine(DestroyEnemy());
         }
     }
 
     //Enemy Die Function 
-    public void DestroyEnemy()
+    IEnumerator DestroyEnemy()
     {
+        animator.SetInteger("AnimationState", 2);
+
+        yield return new WaitForSeconds(2.0f);
+
         GameObject coin = Instantiate(coinPrefab, new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.identity);
         coin.GetComponent<CoinBehaviour>().coinValue = coinReward;
         gameManager.GetComponent<Inventory>().expInt += expReward;
