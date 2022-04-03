@@ -24,7 +24,9 @@ class SaveData
     {
         GameObject[] towers = GameObject.FindGameObjectsWithTag("tower");
         Map = new int[50, 50];
-        towerData = new float[towers.Length, 3];
+        towerData = new float[towers.GetLength(0), 3];
+
+        Debug.Log("Length : " + towers.GetLength(0));
     }
 }
 
@@ -52,24 +54,28 @@ public class GameSaveManager : MonoBehaviour
 
         //Save Towers
         GameObject[] towers = GameObject.FindGameObjectsWithTag("tower");
+        int towerCount = towers.Length;
 
-        foreach (var tower in towers)
+        for (int i = 0; i < towerCount; i++)
         {
-            if (tower.name == "Tower-Arrow(Clone)")
+            Debug.Log("Saving Tower Data: X: " + towers[i].transform.position.x + " Z: " + towers[i].transform.position.z);
+            data.towerData[i, 0] = towers[i].transform.position.x;
+            data.towerData[i, 1] = towers[i].transform.position.z;
+            if (towers[i].name == "Tower-Arrow(Clone)")
             {
-
+                data.towerData[i, 2] = 0.0f;
             }
-            else if (tower.name == "Tower-Ice(Clone)")
+            else if (towers[i].name == "Tower-Ice(Clone)")
             {
-
+                data.towerData[i, 2] = 1.0f;
             }
-            else if (tower.name == "Tower-Cannon(Clone)")
+            else if (towers[i].name == "Tower-Cannon(Clone)")
             {
-
+                data.towerData[i, 2] = 2.0f;
             }
             else
             {
-                
+                data.towerData[i, 2] = 3.0f;
             }
         }
 
@@ -95,10 +101,20 @@ public class GameSaveManager : MonoBehaviour
             gameManager.GetComponent<Inventory>().expInt = data.exp;
             gameManager.GetComponent<SurgeController>().surgeTimerInt = data.surge;
 
-            //Load Map
-            gameManager.GetComponent<Initialize>().Map = data.Map;
-            gameManager.GetComponent<Initialize>().ReloadMap();
+            //Load Map //UNCOMMENT FOR MAP LOAD - Can't test due to road building not working
+            //gameManager.GetComponent<Initialize>().Map = data.Map;
+            //gameManager.GetComponent<Initialize>().ReloadMap();
+
             //Load Towers
+            int towerDataSize = data.towerData.GetLength(0);
+
+            gameManager.GetComponent<Inventory>().ClearTowers();
+
+            for (int i = 0; i < towerDataSize; i++)
+            {
+                Debug.Log("Placing tower at X: " + data.towerData[i, 0] + ", Z: " + data.towerData[i, 0]);
+                gameManager.GetComponent<Inventory>().loadPlaceTower(data.towerData[i, 0], data.towerData[i, 1], (int)data.towerData[i, 2]);
+            }
 
             Debug.Log("Game data loaded! - Binary File");
         }
@@ -108,8 +124,6 @@ public class GameSaveManager : MonoBehaviour
 
     private void ResetData()
     {
-        //PlayerPrefs.DeleteAll();
-        //Debug.Log("Data reset complete - PlayerPrefs");
 
         if (File.Exists(Application.persistentDataPath + "/MySaveData.dat"))
         {

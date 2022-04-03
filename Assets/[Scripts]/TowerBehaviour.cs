@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class TowerBehaviour : MonoBehaviour
 {
-
- 
-    
     [Header("Tower Properties")]
     [SerializeField] float aimRadius;
     [SerializeField] float damage;
@@ -18,6 +15,8 @@ public class TowerBehaviour : MonoBehaviour
     private TowerPlacement towerPlacement;
 
     public GameObject bulletSpawnLocation;
+
+    public bool loadPlaced;
 
     bool hasTarget = false;
     //public GameObject target;

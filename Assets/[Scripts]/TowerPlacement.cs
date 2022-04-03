@@ -134,4 +134,14 @@ public class TowerPlacement : MonoBehaviour
         gameManger.GetComponent<Initialize>().toggleTiles();
 
     }
+
+    public void LoadPlacedTower()
+    {
+        Start();
+        holding = false;
+        for (int x = 0; x < 3; x++)
+        {
+            met[x].color = originalMet[x];
+        }
+    }
 }
