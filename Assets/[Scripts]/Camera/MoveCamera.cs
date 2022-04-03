@@ -2,8 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum CameraType
+{
+    GAME,
+    MAP
+}
+
+
 public class MoveCamera : MonoBehaviour
 {
+    public CameraType type;
+
     Camera camera;
     private Vector3 dragOrigin;
     private Vector3 clickOrigin = Vector3.zero;
@@ -18,6 +27,8 @@ public class MoveCamera : MonoBehaviour
     public bool canDragCamera = true;
     public bool touchMode = false;
 
+    float initialDistance;
+
     void Start()
     {
         camera = GetComponent<Camera>();
@@ -30,18 +41,18 @@ public class MoveCamera : MonoBehaviour
         if (canDragCamera)
         {
 
-            if (Input.GetKeyDown(KeyCode.O))
-            {
-                ZoomIn();
-            }
-            if (Input.GetKeyDown(KeyCode.I))
-            {
-                ZoomOut();
-            }
-
 
             if (!touchMode)
             {
+                if (Input.GetKeyDown(KeyCode.O))
+                {
+                    ZoomIn();
+                }
+                if (Input.GetKeyDown(KeyCode.I))
+                {
+                    ZoomOut();
+                }
+
                 if (Input.GetMouseButton(0))
                 {
                     if (clickOrigin == Vector3.zero)
@@ -63,6 +74,52 @@ public class MoveCamera : MonoBehaviour
             }
             else
             {
+
+                if(Input.touchCount == 2)
+                {
+
+
+                    var firstTouch = Input.GetTouch(0);
+                    var secondTouch = Input.GetTouch(1);
+
+                    if( firstTouch.phase == TouchPhase.Ended || firstTouch.phase == TouchPhase.Canceled || secondTouch.phase == TouchPhase.Ended || secondTouch.phase == TouchPhase.Canceled )
+                    {
+                        // let go
+                    }
+                    else if (firstTouch.phase == TouchPhase.Began || secondTouch.phase == TouchPhase.Began )
+                    {
+                        initialDistance = Vector2.Distance(firstTouch.position, secondTouch.position);
+                    }
+                    else
+                    {
+                        var currentDistance = Vector2.Distance(firstTouch.position, secondTouch.position);
+
+                        if(Mathf.Approximately(initialDistance, 0))
+                        {
+                            // too small change
+                        }
+                        else // big enough to zoom
+                        {
+                            var distanceFactor = currentDistance / initialDistance;
+
+                            cameraHeight *= distanceFactor;
+
+                            if (cameraHeight < minHeight)
+                                cameraHeight = minHeight;
+                            if (cameraHeight > maxHeight)
+                                cameraHeight = maxHeight;
+
+                            ChangeZoom();
+
+                        }
+
+
+                    }
+
+                }
+
+
+
 
                 if (Input.touchCount >= 1)
                 {
