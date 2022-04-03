@@ -115,15 +115,16 @@ public class Inventory : MonoBehaviour
     //Buttons
     public void InvButtonSlider()
     {
+        Debug.Log("Opening Menu Panel");
         if (isOpen == false)
         {
             isOpen = true;
-            invPanel.transform.position -= new Vector3(450.0f, 0.0f, 0.0f); //Opens Inv
+            invPanel.SetActive(true); //Opens Inv
         }
         else if (isOpen)
         {
             isOpen = false;
-            invPanel.transform.position = pos;//closes Inv  
+            invPanel.SetActive(false);//closes Inv  
         }
     }
 
@@ -133,7 +134,8 @@ public class Inventory : MonoBehaviour
         {
             currentTower = Instantiate(Tower_1, new Vector3(0, 0, 0), Quaternion.identity);
             holding = true;
-            invPanel.transform.position = pos;
+            //invPanel.transform.position = pos;
+            invPanel.SetActive(false);
             stoneTemp = stoneInt;
             coinTemp = coinInt;
             stoneInt--;
@@ -148,7 +150,8 @@ public class Inventory : MonoBehaviour
         {
             currentTower = Instantiate(Tower_2, new Vector3(0, 0, 0), Quaternion.identity);
             holding = true;
-            invPanel.transform.position = pos;
+            //invPanel.transform.position = pos;
+            invPanel.SetActive(false);
             stoneTemp = stoneInt;
             coinTemp = coinInt;
             stoneInt -= 1;
@@ -162,7 +165,8 @@ public class Inventory : MonoBehaviour
         {
             currentTower = Instantiate(Tower_3, new Vector3(0, 0, 0), Quaternion.identity);
             holding = true;
-            invPanel.transform.position = pos;
+            //invPanel.transform.position = pos;
+            invPanel.SetActive(false);
             stoneTemp = stoneInt;
             coinTemp = coinInt;
             stoneInt -= 3;
@@ -176,11 +180,43 @@ public class Inventory : MonoBehaviour
         {
             currentTower = Instantiate(Tower_4, new Vector3(0, 0, 0), Quaternion.identity);
             holding = true;
-            invPanel.transform.position = pos;
+            //invPanel.transform.position = pos;
+            invPanel.SetActive(false);
             stoneTemp = stoneInt;
             coinTemp = coinInt;
             stoneInt -= 3;
             coinInt -= 2;
+        }
+    }
+
+    public void ClearTowers()
+    {
+        GameObject[] towers = GameObject.FindGameObjectsWithTag("tower");
+
+        foreach (var tower in towers)
+        {
+            Destroy(tower);   
+        }
+    }
+
+    public void loadPlaceTower(float xPos, float zPos, int type)
+    {
+        if (type == 1)
+        {
+            currentTower = Instantiate(Tower_1, new Vector3(xPos, 0.2f, zPos), Quaternion.identity);
+
+        }
+        else if (type == 2)
+        {
+            currentTower = Instantiate(Tower_2, new Vector3(xPos, 0.2f, zPos), Quaternion.identity);
+        }
+        else if (type == 3)
+        {
+            currentTower = Instantiate(Tower_3, new Vector3(xPos, 0.2f, zPos), Quaternion.identity);
+        }
+        else if (type == 4)
+        {
+            currentTower = Instantiate(Tower_4, new Vector3(xPos, 0.2f, zPos), Quaternion.identity);
         }
     }
 

@@ -93,6 +93,24 @@ public class Initialize : MonoBehaviour
         map = GameObject.Find("Map");
         mapRoad = GameObject.Find("MapRoad");
 
+        BuildMap();
+    }
+
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    public void ReloadMap()
+    {
+        ClearMap();
+        BuildMap();
+    }
+
+    private void BuildMap()
+    {
         for (int x = 0; x < mapSize; x++)
         {
 
@@ -190,19 +208,21 @@ public class Initialize : MonoBehaviour
         }
 
         CheckRoad();
-
     }
 
-
-    // Update is called once per frame
-    void Update()
+    private void ClearMap()
     {
-
+        foreach (var tile in tileList)
+        {
+            Destroy(tile);
+        }
+        tileList.Clear();
     }
 
 
     public void CheckRoad()
     {
+        Debug.Log("Check Road");
         int count = 0;
         for (int x = 0; x < tileList.Count; x++)
         {
