@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4248,6 +4248,7 @@ GameObject:
   - component: {fileID: 1096541697}
   - component: {fileID: 1096541698}
   - component: {fileID: 1096541699}
+  - component: {fileID: 1096541700}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4272,8 +4273,8 @@ MonoBehaviour:
   Tower_1: {fileID: 2662669650694739595, guid: 763e1b82552ad284383de86191905228, type: 3}
   Tower_2: {fileID: 3443534826755157302, guid: 7ba5c45066e3d0947a98797a1f1e125c, type: 3}
   Tower_3: {fileID: 3443534826755157302, guid: 4de9dea7ffce7a34bb9ba98c78edf664, type: 3}
-  Tower_4: {fileID: 0}
-  Tower_5: {fileID: 0}
+  Tower_4: {fileID: 2662669650694739595, guid: 839eb76154cba504a8e2c105c61a3117, type: 3}
+  Tower_5: {fileID: 2662669650694739595, guid: 4ef0d2600afc51f4c86b9a10d0d2665b, type: 3}
   currentTower: {fileID: 0}
   invPanel: {fileID: 758091154}
   infoPanel: {fileID: 724229221}
@@ -4412,6 +4413,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1096541691}
+--- !u!114 &1096541700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096541691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a40d049a69280454d8cec574d3b1e6c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newRoadList: []
+  UIcover: 1
+  RoadSelect: 1
+  leftRoad: {fileID: 0}
 --- !u!1 &1096983715
 GameObject:
   m_ObjectHideFlags: 0

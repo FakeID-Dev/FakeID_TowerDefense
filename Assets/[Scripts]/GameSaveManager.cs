@@ -9,15 +9,11 @@ using UnityEngine;
 [System.Serializable]
 class SaveData
 {
-
-    public int numTiles;
     public int[,] Map;
-
     public int gold;
     public int stone;
     public int exp;
     public int surge;
-
     public float[,] towerData;
     
     public SaveData()
@@ -102,8 +98,8 @@ public class GameSaveManager : MonoBehaviour
             gameManager.GetComponent<SurgeController>().surgeTimerInt = data.surge;
 
             //Load Map //UNCOMMENT FOR MAP LOAD - Can't test due to road building not working
-            //gameManager.GetComponent<Initialize>().Map = data.Map;
-            //gameManager.GetComponent<Initialize>().ReloadMap();
+            gameManager.GetComponent<Initialize>().Map = data.Map;
+            gameManager.GetComponent<Initialize>().ReloadMap();
 
             //Load Towers
             int towerDataSize = data.towerData.GetLength(0);

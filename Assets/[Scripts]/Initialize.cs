@@ -239,7 +239,7 @@ public class Initialize : MonoBehaviour
 
         }
 
-        HardCodeMainRoad();
+        navMeshSurface.BuildNavMesh();
     }
 
     public void UpdateRoad(int PosX, int PosY)
