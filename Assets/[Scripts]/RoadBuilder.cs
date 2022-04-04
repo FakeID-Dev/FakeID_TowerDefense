@@ -72,6 +72,8 @@ public class RoadBuilder : MonoBehaviour
                     x = newRoadList[c].GetComponent<TileOptions>().posX;
                     y = newRoadList[c].GetComponent<TileOptions>().posY;
 
+                    gameManager.GetComponent<Initialize>().Map[x, y] = 1;
+
                     for (int u = 0; u < newRoadList.Count; u++)
                     {
 
@@ -100,6 +102,7 @@ public class RoadBuilder : MonoBehaviour
                         }
                     }
                     newRoadList[c].GetComponent<TileOptions>().RoadType();
+                    
                 }
 
                 if (size > 1)
@@ -109,6 +112,7 @@ public class RoadBuilder : MonoBehaviour
                         temp = newRoadList[0];
                         newRoadList.RemoveAt(0);
                         gameManager.GetComponent<Initialize>().RemoveTile(temp);
+                        
                         Destroy(temp);
                     }
                     CanBuildRoad();

@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 1809855272}
   - component: {fileID: 6092413630747444041}
   - component: {fileID: 520826880}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: towerRound_sampleF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -401,7 +401,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5418660199876657184}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 538aacc0c0a013a46a17fcc0a4431faf, type: 3}
   m_Name: 

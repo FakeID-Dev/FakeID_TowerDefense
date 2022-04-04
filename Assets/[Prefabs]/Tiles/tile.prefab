@@ -194,3 +194,5 @@ MonoBehaviour:
     type: 3}
   roadDowRight: {fileID: 6366786572813678429, guid: 01dcd77e4604f8b48a2a32920a1a7056,
     type: 3}
+  roadSplitUp: {fileID: 5572398107726417801, guid: 6bb0927395eb81843af4d8e0050d39cd,
+    type: 3}
