@@ -21,7 +21,7 @@ public class SurgeController : MonoBehaviour
 
     public EnemySpawner[] enemySpawners;
 
-    public int availableUnits; //Temp
+    public int availableUnits = 100; //Temp
     public int availableUnitIncrementAmount;
 
     //Should make surgeController a singleton

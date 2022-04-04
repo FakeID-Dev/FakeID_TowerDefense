@@ -13,12 +13,11 @@ public class EnemySpawner : MonoBehaviour
     public float timeBetweenWavesMax = 60.0f;
     private float timeBetweenWaves;
 
-    private float countDown;
-    public int enemiesInWave = 1;
+    private float countDown = 2.0f;
+    public int enemiesInWave = 5;
     public int surgeBoost;
 
     //Surge Variables 
-
     public int posX = 0;
     public int posY = 0;
 
@@ -27,11 +26,9 @@ public class EnemySpawner : MonoBehaviour
     public GameObject gameManager;
     public SurgeController surgeControllerInstance;
 
-
     // Start is called before the first frame update
     void Start()
     {
-
         surgeControllerInstance = SurgeController.surgeControllerInstance;
 
         gameManager = GameObject.Find("GameManager");
@@ -42,23 +39,27 @@ public class EnemySpawner : MonoBehaviour
     void Update()
     {
         SpawnWaveIfAvailable();
+       // CheckAvailableRoad();
     }
 
 
     public void SpawnEnemy()
     {
+      
         GameObject temp = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
         FindStartingRoad(temp);
+       
     }
 
-    IEnumerator SpawnEnemyWave()
+   //Changed from IEnum
+    IEnumerator  SpawnEnemyWave()
     {
         int enemyUnitCost = enemyPrefab.GetComponent<EnemyController>().unitCost;
 
         int waveunitCost = enemyUnitCost * enemiesInWave;
 
-        if (waveunitCost > surgeControllerInstance.GetAvailableUnits())
-        {
+        if (waveunitCost < surgeControllerInstance.GetAvailableUnits())
+        {           
             surgeControllerInstance.DecreaseAvailableEnemyUnits(waveunitCost);
 
             //Spawn enemy
@@ -87,6 +88,7 @@ public class EnemySpawner : MonoBehaviour
 
             if (canSpawn)
             {
+                //SpawnEnemyWave();
                 StartCoroutine(SpawnEnemyWave());
             }
             countDown = timeBetweenWaves;
@@ -107,7 +109,7 @@ public class EnemySpawner : MonoBehaviour
     private void GenerateRandomTimeBetweenWaves()
     {
         timeBetweenWaves = Random.Range(timeBetweenWavesMin, timeBetweenWavesMax);
-        countDown = timeBetweenWaves;
+       // countDown = timeBetweenWaves;
     }
 
     private void IncreaseTimeBetweenWaveMinAndMax()
@@ -148,6 +150,9 @@ public class EnemySpawner : MonoBehaviour
 
     private void CheckAvailableRoad()
     {
+
+       // Debug.Log("Check Available Roads");
+
         if (gameManager.GetComponent<Initialize>().Tiles2D[posX - 1, posY].tag == "Road")
         {
             canSpawn = true;
