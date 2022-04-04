@@ -37,7 +37,7 @@ public class MoveCamera : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(Input.touchCount);
+        // Debug.Log(Input.touchCount);
 
         if (canDragCamera)
         {
@@ -78,7 +78,7 @@ public class MoveCamera : MonoBehaviour
 
                 if(Input.touchCount == 2)
                 {
-                    Debug.Log("Two+ Touches");
+                    // Debug.Log("Two+ Touches");
 
                     var firstTouch = Input.GetTouch(0);
                     var secondTouch = Input.GetTouch(1);
@@ -98,11 +98,11 @@ public class MoveCamera : MonoBehaviour
                         if(Mathf.Approximately(initialDistance, 0))
                         {
                             // too small change
-                            Debug.Log("Too Small");
+                            // Debug.Log("Too Small");
                         }
                         else // big enough to zoom
                         {
-                            Debug.Log("Camera Height: " + cameraHeight);
+                            //Debug.Log("Camera Height: " + cameraHeight);
                             if (currentDistance > initialDistance)
                             {
                                 cameraHeight--;
