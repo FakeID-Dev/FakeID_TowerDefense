@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 359109662566094606}
   - component: {fileID: 3630200005113296635}
   - component: {fileID: 2715251192761695317}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CannonballExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}

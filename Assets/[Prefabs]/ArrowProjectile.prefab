@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2059238193}
   - component: {fileID: 2059238195}
   - component: {fileID: 2059238194}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ArrowMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 1316683770}
   - component: {fileID: 1316683769}
   - component: {fileID: -5183336082625494142}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ArrowProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
@@ -306,7 +306,7 @@ GameObject:
   - component: {fileID: 8621296843454784824}
   - component: {fileID: 1986972612409027833}
   - component: {fileID: 1520854386289358591}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

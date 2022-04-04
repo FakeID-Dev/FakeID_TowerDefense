@@ -113,15 +113,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posX: 0
   posY: 0
+  up: 0
+  down: 0
+  left: 0
+  right: 0
   canBuild: 0
-  Panel: {fileID: 0}
-  hovered: {fileID: 0}
-  road1: {fileID: 0}
-  road2: {fileID: 0}
   isSelected: 0
-  hover: 0
   UIcover: 0
   gameManager: {fileID: 0}
+  roadDown: {fileID: 0}
+  roadStr: {fileID: 0}
+  roadLeft: {fileID: 0}
+  roadRight: {fileID: 0}
+  roadDowLeft: {fileID: 0}
+  roadDowRight: {fileID: 0}
 --- !u!1 &7981016581919607046
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,6 +167,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7316542791065162684}
     m_Modifications:
+    - target: {fileID: 1945931158368534777, guid: 46e5d149fd5492540b8b1ff4e64ecafa,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1945931158368534777, guid: 46e5d149fd5492540b8b1ff4e64ecafa,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7434474503193619634, guid: 46e5d149fd5492540b8b1ff4e64ecafa,
         type: 3}
       propertyPath: m_RootOrder
