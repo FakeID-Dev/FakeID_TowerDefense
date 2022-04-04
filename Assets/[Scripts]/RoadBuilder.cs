@@ -147,4 +147,14 @@ public class RoadBuilder : MonoBehaviour
             RoadSelect = false;
         }
     }
+
+    public void OnBuildButtonClicked()
+    {
+        RoadSelect = !RoadSelect;
+    }
+
+    public void OnCancelRoadSelect()
+    {
+        RoadSelect = false;
+    }
 }
