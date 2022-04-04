@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class PatrolState : EnemyState
 {
-
     public EnemyStateId GetId()
     {
         return EnemyStateId.PatrolPath;
