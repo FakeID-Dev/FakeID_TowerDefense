@@ -3689,7 +3689,7 @@ MonoBehaviour:
   minHeight: 5
   maxHeight: 25
   canDragCamera: 1
-  touchMode: 1
+  touchMode: 0
 --- !u!1 &937311676
 GameObject:
   m_ObjectHideFlags: 0
@@ -6330,7 +6330,7 @@ PrefabInstance:
     - target: {fileID: 4445219674813904862, guid: 14b188fa2bb01f340aecb8df39f8b1d0,
         type: 3}
       propertyPath: touchMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14b188fa2bb01f340aecb8df39f8b1d0, type: 3}
