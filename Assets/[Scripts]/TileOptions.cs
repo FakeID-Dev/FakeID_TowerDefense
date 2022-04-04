@@ -55,6 +55,7 @@ public class TileOptions : MonoBehaviour
             if (left == false && right == false)
             {
                 Instantiate(roadDown, new Vector3(transform.position.x, transform.position.y, transform.position.z), roadDown.transform.rotation);
+                gameManager.GetComponent<Initialize>().Map[posX, posY] = 1;
             }
         }
 
@@ -63,27 +64,32 @@ public class TileOptions : MonoBehaviour
             if (up == false && down == false)
             {
                 Instantiate(roadStr, new Vector3(transform.position.x, transform.position.y, transform.position.z), roadStr.transform.rotation);
+                gameManager.GetComponent<Initialize>().Map[posX, posY] = 1;
             }
         }
 
         if (left && up)
         {
             Instantiate(roadLeft, new Vector3(transform.position.x, transform.position.y, transform.position.z), roadLeft.transform.rotation);
+            gameManager.GetComponent<Initialize>().Map[posX, posY] = 1;
         }
 
         if (right && up)
         {
             Instantiate(roadRight, new Vector3(transform.position.x, transform.position.y, transform.position.z), roadRight.transform.rotation);
+            gameManager.GetComponent<Initialize>().Map[posX, posY] = 1;
         }
 
         if (right && down)
         {
             Instantiate(roadDowLeft, new Vector3(transform.position.x, transform.position.y, transform.position.z), roadDowLeft.transform.rotation);
+            gameManager.GetComponent<Initialize>().Map[posX, posY] = 1;
         }
 
         if (left && down)
         {
-            Instantiate(roadDowRight, new Vector3(transform.position.x, transform.position.y, transform.position.z), roadDowRight.transform.rotation); ;
+            Instantiate(roadDowRight, new Vector3(transform.position.x, transform.position.y, transform.position.z), roadDowRight.transform.rotation);
+            gameManager.GetComponent<Initialize>().Map[posX, posY] = 1;
         }
 
 
