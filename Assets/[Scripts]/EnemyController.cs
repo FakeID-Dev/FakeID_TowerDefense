@@ -14,7 +14,7 @@ public class EnemyController : MonoBehaviour
     public int coinReward;
     public int expReward;
 
-    public int unitCost;
+    public int unitCost = 5;
     public SurgeController surgeControllerInstance;
 
     public int rewardMultiplier;
