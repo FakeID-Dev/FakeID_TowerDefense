@@ -69,7 +69,6 @@ public class SurgeController : MonoBehaviour
         if (tempWait < surgeWait)
         {
             tempWait += Time.deltaTime;
-
             surgeSlider.value = tempWait;
         }
         else
@@ -84,11 +83,9 @@ public class SurgeController : MonoBehaviour
     {
         surgeSlider.maxValue = surgeDuration;
 
-
         if (tempDuration > 0)
-        {
+        { 
             tempDuration -= Time.deltaTime;
-
             surgeSlider.value = tempDuration;
         }
         else

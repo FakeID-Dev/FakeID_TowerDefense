@@ -15,6 +15,7 @@ public class EnemyController : MonoBehaviour
     public int expReward;
 
     public int unitCost;
+    public SurgeController surgeControllerInstance;
 
     public int rewardMultiplier;
 
@@ -83,7 +84,6 @@ public class EnemyController : MonoBehaviour
     //Enemy Take Damage Function
     public void TakeDamage(float damage)
     {
-
         if (healthUI.activeInHierarchy == false)
         {
             healthUI.SetActive(true);
@@ -109,6 +109,8 @@ public class EnemyController : MonoBehaviour
         GameObject coin = Instantiate(coinPrefab, new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.identity);
         coin.GetComponent<CoinBehaviour>().coinValue = coinReward;
         gameManager.GetComponent<Inventory>().expInt += expReward;
+        surgeControllerInstance.IncreaseAvailableEnemyUnits(unitCost);
+
         Destroy(gameObject);
     }
 
