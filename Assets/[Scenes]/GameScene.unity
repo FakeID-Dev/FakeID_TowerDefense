@@ -4764,8 +4764,8 @@ MonoBehaviour:
   surgeDuration: 30
   surgeWait: 180
   enemySpawners: []
-  availableUnits: 0
-  availableUnitIncrementAmount: 0
+  availableUnits: 100
+  availableUnitIncrementAmount: 10
 --- !u!114 &1096541699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6139,7 +6139,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1389275728}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7, y: 0.25, z: 7}
+  m_LocalPosition: {x: 22.92, y: 0.25, z: 17.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -147,8 +147,8 @@ MonoBehaviour:
   enemyPrefab: {fileID: 9159529323677799331, guid: c1e63156088cfe446946fa795c103fef,
     type: 3}
   spawnPoint: {fileID: 7434474502357880158}
-  timeBetweenWavesMin: 5
-  timeBetweenWavesMax: 20
+  timeBetweenWavesMin: 20
+  timeBetweenWavesMax: 40
   enemiesInWave: 10
   surgeBoost: 0
   posX: 0

@@ -66,7 +66,7 @@ public class EnemySpawner : MonoBehaviour
             for (int i = 0; i < enemiesInWave; i++)
             {
                 SpawnEnemy();
-                yield return new WaitForSeconds(2.0f);
+                yield return new WaitForSeconds(5.0f);
             }
         }
     }
