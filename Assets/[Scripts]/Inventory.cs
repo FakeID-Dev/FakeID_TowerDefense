@@ -116,7 +116,7 @@ public class Inventory : MonoBehaviour
     //Buttons
     public void InvButtonSlider()
     {
-        Debug.Log("Opening Menu Panel");
+        //Debug.Log("Opening Menu Panel");
         if (isOpen == false)
         {
             isOpen = true;
@@ -217,7 +217,7 @@ public class Inventory : MonoBehaviour
 
     public void loadPlaceTower(float xPos, float zPos, int type)
     {
-        Debug.Log(type);
+        //Debug.Log(type);
         if (type == 0)
         {
             currentTower = Instantiate(Tower_1, new Vector3(xPos, 0.2f, zPos), Quaternion.identity);

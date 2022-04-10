@@ -28,7 +28,7 @@ public class TowerBehaviour : MonoBehaviour
     private void Start()
     {
         gameObject.GetComponent<SphereCollider>().radius = aimRadius;
-        Debug.Log("TOWER BEHAVIOUR STARTING");
+        //Debug.Log("TOWER BEHAVIOUR STARTING");
         towerPlacement = gameObject.GetComponent<TowerPlacement>();
         
         ///lineRenderer = gameObject.GetComponent<LineRenderer>();

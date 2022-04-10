@@ -40,14 +40,14 @@ public class CollectorBehaviour : MonoBehaviour
         {
             currentGold += other.gameObject.GetComponent<CoinBehaviour>().coinValue;
             Destroy(other.gameObject);
-            Debug.Log("COLLECTING A COIN!");
+            //Debug.Log("COLLECTING A COIN!");
             coinText.text = currentGold.ToString();
         }
     }
 
     private void OnMouseDown()
     {
-        Debug.Log("CLICKED ON COLLECTOR");
+        //Debug.Log("CLICKED ON COLLECTOR");
         inventory.coinInt += currentGold;
         currentGold = 0;
         coinText.text = currentGold.ToString();

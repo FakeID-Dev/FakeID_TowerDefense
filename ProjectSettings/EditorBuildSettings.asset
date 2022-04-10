@@ -9,17 +9,11 @@ EditorBuildSettings:
     path: Assets/[Scenes]/MenuUI.unity
     guid: d006591c9c83db240a0dacc1f88c9db3
   - enabled: 1
-    path: Assets/[Scenes]/Sam_TowerTesting.unity
-    guid: e7a84129bf3178641a1d565039f05303
-  - enabled: 1
     path: Assets/[Scenes]/SampleScene.unity
     guid: c850ee8c3b14cc8459e7e186857cf567
   - enabled: 1
     path: Assets/[Scenes]/GameScene.unity
     guid: cc67a963561748040b57952894493b16
-  - enabled: 1
-    path: Assets/[Scenes]/EnemyAI_Scene.unity
-    guid: 3ead326e4d786da429f40dc96c7844a2
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
       guid: bedcc1bb265fb4d4b8c1f0b3dd29b233, type: 2}

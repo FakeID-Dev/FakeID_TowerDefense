@@ -78,25 +78,25 @@ public class RoadBuilder : MonoBehaviour
                         if (x == newRoadList[u].GetComponent<TileOptions>().posX && y + 1 == newRoadList[u].GetComponent<TileOptions>().posY)
                         {
                             newRoadList[c].GetComponent<TileOptions>().up = true;
-                            Debug.Log("up");
+                            //Debug.Log("up");
                         }
 
                         if (x + 1 == newRoadList[u].GetComponent<TileOptions>().posX && y == newRoadList[u].GetComponent<TileOptions>().posY)
                         {
                             newRoadList[c].GetComponent<TileOptions>().right = true;
-                            Debug.Log("right");
+                            //Debug.Log("right");
                         }
 
                         if (x == newRoadList[u].GetComponent<TileOptions>().posX && y - 1 == newRoadList[u].GetComponent<TileOptions>().posY)
                         {
                             newRoadList[c].GetComponent<TileOptions>().down = true;
-                            Debug.Log("down");
+                            //Debug.Log("down");
                         }
 
                         if (x - 1 == newRoadList[u].GetComponent<TileOptions>().posX && y == newRoadList[u].GetComponent<TileOptions>().posY)
                         {
                             newRoadList[c].GetComponent<TileOptions>().left = true;
-                            Debug.Log("LEFT");
+                            //Debug.Log("LEFT");
                         }
                     }
                     newRoadList[c].GetComponent<TileOptions>().RoadType();

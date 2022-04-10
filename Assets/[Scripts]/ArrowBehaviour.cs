@@ -8,12 +8,6 @@ public class ArrowBehaviour : MonoBehaviour
 
     [SerializeField] float flySpeed;
     [SerializeField] float damage;
-
-    void Start()
-    {
-        
-    }
-
     void FixedUpdate()
     {
         if (!target)
