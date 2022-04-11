@@ -22,7 +22,7 @@ class SaveData
         Map = new int[50, 50];
         towerData = new float[towers.GetLength(0), 3];
 
-        Debug.Log("Length : " + towers.GetLength(0));
+        //Debug.Log("Length : " + towers.GetLength(0));
     }
 }
 
@@ -54,7 +54,7 @@ public class GameSaveManager : MonoBehaviour
 
         for (int i = 0; i < towerCount; i++)
         {
-            Debug.Log("Saving Tower Data: X: " + towers[i].transform.position.x + " Z: " + towers[i].transform.position.z);
+            //Debug.Log("Saving Tower Data: X: " + towers[i].transform.position.x + " Z: " + towers[i].transform.position.z);
             data.towerData[i, 0] = towers[i].transform.position.x;
             data.towerData[i, 1] = towers[i].transform.position.z;
             if (towers[i].name == "Tower-Arrow(Clone)")
@@ -77,7 +77,7 @@ public class GameSaveManager : MonoBehaviour
 
         bf.Serialize(file, data);
         file.Close();
-        Debug.Log("Game data saved! - Binary File");
+        //Debug.Log("Game data saved! - Binary File");
     }
 
     //Deserialize the player data
@@ -108,7 +108,7 @@ public class GameSaveManager : MonoBehaviour
 
             for (int i = 0; i < towerDataSize; i++)
             {
-                Debug.Log("Placing tower at X: " + data.towerData[i, 0] + ", Z: " + data.towerData[i, 0]);
+                //Debug.Log("Placing tower at X: " + data.towerData[i, 0] + ", Z: " + data.towerData[i, 0]);
                 gameManager.GetComponent<Inventory>().loadPlaceTower(data.towerData[i, 0], data.towerData[i, 1], (int)data.towerData[i, 2]);
             }
 

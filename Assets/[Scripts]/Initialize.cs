@@ -96,13 +96,6 @@ public class Initialize : MonoBehaviour
         BuildMap();
     }
 
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void ReloadMap()
     {
         ClearMap();
@@ -222,7 +215,7 @@ public class Initialize : MonoBehaviour
 
     public void CheckRoad()
     {
-        Debug.Log("Check Road");
+        //Debug.Log("Check Road");
         int count = 0;
         for (int x = 0; x < tileList.Count; x++)
         {

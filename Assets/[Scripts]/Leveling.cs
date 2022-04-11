@@ -24,7 +24,7 @@ public class Leveling : MonoBehaviour
     {
         if (gameManager.GetComponent<Inventory>().expSlider.value == gameManager.GetComponent<Inventory>().expSlider.maxValue)
         {
-            Debug.Log("LEVEL UP");
+            //Debug.Log("LEVEL UP");
             levelPanel.SetActive(true);
         }
        

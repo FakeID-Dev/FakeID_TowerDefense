@@ -58,7 +58,7 @@ public class ToggleMapCamera : MonoBehaviour
     {
         bool currentDrag = currentCamera.GetComponent<MoveCamera>().canDragCamera;
         currentCamera.GetComponent<MoveCamera>().canDragCamera = !currentDrag;
-        Debug.Log("Calling ToggleActiveCameraMove");
+        //Debug.Log("Calling ToggleActiveCameraMove");
 
     }
 

@@ -29,11 +29,7 @@ public class TileOptions : MonoBehaviour
     {
         gameManager = GameObject.Find("GameManager");
     }
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+ 
 
 
     public void AddToMapArray()
