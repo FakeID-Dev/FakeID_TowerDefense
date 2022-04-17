@@ -124,6 +124,8 @@ public class Initialize : MonoBehaviour
                     GameObject temp = Instantiate(roadDown, new Vector3(x, 0, y), roadDown.transform.rotation);
                     temp.GetComponentInChildren<RoadCord>().PosX = x;
                     temp.GetComponentInChildren<RoadCord>().PosY = y;
+                    temp.GetComponent<TileOptions>().posX = x;
+                    temp.GetComponent<TileOptions>().posY = y;
                     Tiles2D[x, y] = temp;
                     tileList.Add(temp);
                     count++;
@@ -133,6 +135,8 @@ public class Initialize : MonoBehaviour
                     GameObject temp = Instantiate(roadLeft, new Vector3(x, 0, y), roadLeft.transform.rotation);
                     temp.GetComponentInChildren<RoadCord>().PosX = x;
                     temp.GetComponentInChildren<RoadCord>().PosY = y;
+                    temp.GetComponent<TileOptions>().posX = x;
+                    temp.GetComponent<TileOptions>().posY = y;
                     tileList.Add(temp);
                     count++;
                 }
@@ -141,6 +145,8 @@ public class Initialize : MonoBehaviour
                     GameObject temp = Instantiate(roadRight, new Vector3(x, 0, y), roadRight.transform.rotation);
                     temp.GetComponentInChildren<RoadCord>().PosX = x;
                     temp.GetComponentInChildren<RoadCord>().PosY = y;
+                    temp.GetComponent<TileOptions>().posX = x;
+                    temp.GetComponent<TileOptions>().posY = y;
                     tileList.Add(temp);
                     count++;
 
@@ -150,6 +156,8 @@ public class Initialize : MonoBehaviour
                     GameObject temp = Instantiate(roadStr, new Vector3(x, 0, y), roadStr.transform.rotation);
                     temp.GetComponentInChildren<RoadCord>().PosX = x;
                     temp.GetComponentInChildren<RoadCord>().PosY = y;
+                    temp.GetComponent<TileOptions>().posX = x;
+                    temp.GetComponent<TileOptions>().posY = y;
                     Tiles2D[x, y] = temp;
                     tileList.Add(temp);
                     count++;
@@ -160,6 +168,8 @@ public class Initialize : MonoBehaviour
                     GameObject temp = Instantiate(roadDowLeft, new Vector3(x, 0, y), roadDowLeft.transform.rotation);
                     temp.GetComponentInChildren<RoadCord>().PosX = x;
                     temp.GetComponentInChildren<RoadCord>().PosY = y;
+                    temp.GetComponent<TileOptions>().posX = x;
+                    temp.GetComponent<TileOptions>().posY = y;
                     tileList.Add(temp);
                     count++;
 
@@ -169,6 +179,8 @@ public class Initialize : MonoBehaviour
                     GameObject temp = Instantiate(roadDowRight, new Vector3(x, 0, y), roadDowRight.transform.rotation);
                     temp.GetComponentInChildren<RoadCord>().PosX = x;
                     temp.GetComponentInChildren<RoadCord>().PosY = y;
+                    temp.GetComponent<TileOptions>().posX = x;
+                    temp.GetComponent<TileOptions>().posY = y;
                     tileList.Add(temp);
                     count++;
                 }

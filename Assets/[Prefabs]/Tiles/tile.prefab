@@ -194,3 +194,13 @@ MonoBehaviour:
     type: 3}
   roadDowRight: {fileID: 6366786572813678429, guid: 01dcd77e4604f8b48a2a32920a1a7056,
     type: 3}
+  roadCrossing: {fileID: 4843604263267660322, guid: 49e2b955e90caae4e920043e7a12b8ea,
+    type: 3}
+  roadSplitRight: {fileID: 4548235544189444975, guid: 587a9d34331ed3942a457f3982890440,
+    type: 3}
+  roadSplitLeft: {fileID: 9125143433381273565, guid: 49757f4fbee06054298c4b65c4678f05,
+    type: 3}
+  roadSplitDown: {fileID: 6087856472348167773, guid: 9facd6811d363da4abda7b757d389632,
+    type: 3}
+  roadSplitUp: {fileID: 3183490562772315667, guid: 3dbaa0e9ece7ab84da4e4ab9aac0f9c2,
+    type: 3}

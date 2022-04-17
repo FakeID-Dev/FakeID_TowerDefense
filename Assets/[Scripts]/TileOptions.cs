@@ -21,6 +21,13 @@ public class TileOptions : MonoBehaviour
     public GameObject roadRight;
     public GameObject roadDowLeft;
     public GameObject roadDowRight;
+    public GameObject roadCrossing;
+    public GameObject roadSplitRight;
+    public GameObject roadSplitLeft;
+    public GameObject roadSplitDown;
+    public GameObject roadSplitUp;
+
+    private GameObject temp; 
 
 
 
@@ -48,47 +55,140 @@ public class TileOptions : MonoBehaviour
     {
         if (up || down)
         {
-            if (left == false && right == false)
+            if (left && right && up && down)
             {
-                Instantiate(roadDown, new Vector3(transform.position.x, transform.position.y, transform.position.z), roadDown.transform.rotation);
+                temp = Instantiate(roadCrossing, new Vector3(transform.position.x, transform.position.y, transform.position.z), roadCrossing.transform.rotation);
                 gameManager.GetComponent<Initialize>().Map[posX, posY] = 1;
+                gameManager.GetComponent<Initialize>().Tiles2D[posX, posY] = temp;
+                gameManager.GetComponent<Initialize>().tileList.Add(temp);
+                temp.GetComponent<TileOptions>().up = up;
+                temp.GetComponent<TileOptions>().down = down;
+                temp.GetComponent<TileOptions>().left = left;
+                temp.GetComponent<TileOptions>().right = right;
             }
-        }
-
-        if (left || right)
-        {
-            if (up == false && down == false)
+            else if (left == false && right == false)
             {
-                Instantiate(roadStr, new Vector3(transform.position.x, transform.position.y, transform.position.z), roadStr.transform.rotation);
+                temp = Instantiate(roadDown, new Vector3(transform.position.x, transform.position.y, transform.position.z), roadDown.transform.rotation);
                 gameManager.GetComponent<Initialize>().Map[posX, posY] = 1;
+                gameManager.GetComponent<Initialize>().Tiles2D[posX, posY] = temp;
+                gameManager.GetComponent<Initialize>().tileList.Add(temp);
+                temp.GetComponent<TileOptions>().up = up;
+                temp.GetComponent<TileOptions>().down = down;
+                temp.GetComponent<TileOptions>().left = left;
+                temp.GetComponent<TileOptions>().right = right;
             }
-        }
+            else if (right && left && up)
+            {
+                temp = Instantiate(roadSplitUp, new Vector3(transform.position.x, transform.position.y, transform.position.z), roadSplitUp.transform.rotation);
+                gameManager.GetComponent<Initialize>().Map[posX, posY] = 1;
+                gameManager.GetComponent<Initialize>().Tiles2D[posX, posY] = temp;
+                gameManager.GetComponent<Initialize>().tileList.Add(temp);
+                temp.GetComponent<TileOptions>().up = up;
+                temp.GetComponent<TileOptions>().down = down;
+                temp.GetComponent<TileOptions>().left = left;
+                temp.GetComponent<TileOptions>().right = right;
+            }
+            else if (right && left && down)
+            {
+                temp = Instantiate(roadSplitDown, new Vector3(transform.position.x, transform.position.y, transform.position.z), roadSplitDown.transform.rotation);
+                gameManager.GetComponent<Initialize>().Map[posX, posY] = 1;
+                gameManager.GetComponent<Initialize>().Tiles2D[posX, posY] = temp;
+                gameManager.GetComponent<Initialize>().tileList.Add(temp);
+                temp.GetComponent<TileOptions>().up = up;
+                temp.GetComponent<TileOptions>().down = down;
+                temp.GetComponent<TileOptions>().left = left;
+                temp.GetComponent<TileOptions>().right = right;
+            }
+            else if (right && up && down)
+            {
+                temp = Instantiate(roadSplitRight, new Vector3(transform.position.x, transform.position.y, transform.position.z), roadSplitRight.transform.rotation);
+                gameManager.GetComponent<Initialize>().Map[posX, posY] = 1;
+                gameManager.GetComponent<Initialize>().Tiles2D[posX, posY] = temp;
+                gameManager.GetComponent<Initialize>().tileList.Add(temp);
+                temp.GetComponent<TileOptions>().up = up;
+                temp.GetComponent<TileOptions>().down = down;
+                temp.GetComponent<TileOptions>().left = left;
+                temp.GetComponent<TileOptions>().right = right;
+            }
+            else if (left && up && down)
+            {
+                temp = Instantiate(roadSplitLeft, new Vector3(transform.position.x, transform.position.y, transform.position.z), roadSplitLeft.transform.rotation);
+                gameManager.GetComponent<Initialize>().Map[posX, posY] = 1;
+                gameManager.GetComponent<Initialize>().Tiles2D[posX, posY] = temp;
+                gameManager.GetComponent<Initialize>().tileList.Add(temp);
+                temp.GetComponent<TileOptions>().up = up;
+                temp.GetComponent<TileOptions>().down = down;
+                temp.GetComponent<TileOptions>().left = left;
+                temp.GetComponent<TileOptions>().right = right;
+            }
+            else if (left && up)
+            {
+                temp = Instantiate(roadLeft, new Vector3(transform.position.x, transform.position.y, transform.position.z), roadLeft.transform.rotation);
+                gameManager.GetComponent<Initialize>().Map[posX, posY] = 1;
+                gameManager.GetComponent<Initialize>().Tiles2D[posX, posY] = temp;
+                gameManager.GetComponent<Initialize>().tileList.Add(temp);
+                temp.GetComponent<TileOptions>().up = up;
+                temp.GetComponent<TileOptions>().down = down;
+                temp.GetComponent<TileOptions>().left = left;
+                temp.GetComponent<TileOptions>().right = right;
+            }
+            else if (right && up)
+            {
+                temp = Instantiate(roadRight, new Vector3(transform.position.x, transform.position.y, transform.position.z), roadRight.transform.rotation);
+                gameManager.GetComponent<Initialize>().Map[posX, posY] = 1;
+                gameManager.GetComponent<Initialize>().Tiles2D[posX, posY] = temp;
+                gameManager.GetComponent<Initialize>().tileList.Add(temp);
+                temp.GetComponent<TileOptions>().up = up;
+                temp.GetComponent<TileOptions>().down = down;
+                temp.GetComponent<TileOptions>().left = left;
+                temp.GetComponent<TileOptions>().right = right;
+            }
+            else if (right && down)
+            {
+                temp = Instantiate(roadDowLeft, new Vector3(transform.position.x, transform.position.y, transform.position.z), roadDowLeft.transform.rotation);
+                gameManager.GetComponent<Initialize>().Map[posX, posY] = 1;
+                gameManager.GetComponent<Initialize>().Tiles2D[posX, posY] = temp;
+                gameManager.GetComponent<Initialize>().tileList.Add(temp);
+                temp.GetComponent<TileOptions>().up = up;
+                temp.GetComponent<TileOptions>().down = down;
+                temp.GetComponent<TileOptions>().left = left;
+                temp.GetComponent<TileOptions>().right = right;
+            }
+            else if (left && down)
+            {
+                temp = Instantiate(roadDowRight, new Vector3(transform.position.x, transform.position.y, transform.position.z), roadDowRight.transform.rotation);
+                gameManager.GetComponent<Initialize>().Map[posX, posY] = 1;
+                gameManager.GetComponent<Initialize>().Tiles2D[posX, posY] = temp;
+                gameManager.GetComponent<Initialize>().tileList.Add(temp);
+                temp.GetComponent<TileOptions>().up = up;
+                temp.GetComponent<TileOptions>().down = down;
+                temp.GetComponent<TileOptions>().left = left;
+                temp.GetComponent<TileOptions>().right = right;
+            }
 
-        if (left && up)
+
+        }
+        else if (up == false && down == false)
         {
-            Instantiate(roadLeft, new Vector3(transform.position.x, transform.position.y, transform.position.z), roadLeft.transform.rotation);
+            temp = Instantiate(roadStr, new Vector3(transform.position.x, transform.position.y, transform.position.z), roadStr.transform.rotation);
             gameManager.GetComponent<Initialize>().Map[posX, posY] = 1;
-        }
-
-        if (right && up)
-        {
-            Instantiate(roadRight, new Vector3(transform.position.x, transform.position.y, transform.position.z), roadRight.transform.rotation);
-            gameManager.GetComponent<Initialize>().Map[posX, posY] = 1;
-        }
-
-        if (right && down)
-        {
-            Instantiate(roadDowLeft, new Vector3(transform.position.x, transform.position.y, transform.position.z), roadDowLeft.transform.rotation);
-            gameManager.GetComponent<Initialize>().Map[posX, posY] = 1;
-        }
-
-        if (left && down)
-        {
-            Instantiate(roadDowRight, new Vector3(transform.position.x, transform.position.y, transform.position.z), roadDowRight.transform.rotation);
-            gameManager.GetComponent<Initialize>().Map[posX, posY] = 1;
+            gameManager.GetComponent<Initialize>().Tiles2D[posX, posY] = temp;
+            gameManager.GetComponent<Initialize>().tileList.Add(temp);
+            temp.GetComponent<TileOptions>().up = up;
+            temp.GetComponent<TileOptions>().down = down;
+            temp.GetComponent<TileOptions>().left = left;
+            temp.GetComponent<TileOptions>().right = right;
         }
 
 
+
+
+
+
+        temp.GetComponentInChildren<RoadCord>().PosX = posX;
+        temp.GetComponentInChildren<RoadCord>().PosY = posY;
+        temp.GetComponentInChildren<TileOptions>().posX = posX;
+        temp.GetComponentInChildren<TileOptions>().posY = posY;
     }
 
 }
