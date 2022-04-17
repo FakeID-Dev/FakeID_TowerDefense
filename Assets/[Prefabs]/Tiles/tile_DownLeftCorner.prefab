@@ -110,6 +110,7 @@ GameObject:
   - component: {fileID: 8438291962464369947}
   - component: {fileID: 8647787272664884253}
   - component: {fileID: -8940322069215796786}
+  - component: {fileID: 4495874743712647702}
   m_Layer: 0
   m_Name: tile_DownLeftCorner
   m_TagString: Road
@@ -164,3 +165,45 @@ MonoBehaviour:
   PosX: 0
   PosY: 0
   nodeVisted: 0
+--- !u!114 &4495874743712647702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9102062336709535649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d53113d4768f504190e7763d55f4815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  posX: 0
+  posY: 0
+  up: 0
+  down: 0
+  left: 0
+  right: 0
+  canBuild: 0
+  isSelected: 0
+  UIcover: 0
+  gameManager: {fileID: 0}
+  roadDown: {fileID: 4853406232502467124, guid: 1413eb04038939a4a9db5405f58ea960,
+    type: 3}
+  roadStr: {fileID: 2231024263565004558, guid: 5501c002905cb8444a6382ccdb79cdf2, type: 3}
+  roadLeft: {fileID: 3812265909077432112, guid: ebf04be90cfbbd544ab0f4149978dcb9,
+    type: 3}
+  roadRight: {fileID: 3812265909077432112, guid: ebf04be90cfbbd544ab0f4149978dcb9,
+    type: 3}
+  roadDowLeft: {fileID: 9102062336709535649}
+  roadDowRight: {fileID: 6366786572813678429, guid: 01dcd77e4604f8b48a2a32920a1a7056,
+    type: 3}
+  roadCrossing: {fileID: 4843604263267660322, guid: 49e2b955e90caae4e920043e7a12b8ea,
+    type: 3}
+  roadSplitRight: {fileID: 4548235544189444975, guid: 587a9d34331ed3942a457f3982890440,
+    type: 3}
+  roadSplitLeft: {fileID: 9125143433381273565, guid: 49757f4fbee06054298c4b65c4678f05,
+    type: 3}
+  roadSplitDown: {fileID: 6087856472348167773, guid: 9facd6811d363da4abda7b757d389632,
+    type: 3}
+  roadSplitUp: {fileID: 3183490562772315667, guid: 3dbaa0e9ece7ab84da4e4ab9aac0f9c2,
+    type: 3}

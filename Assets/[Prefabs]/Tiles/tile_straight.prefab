@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2777655494778286862}
   - component: {fileID: 1216753889382384568}
   - component: {fileID: 1312616149596582012}
-  - component: {fileID: 13173823584795849}
   - component: {fileID: 8761426312128964364}
   m_Layer: 0
   m_Name: tile_straight
@@ -101,29 +100,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.87928784, y: 0.2, z: 1}
   m_Center: {x: -0.0027008802, y: 0.1, z: 0}
---- !u!114 &13173823584795849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1803169714495113842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d53113d4768f504190e7763d55f4815, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  posX: 0
-  posY: 0
-  canBuild: 0
-  Panel: {fileID: 0}
-  hovered: {fileID: 0}
-  road1: {fileID: 0}
-  road2: {fileID: 0}
-  isSelected: 0
-  hover: 0
-  UIcover: 0
-  gameManager: {fileID: 0}
 --- !u!54 &8761426312128964364
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -151,6 +127,7 @@ GameObject:
   - component: {fileID: 1566654621120828852}
   - component: {fileID: 3972984156013809895}
   - component: {fileID: -7121121287837358010}
+  - component: {fileID: 288728370891298806}
   m_Layer: 0
   m_Name: tile_straight
   m_TagString: Road
@@ -205,3 +182,46 @@ MonoBehaviour:
   m_Area: 0
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!114 &288728370891298806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2231024263565004558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d53113d4768f504190e7763d55f4815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  posX: 0
+  posY: 0
+  up: 0
+  down: 0
+  left: 0
+  right: 0
+  canBuild: 0
+  isSelected: 0
+  UIcover: 0
+  gameManager: {fileID: 0}
+  roadDown: {fileID: 4853406232502467124, guid: 1413eb04038939a4a9db5405f58ea960,
+    type: 3}
+  roadStr: {fileID: 2231024263565004558}
+  roadLeft: {fileID: 3812265909077432112, guid: ebf04be90cfbbd544ab0f4149978dcb9,
+    type: 3}
+  roadRight: {fileID: 7075760610574189369, guid: 67f3d1c25366c9b49b5288469e264d7b,
+    type: 3}
+  roadDowLeft: {fileID: 9102062336709535649, guid: 0dad4751199b17849b0411fbe1961dce,
+    type: 3}
+  roadDowRight: {fileID: 6366786572813678429, guid: 01dcd77e4604f8b48a2a32920a1a7056,
+    type: 3}
+  roadCrossing: {fileID: 4843604263267660322, guid: 49e2b955e90caae4e920043e7a12b8ea,
+    type: 3}
+  roadSplitRight: {fileID: 4548235544189444975, guid: 587a9d34331ed3942a457f3982890440,
+    type: 3}
+  roadSplitLeft: {fileID: 9125143433381273565, guid: 49757f4fbee06054298c4b65c4678f05,
+    type: 3}
+  roadSplitDown: {fileID: 6087856472348167773, guid: 9facd6811d363da4abda7b757d389632,
+    type: 3}
+  roadSplitUp: {fileID: 3183490562772315667, guid: 3dbaa0e9ece7ab84da4e4ab9aac0f9c2,
+    type: 3}
