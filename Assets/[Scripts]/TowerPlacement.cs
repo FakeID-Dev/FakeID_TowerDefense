@@ -91,7 +91,7 @@ public class TowerPlacement : MonoBehaviour
 
         for (int x = 0; x < objects.Count; x++)
         {
-            if (objects[x].gameObject.tag == "Road")
+            if (objects[x].gameObject.tag == "Road" || objects[x].gameObject.tag == "Enemy")
             {
                 roadBool = true;
             }
@@ -102,7 +102,7 @@ public class TowerPlacement : MonoBehaviour
 
     void OnCollisionExit(Collision other)
     {
-        if (other.gameObject.tag == "Road")
+        if (other.gameObject.tag == "Road" || other.gameObject.tag == "Enemy")
         {
             objects.Remove(other.gameObject);
         }
@@ -117,7 +117,7 @@ public class TowerPlacement : MonoBehaviour
 
         for (int x = 0; x < objects.Count; x++)
         {
-            if (objects[x].gameObject.tag == "Road")
+            if (objects[x].gameObject.tag == "Road" || objects[x].gameObject.tag == "Enemy")
             {
                 roadBool = true;
             }

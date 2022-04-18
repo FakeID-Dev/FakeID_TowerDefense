@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3799588686405574659}
   m_Layer: 0
   m_Name: tile
-  m_TagString: tile
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,6 +127,11 @@ MonoBehaviour:
   roadRight: {fileID: 0}
   roadDowLeft: {fileID: 0}
   roadDowRight: {fileID: 0}
+  roadCrossing: {fileID: 0}
+  roadSplitRight: {fileID: 0}
+  roadSplitLeft: {fileID: 0}
+  roadSplitDown: {fileID: 0}
+  roadSplitUp: {fileID: 0}
 --- !u!1 &7981016581919607046
 GameObject:
   m_ObjectHideFlags: 0
