@@ -11,7 +11,7 @@ class SaveData
 {
     public int[,] Map;
     public int gold;
-    public int stone;
+    //public int stone;
     public int exp;
     public int surge;
     public float[,] towerData;
@@ -41,7 +41,7 @@ public class GameSaveManager : MonoBehaviour
 
         //Save Game Stats
         data.gold = gameManager.GetComponent<Inventory>().coinInt;
-        data.stone = gameManager.GetComponent<Inventory>().stoneInt;
+        //data.stone = gameManager.GetComponent<Inventory>().stoneInt;
         data.exp = gameManager.GetComponent<Inventory>().expInt;
         data.surge = gameManager.GetComponent<SurgeController>().surgeTimerInt;
 
@@ -93,7 +93,7 @@ public class GameSaveManager : MonoBehaviour
             
             //Load Game Stats
             gameManager.GetComponent<Inventory>().coinInt = data.gold;
-            gameManager.GetComponent<Inventory>().stoneInt = data.stone;
+            //gameManager.GetComponent<Inventory>().stoneInt = data.stone;
             gameManager.GetComponent<Inventory>().expInt = data.exp;
             gameManager.GetComponent<SurgeController>().surgeTimerInt = data.surge;
 
