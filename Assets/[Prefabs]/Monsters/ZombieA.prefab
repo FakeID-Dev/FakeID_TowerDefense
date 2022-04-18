@@ -2631,9 +2631,10 @@ MonoBehaviour:
   enemyMaxHealth: 3
   enemySpeed: 0.5
   enemyCurrentHealth: 0
-  coinReward: 10
-  expReward: 2
+  coinReward: 2
+  expReward: 1
   unitCost: 0
+  surgeControllerInstance: {fileID: 0}
   rewardMultiplier: 1
   coinPrefab: {fileID: 5560468421022840494, guid: 32933e16fd1b20548a1f8cd3736f2dc7,
     type: 3}
