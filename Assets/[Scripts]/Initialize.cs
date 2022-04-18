@@ -212,6 +212,7 @@ public class Initialize : MonoBehaviour
             }
         }
 
+        navMeshSurface.BuildNavMesh();
         CheckRoad();
     }
 
@@ -320,6 +321,8 @@ public class Initialize : MonoBehaviour
 
     public void AddToNewRoad(int psX, int psY)
     {
+
+        navMeshSurface.BuildNavMesh();
         //for (int x = 0; x < NewRoadsList.Count; x++)
         //{
         //    foreach (Transform g in NewRoadsList[x].GetComponentsInChildren<Transform>())

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.AI;
 
 public class RoadBuilder : MonoBehaviour
 {
@@ -12,6 +13,10 @@ public class RoadBuilder : MonoBehaviour
     public bool RoadSelect = false;
     private GameObject gameManager;
     public GameObject leftRoad;
+
+    public NavMeshSurface navMeshSurface;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -67,6 +72,7 @@ public class RoadBuilder : MonoBehaviour
                         }
                     }
                 }
+                navMeshSurface.BuildNavMesh();
             }
 
             if (touch.phase == TouchPhase.Ended)
@@ -89,29 +95,35 @@ public class RoadBuilder : MonoBehaviour
                         {
                             newRoadList[c].GetComponentInParent<TileOptions>().up = true;
                             //Debug.Log("up");
+                            
                         }
 
                         if (x + 1 == newRoadList[u].GetComponentInParent<TileOptions>().posX && y == newRoadList[u].GetComponentInParent<TileOptions>().posY)
                         {
                             newRoadList[c].GetComponentInParent<TileOptions>().right = true;
                             //Debug.Log("right");
+                            
                         }
 
                         if (x == newRoadList[u].GetComponentInParent<TileOptions>().posX && y - 1 == newRoadList[u].GetComponentInParent<TileOptions>().posY)
                         {
                             newRoadList[c].GetComponentInParent<TileOptions>().down = true;
                             //Debug.Log("down");
+                            
                         }
 
                         if (x - 1 == newRoadList[u].GetComponentInParent<TileOptions>().posX && y == newRoadList[u].GetComponentInParent<TileOptions>().posY)
                         {
                             newRoadList[c].GetComponentInParent<TileOptions>().left = true;
                             //Debug.Log("LEFT");
+                            
                         }
 
                         
                     }
+
                    
+
                 }
                 
                 for(int v = 0; v < newRoadList.Count;  v++)
@@ -136,7 +148,9 @@ public class RoadBuilder : MonoBehaviour
                 {
                     //newRoadList.RemoveAt(0);
                 }
- 
+
+                //Rebuild NavMesh at end of touch
+                navMeshSurface.BuildNavMesh();
             }
         }
     }

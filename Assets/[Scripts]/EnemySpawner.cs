@@ -26,6 +26,10 @@ public class EnemySpawner : MonoBehaviour
     public GameObject gameManager;
     public SurgeController surgeControllerInstance;
 
+    //UI Elements 
+    public GameObject surgeImage;
+    public GameObject spawnImage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,16 +43,16 @@ public class EnemySpawner : MonoBehaviour
     void Update()
     {
         SpawnWaveIfAvailable();
-       // CheckAvailableRoad();
+         CheckAvailableRoad();
+
+        UpdateSpawnerUI();
     }
 
 
     public void SpawnEnemy()
     {
-      
         GameObject temp = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
         FindStartingRoad(temp);
-       
     }
 
    //Changed from IEnum
@@ -88,7 +92,7 @@ public class EnemySpawner : MonoBehaviour
 
             if (canSpawn)
             {
-                //SpawnEnemyWave();
+                SpawnEnemyWave();
                 StartCoroutine(SpawnEnemyWave());
             }
             countDown = timeBetweenWaves;
@@ -109,7 +113,7 @@ public class EnemySpawner : MonoBehaviour
     private void GenerateRandomTimeBetweenWaves()
     {
         timeBetweenWaves = Random.Range(timeBetweenWavesMin, timeBetweenWavesMax);
-       // countDown = timeBetweenWaves;
+        countDown = timeBetweenWaves;
     }
 
     private void IncreaseTimeBetweenWaveMinAndMax()
@@ -124,6 +128,11 @@ public class EnemySpawner : MonoBehaviour
     }
 
     public void DeactivateSurgeSpawning()
+    {
+
+    }
+
+    public void UpdateSpawnerUI()
     {
 
     }

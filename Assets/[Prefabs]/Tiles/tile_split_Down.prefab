@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 5176898684583197124}
   - component: {fileID: 6494490442685720213}
   - component: {fileID: 7002154910629744936}
+  - component: {fileID: 7091172181388138668}
   m_Layer: 0
   m_Name: tile_split
-  m_TagString: Untagged
+  m_TagString: Road
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,6 +86,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7091172181388138668
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743334640256715606}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.2, z: 1}
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!1 &6087856472348167773
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,12 +108,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6861156621810160871}
+  - component: {fileID: 7839511290480190747}
   - component: {fileID: 4697401616845956244}
-  - component: {fileID: 3774644477474691033}
   - component: {fileID: -6437152376506601361}
   m_Layer: 0
   m_Name: tile_split_Down
-  m_TagString: Untagged
+  m_TagString: Road
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,6 +134,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7839511290480190747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6087856472348167773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!114 &4697401616845956244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,31 +172,26 @@ MonoBehaviour:
   isSelected: 0
   UIcover: 0
   gameManager: {fileID: 0}
-  roadDown: {fileID: 0}
-  roadStr: {fileID: 0}
-  roadLeft: {fileID: 0}
-  roadRight: {fileID: 0}
-  roadDowLeft: {fileID: 0}
-  roadDowRight: {fileID: 0}
-  roadCrossing: {fileID: 0}
-  roadSplitRight: {fileID: 0}
-  roadSplitLeft: {fileID: 0}
---- !u!114 &3774644477474691033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6087856472348167773}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_OverrideArea: 1
-  m_Area: 0
-  m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff
+  roadDown: {fileID: 4853406232502467124, guid: 1413eb04038939a4a9db5405f58ea960,
+    type: 3}
+  roadStr: {fileID: 2231024263565004558, guid: 5501c002905cb8444a6382ccdb79cdf2, type: 3}
+  roadLeft: {fileID: 3812265909077432112, guid: ebf04be90cfbbd544ab0f4149978dcb9,
+    type: 3}
+  roadRight: {fileID: 3812265909077432112, guid: ebf04be90cfbbd544ab0f4149978dcb9,
+    type: 3}
+  roadDowLeft: {fileID: 9102062336709535649, guid: 0dad4751199b17849b0411fbe1961dce,
+    type: 3}
+  roadDowRight: {fileID: 6366786572813678429, guid: 01dcd77e4604f8b48a2a32920a1a7056,
+    type: 3}
+  roadCrossing: {fileID: 4843604263267660322, guid: 49e2b955e90caae4e920043e7a12b8ea,
+    type: 3}
+  roadSplitRight: {fileID: 4548235544189444975, guid: 587a9d34331ed3942a457f3982890440,
+    type: 3}
+  roadSplitLeft: {fileID: 9125143433381273565, guid: 49757f4fbee06054298c4b65c4678f05,
+    type: 3}
+  roadSplitDown: {fileID: 6087856472348167773}
+  roadSplitUp: {fileID: 3183490562772315667, guid: 3dbaa0e9ece7ab84da4e4ab9aac0f9c2,
+    type: 3}
 --- !u!114 &-6437152376506601361
 MonoBehaviour:
   m_ObjectHideFlags: 0

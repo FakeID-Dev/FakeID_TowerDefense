@@ -154,3 +154,5 @@ MonoBehaviour:
   posY: 0
   gameManager: {fileID: 0}
   surgeControllerInstance: {fileID: 0}
+  surgeImage: {fileID: 0}
+  spawnImage: {fileID: 0}

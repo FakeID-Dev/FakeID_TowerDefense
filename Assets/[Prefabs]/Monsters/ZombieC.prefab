@@ -270,7 +270,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1141521443442159339}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -301,6 +301,7 @@ MonoBehaviour:
   coinReward: 10
   expReward: 20
   unitCost: 0
+  surgeControllerInstance: {fileID: 0}
   rewardMultiplier: 1
   coinPrefab: {fileID: 0}
   enemyType: 4
