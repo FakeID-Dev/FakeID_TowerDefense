@@ -29,28 +29,44 @@ public class Inventory : MonoBehaviour
     public GameObject buildButton;
 
     public Text coinTxt;
-    public Text stoneTxt;
+    //public Text stoneTxt;
     public Text crystalTxt;
 
     public Slider expSlider;
 
     public int coinInt = 0;
-    public int stoneInt = 0;
+    //public int stoneInt = 0;
     public int crystalInt = 0;
     public int expInt = 0;
 
     private int coinTemp = 0;
-    private int stoneTemp = 0;
+    //private int stoneTemp = 0;
     private int crystalTemp = 0;
     private int expTemp = 0;
+
+    [Header("Arrow Tower")]
+    public int tower1GoldCost;
+    public int tower1CrystalCost;
+    [Header("Ice Tower")]
+    public int tower2GoldCost;
+    public int tower2CrystalCost;
+    [Header("Cannon Tower")]
+    public int tower3GoldCost;
+    public int tower3CrystalCost;
+    [Header("Driller Tower")]
+    public int tower4GoldCost;
+    public int tower4CrystalCost;
+    [Header("Collector Tower")]
+    public int tower5GoldCost; 
+    public int tower5CrystalCost;
 
 
     // Start is called before the first frame update
     void Start()
     {
         coinInt = 2;
-        stoneInt = 6;
-        crystalInt = 0;
+        //stoneInt = 6;
+        crystalInt = 1;
         expInt = 0;
         pos = invPanel.transform.position;
     }
@@ -65,7 +81,7 @@ public class Inventory : MonoBehaviour
     public void updateUI()
     {
         coinTxt.text = "GOLD: " + coinInt;
-        stoneTxt.text = "STONE: " + stoneInt;
+        //stoneTxt.text = "STONE: " + stoneInt;
         crystalTxt.text = "CRYSTAL: " + crystalInt;
         expSlider.value = expInt;
     }
@@ -103,7 +119,7 @@ public class Inventory : MonoBehaviour
                     holding = false;
                     currentTower = null;
 
-                    stoneInt = stoneTemp;
+                    //stoneInt = stoneTemp;
                     coinInt = coinTemp;
                 }
             }
@@ -129,79 +145,88 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void InvButtonTowerPlace1()
+    public void InvButtonTowerPlace1()  // Arrow tower
     {
-        if (stoneInt >= 1 && coinInt >= 1)
+        //stoneInt >= 1 &&
+        if ( coinInt >= tower1GoldCost && crystalInt >= tower1CrystalCost)
         {
             currentTower = Instantiate(Tower_1, new Vector3(0, 0, 0), Quaternion.identity);
             holding = true;
             //invPanel.transform.position = pos;
             invPanel.SetActive(false);
-            stoneTemp = stoneInt;
+            //stoneTemp = stoneInt;
             coinTemp = coinInt;
-            stoneInt--;
-            coinInt--;
+            //stoneInt--;
+            coinInt -= tower1GoldCost;
+            crystalInt -= tower1CrystalCost;
         }
 
     }
 
-    public void InvButtonTowerPlace2()
+    public void InvButtonTowerPlace2()  // Ice Tower
     {
-        if (stoneInt >= 1 && coinInt >= 1)
+        //stoneInt >= 1 &&
+        if (coinInt >= tower2GoldCost && crystalInt >= tower2CrystalCost)
         {
             currentTower = Instantiate(Tower_2, new Vector3(0, 0, 0), Quaternion.identity);
             holding = true;
             //invPanel.transform.position = pos;
             invPanel.SetActive(false);
-            stoneTemp = stoneInt;
+            //stoneTemp = stoneInt;
             coinTemp = coinInt;
-            stoneInt -= 1;
-            coinInt -= 1;
+            //stoneInt -= 1;
+            coinInt -= tower2GoldCost;
+            crystalInt -= tower2CrystalCost;
+
         }
     }
 
-    public void InvButtonTowerPlace3()
+    public void InvButtonTowerPlace3()  // Cannon tower
     {
-        if (stoneInt >= 3 && coinInt >= 2)
+        //stoneInt >= 3 &&
+        if (coinInt >= tower3GoldCost && crystalInt >= tower3CrystalCost)
         {
             currentTower = Instantiate(Tower_3, new Vector3(0, 0, 0), Quaternion.identity);
             holding = true;
             //invPanel.transform.position = pos;
             invPanel.SetActive(false);
-            stoneTemp = stoneInt;
+            //stoneTemp = stoneInt;
             coinTemp = coinInt;
-            stoneInt -= 3;
-            coinInt -= 2;
+            //stoneInt -= 3;
+            coinInt -= tower3GoldCost;
+            crystalInt -= tower3CrystalCost;
         }
     }
 
-    public void InvButtonTowerPlace4()
+    public void InvButtonTowerPlace4()  // Driller Tower
     {
-        if (stoneInt >= 3 && coinInt >= 2)
+        if (coinInt >= tower4GoldCost && crystalInt >= tower4CrystalCost)
         {
             currentTower = Instantiate(Tower_4, new Vector3(0, 0, 0), Quaternion.identity);
             holding = true;
             //invPanel.transform.position = pos;
             invPanel.SetActive(false);
-            stoneTemp = stoneInt;
+            //stoneTemp = stoneInt;
             coinTemp = coinInt;
-            stoneInt -= 3;
-            coinInt -= 2;
+            //stoneInt -= 3;
+            coinInt -= tower4GoldCost;
+            crystalInt -= tower4CrystalCost;
         }
     }
 
-    public void InvButtonTowerPlace5()
+    public void InvButtonTowerPlace5()  // Storage tower
     {
-        if (stoneInt >= 3 && coinInt >= 2)
+        if (coinInt >= tower5GoldCost && crystalInt >= tower5CrystalCost)
         {
             currentTower = Instantiate(Tower_5, new Vector3(0, 0, 0), Quaternion.identity);
             holding = true;
             //invPanel.transform.position = pos;
             invPanel.SetActive(false);
-            stoneTemp = stoneInt;
+            //stoneTemp = stoneInt;
             coinTemp = coinInt;
-            stoneInt -= 3;
-            coinInt -= 2;
+            //stoneInt -= 3;
+            coinInt -= tower5GoldCost;
+            crystalInt -= tower5CrystalCost;
         }
     }
 
