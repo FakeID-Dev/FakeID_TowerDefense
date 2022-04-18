@@ -64,7 +64,7 @@ public class Inventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        coinInt = 2;
+        coinInt = 5;
         //stoneInt = 6;
         crystalInt = 1;
         expInt = 0;
