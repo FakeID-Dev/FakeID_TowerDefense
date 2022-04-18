@@ -3020,7 +3020,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: eaa75040b736e4f40a541c3476ad6f19, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ee83918c39c4a584c84e9f9c44ebad5c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4578,15 +4578,15 @@ MonoBehaviour:
   coinInt: 0
   crystalInt: 0
   expInt: 0
-  tower1GoldCost: 1
+  tower1GoldCost: 5
   tower1CrystalCost: 0
-  tower2GoldCost: 1
+  tower2GoldCost: 5
   tower2CrystalCost: 1
-  tower3GoldCost: 3
+  tower3GoldCost: 5
   tower3CrystalCost: 0
-  tower4GoldCost: 2
+  tower4GoldCost: 5
   tower4CrystalCost: 0
-  tower5GoldCost: 2
+  tower5GoldCost: 5
   tower5CrystalCost: 2
 --- !u!4 &1096541693
 Transform:
@@ -5491,14 +5491,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4811321, g: 0.3063813, b: 0.3063813, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: df909951e0a552341bbf43fddaab5edd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c1529c61d687aa545b790d6973164b76, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5567,14 +5567,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4811321, g: 0.3063813, b: 0.3063813, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a867de205d88f3446a97a7f9b12720f8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a86372fb743d27f42b4cf0c20bc61f66, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7550,7 +7550,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4811321, g: 0.3063813, b: 0.3063813, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7755,7 +7755,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e270d338adaa97940b60548accac5fb7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: eb996a888c24abc499eb23b3a4b823ee, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
