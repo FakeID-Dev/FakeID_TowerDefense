@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CoinBehaviour : MonoBehaviour
 {
+    public AudioClip pickupSound;
     public float spinSpeed;
     public int coinValue; 
     private Inventory inventory;
@@ -43,6 +44,7 @@ public class CoinBehaviour : MonoBehaviour
 
     void Collect()
     {
+        AudioSource.PlayClipAtPoint(pickupSound, transform.position);
         inventory.coinInt+= coinValue;
         Destroy(gameObject);
     }
