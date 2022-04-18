@@ -149,7 +149,7 @@ MonoBehaviour:
   m_OverrideArea: 1
   m_Area: 0
   m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff
+  m_AffectedAgents: 00000000
 --- !u!114 &-8940322069215796786
 MonoBehaviour:
   m_ObjectHideFlags: 0
