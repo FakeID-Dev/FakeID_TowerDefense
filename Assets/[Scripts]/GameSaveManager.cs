@@ -69,6 +69,10 @@ public class GameSaveManager : MonoBehaviour
             {
                 data.towerData[i, 2] = 2.0f;
             }
+            else if (towers[i].name == "Tower-Drill(Clone)")
+            {
+                data.towerData[i, 2] = 3.0f;
+            }
             else
             {
                 data.towerData[i, 2] = 3.0f;
