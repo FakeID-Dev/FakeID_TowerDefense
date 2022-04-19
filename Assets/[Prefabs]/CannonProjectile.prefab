@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  flySpeed: 0.1
+  flySpeed: 0.06
   hitSound: {fileID: 8300000, guid: 6863f828976a6034cbb049c9b2c280fb, type: 3}
   cannonballExplosion: {fileID: 8861302616004694846, guid: 82a0fa60ecb256a4b89154eb60e7ab07,
     type: 3}
