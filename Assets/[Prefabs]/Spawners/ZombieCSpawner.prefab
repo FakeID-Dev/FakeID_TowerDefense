@@ -119,7 +119,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &81108695228717604
 RectTransform:
   m_ObjectHideFlags: 0
@@ -195,7 +195,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &590223453298820077
 RectTransform:
   m_ObjectHideFlags: 0
@@ -399,7 +399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48cdef3016d1e434eb16ff9a8d4ea194, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 83956058447933189, guid: d6772f9b0ea62424c987e26486355b1f,
+  enemyPrefab: {fileID: 1141521443442159339, guid: 8f42797962f0ce34fb7b6670a713d2a8,
     type: 3}
   spawnPoint: {fileID: 8621362995198116546}
   timeBetweenWavesMin: 80
