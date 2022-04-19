@@ -13,9 +13,11 @@ public class EnemySpawner : MonoBehaviour
     public int timeBetweenWavesMax = 60;
     private float timeBetweenWaves;
 
-    private float countDown = 2.0f;
+    private float countDown = 5.0f;
     public int enemiesInWave = 5;
     public int surgeBoost;
+
+    private float surgeCountDown = 1.0f;
 
     //Surge Variables 
     public int posX = 0;
@@ -26,6 +28,8 @@ public class EnemySpawner : MonoBehaviour
     public GameObject gameManager;
     public SurgeController surgeControllerInstance;
 
+    private bool surgeActive = false;
+
     //UI Elements 
     public GameObject surgeImage;
     public GameObject spawnImage;
@@ -34,37 +38,44 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         surgeControllerInstance = SurgeController.surgeControllerInstance;
-
-        gameManager = GameObject.Find("GameManager");
-
-        GenerateRandomTimeBetweenWaves();
-
-       
+        gameManager = GameObject.Find("GameManager");   
     }
 
     void Update()
     {
-        SpawnWaveIfAvailable();
+        if (surgeActive)
+        {
+            SpawnSurgeIfAvailable();
+        }
+        else
+        {
+            SpawnWaveIfAvailable();
+        }
         CheckAvailableRoad();
     }
-
 
     public void SpawnEnemy()
     {
         GameObject temp = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+       
         FindStartingRoad(temp);
+
+        switch (Random.Range(0,3))
+        {
+            case 1:
+                gameObject.GetComponent<AudioSource>().Play();
+                break;
+
+            default:
+                break;
+        }
     }
 
    //Changed from IEnum
     IEnumerator  SpawnEnemyWave()
     {
-        Debug.Log("Begin Enemy Wave");
-
-
         spawnImage.SetActive(true);
-
         int enemyUnitCost = enemyPrefab.GetComponent<EnemyController>().unitCost;
-
         int waveunitCost = enemyUnitCost * enemiesInWave;
 
         if (waveunitCost < surgeControllerInstance.GetAvailableUnits())
@@ -79,7 +90,6 @@ public class EnemySpawner : MonoBehaviour
             }
             spawnImage.SetActive(false);
         }
-        
     }
 
     IEnumerator SpawnEnemySurgeWave()
@@ -98,11 +108,12 @@ public class EnemySpawner : MonoBehaviour
     {
         if (countDown <= 0.0f)
         {
+            GenerateRandomTimeBetweenWaves();
             CheckAvailableRoad();
 
             if (canSpawn)
             {
-                SpawnEnemyWave();
+                //SpawnEnemyWave();
                 StartCoroutine(SpawnEnemyWave());
             }
             countDown = timeBetweenWaves;
@@ -112,12 +123,18 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnSurgeIfAvailable()
     {
-        CheckAvailableRoad();
-        
-        if (canSpawn)
+        if (surgeCountDown <= 0.0f)
         {
-            StartCoroutine(SpawnEnemySurgeWave());
+            CheckAvailableRoad();
+
+            if (canSpawn)
+            {
+                //SpawnEnemyWave();
+                StartCoroutine(SpawnEnemySurgeWave());
+            }
+            surgeCountDown = (timeBetweenWaves / 2);
         }
+        surgeCountDown -= Time.deltaTime;
     }
 
     private void GenerateRandomTimeBetweenWaves()
@@ -134,20 +151,20 @@ public class EnemySpawner : MonoBehaviour
         timeBetweenWavesMin += 5;
         timeBetweenWavesMax += 5;
     }
+
+    private void IncreaseSurgeSpawn()
+    {
+        surgeBoost += 3;
+    }
  
     public void ActivateSurgeSpawning()
     {
-        SpawnSurgeIfAvailable();
+        surgeActive = true;
     }
 
     public void DeactivateSurgeSpawning()
     {
-
-    }
-
-    public void UpdateSpawnerUI()
-    {
-
+        surgeActive = false;
     }
 
     private void FindStartingRoad(GameObject t)

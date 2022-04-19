@@ -4701,7 +4701,7 @@ MonoBehaviour:
   surgeSlider: {fileID: 1868707281}
   surgeTimerInt: 0
   surgeDuration: 20
-  surgeWait: 100
+  surgeWait: 30
   enemySpawners: []
   availableUnits: 100
   availableUnitIncrementAmount: 10
@@ -4733,7 +4733,7 @@ MonoBehaviour:
   newRoadList: []
   UIcover: 1
   RoadSelect: 0
-  cost: 0
+  leftRoad: {fileID: 0}
   navMeshSurface: {fileID: 1077310629}
 --- !u!1 &1096983715
 GameObject:
