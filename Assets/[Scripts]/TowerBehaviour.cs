@@ -41,8 +41,16 @@ public class TowerBehaviour : MonoBehaviour
             if (targetList[0] != null)
             {
                 if (!towerPlacement.holding)
-                    Fire();
-
+                {
+                    if (targetList[0].gameObject.CompareTag("Untagged"))
+                    {
+                        targetList.RemoveAt(0);
+                    }
+                    else
+                    {
+                        Fire();
+                    }
+                }
                 //gameObject.transform.LookAt(new Vector3(target.transform.position.x, 0, target.transform.position.z));
             }
         }
@@ -83,7 +91,9 @@ public class TowerBehaviour : MonoBehaviour
             GameObject firedProjectile = Instantiate(projectileType, bulletSpawnLocation.transform.position, gameObject.transform.rotation);
 
             if (firedProjectile.GetComponent<ArrowBehaviour>())
+            {
                 firedProjectile.GetComponent<ArrowBehaviour>().target = targetList[0];
+            }
             else if (firedProjectile.GetComponent<CannonballBehaviour>())
             {
                 firedProjectile.GetComponent<CannonballBehaviour>().target = targetList[0];
