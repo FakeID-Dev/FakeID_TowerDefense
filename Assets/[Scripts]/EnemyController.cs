@@ -106,6 +106,7 @@ public class EnemyController : MonoBehaviour
     IEnumerator DestroyEnemy()
     {
         animator.SetInteger("AnimationState", 2);
+        gameObject.tag = "Untagged";
 
         yield return new WaitForSeconds(2.0f);
 
