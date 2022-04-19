@@ -9,8 +9,8 @@ public class EnemySpawner : MonoBehaviour
     public Transform spawnPoint;
 
     //Wave Variables
-    public float timeBetweenWavesMin = 10.0f;
-    public float timeBetweenWavesMax = 60.0f;
+    public int timeBetweenWavesMin = 10;
+    public int timeBetweenWavesMax = 60;
     private float timeBetweenWaves;
 
     private float countDown = 2.0f;
@@ -38,14 +38,14 @@ public class EnemySpawner : MonoBehaviour
         gameManager = GameObject.Find("GameManager");
 
         GenerateRandomTimeBetweenWaves();
+
+       
     }
 
     void Update()
     {
         SpawnWaveIfAvailable();
-         CheckAvailableRoad();
-
-        UpdateSpawnerUI();
+        CheckAvailableRoad();
     }
 
 
@@ -58,6 +58,11 @@ public class EnemySpawner : MonoBehaviour
    //Changed from IEnum
     IEnumerator  SpawnEnemyWave()
     {
+        Debug.Log("Begin Enemy Wave");
+
+
+        spawnImage.SetActive(true);
+
         int enemyUnitCost = enemyPrefab.GetComponent<EnemyController>().unitCost;
 
         int waveunitCost = enemyUnitCost * enemiesInWave;
@@ -70,18 +75,23 @@ public class EnemySpawner : MonoBehaviour
             for (int i = 0; i < enemiesInWave; i++)
             {
                 SpawnEnemy();
-                yield return new WaitForSeconds(5.0f);
+                yield return new WaitForSeconds(3.0f);
             }
+            spawnImage.SetActive(false);
         }
+        
     }
 
     IEnumerator SpawnEnemySurgeWave()
     {
+        surgeImage.SetActive(true);
+
         for (int i = 0; i < enemiesInWave + surgeBoost; i++)
         {
             SpawnEnemy();
             yield return new WaitForSeconds(2.0f);
         }
+        surgeImage.SetActive(false);
     }
 
     private void SpawnWaveIfAvailable()
@@ -114,12 +124,15 @@ public class EnemySpawner : MonoBehaviour
     {
         timeBetweenWaves = Random.Range(timeBetweenWavesMin, timeBetweenWavesMax);
         countDown = timeBetweenWaves;
+
+        Debug.Log("Time Between Waves: " + timeBetweenWaves);
+
     }
 
     private void IncreaseTimeBetweenWaveMinAndMax()
     {
-        timeBetweenWavesMin += 5.0f;
-        timeBetweenWavesMax += 5.0f;
+        timeBetweenWavesMin += 5;
+        timeBetweenWavesMax += 5;
     }
  
     public void ActivateSurgeSpawning()

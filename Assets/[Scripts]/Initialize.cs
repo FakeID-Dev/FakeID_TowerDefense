@@ -211,8 +211,6 @@ public class Initialize : MonoBehaviour
                 }
             }
         }
-
-        navMeshSurface.BuildNavMesh();
         CheckRoad();
     }
 
@@ -315,14 +313,10 @@ public class Initialize : MonoBehaviour
         //roadList[roadList.Count - 1].gameObject.transform.parent = mapRoad.gameObject.transform;
 
         //Rebuild NavMesh
-        navMeshSurface.BuildNavMesh();
-
     }
 
     public void AddToNewRoad(int psX, int psY)
     {
-
-        navMeshSurface.BuildNavMesh();
         //for (int x = 0; x < NewRoadsList.Count; x++)
         //{
         //    foreach (Transform g in NewRoadsList[x].GetComponentsInChildren<Transform>())
@@ -378,9 +372,9 @@ public class Initialize : MonoBehaviour
         roadList[12].transform.parent = mapRoad.gameObject.transform;
         roadList[10].transform.parent = mapRoad.gameObject.transform;
 
-        //Rebuild NavMesh
-        navMeshSurface.BuildNavMesh();
 
+       
+      
     }
 
 
