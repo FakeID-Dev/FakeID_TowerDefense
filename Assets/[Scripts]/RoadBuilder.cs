@@ -10,8 +10,10 @@ public class RoadBuilder : MonoBehaviour
     private GameObject startObj;
     public bool UIcover = false;
     public bool RoadSelect = false;
+    public int cost = 0;
     private GameObject gameManager;
-    public GameObject leftRoad;
+    private bool startBuild = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -43,27 +45,32 @@ public class RoadBuilder : MonoBehaviour
             {
                 if (Physics.Raycast(ray, out hit))
                 {
-                    if (hit.transform.gameObject.tag == "Road" || hit.transform.gameObject.tag == "tile")
+                    if (hit.transform.gameObject.tag == "Road")
                     {
                         startObj = hit.transform.gameObject;
                         newRoadList.Add(hit.transform.gameObject);
                         gameManager.GetComponent<Initialize>().tileList.Add(hit.transform.gameObject);
-
+                        startBuild = true;
                     }
                 }
             }
             if (touch.phase == TouchPhase.Moved)
             {
-                if (Physics.Raycast(ray, out hit))
+                if (cost < gameManager.GetComponent<Inventory>().coinInt)
                 {
-                    if (hit.transform.gameObject.tag == "Road" || hit.transform.gameObject.tag == "tile")
+                    if (Physics.Raycast(ray, out hit))
                     {
-                        hit.transform.gameObject.GetComponent<Renderer>().materials[1].SetColor("_Color", Color.green);
-
-                        if (newRoadList[newRoadList.Count - 1] != hit.transform.gameObject)
+                        if (hit.transform.gameObject.tag == "Road" || hit.transform.gameObject.tag == "tile" && startBuild)
                         {
-                            newRoadList.Add(hit.transform.gameObject);
-                            gameManager.GetComponent<Initialize>().tileList.Add(hit.transform.gameObject);
+
+                            hit.transform.gameObject.GetComponent<Renderer>().materials[1].SetColor("_Color", Color.green);
+
+                            if (newRoadList[newRoadList.Count - 1] != hit.transform.gameObject)
+                            {
+                                newRoadList.Add(hit.transform.gameObject);
+                                gameManager.GetComponent<Initialize>().tileList.Add(hit.transform.gameObject);
+                                cost++;
+                            }
                         }
                     }
                 }
@@ -74,8 +81,10 @@ public class RoadBuilder : MonoBehaviour
                 int x, y, size = newRoadList.Count;
                 GameObject temp;
                 bool up = false, down = false, left = false, right = false;
+                gameManager.GetComponent<Inventory>().coinInt -= cost;
+                cost = 0;
+                startBuild = false;
 
-                //GetTileList();
 
                 for (int c = 0; c < newRoadList.Count; c++)
                 {
@@ -85,7 +94,7 @@ public class RoadBuilder : MonoBehaviour
                     for (int u = 0; u < newRoadList.Count; u++)
                     {
 
-                        if (x == newRoadList[u].GetComponentInParent<TileOptions>().posX && y + 1 == newRoadList[u].GetComponentInParent<TileOptions>().posY) 
+                        if (x == newRoadList[u].GetComponentInParent<TileOptions>().posX && y + 1 == newRoadList[u].GetComponentInParent<TileOptions>().posY)
                         {
                             newRoadList[c].GetComponentInParent<TileOptions>().up = true;
                             //Debug.Log("up");
@@ -109,19 +118,21 @@ public class RoadBuilder : MonoBehaviour
                             //Debug.Log("LEFT");
                         }
 
-                        
+
                     }
-                   
+
                 }
-                
-                for(int v = 0; v < newRoadList.Count;  v++)
+
+                for (int v = 0; v < newRoadList.Count; v++)
                 {
+
                     newRoadList[v].GetComponentInParent<TileOptions>().RoadType();
+
                 }
-                
 
 
-                if (size > 1)
+
+                if (size > 0)
                 {
                     for (int g = 0; g < size; g++)
                     {
@@ -132,11 +143,8 @@ public class RoadBuilder : MonoBehaviour
                     }
                     CanBuildRoad();
                 }
-                else
-                {
-                    //newRoadList.RemoveAt(0);
-                }
- 
+
+
             }
         }
     }
@@ -179,12 +187,13 @@ public class RoadBuilder : MonoBehaviour
 
     public void GetTileList()
     {
-        for(int c = 0; c < gameManager.GetComponent<Initialize>().tileList.Count; c++)
+        for (int c = 0; c < gameManager.GetComponent<Initialize>().tileList.Count; c++)
         {
-            if(gameManager.GetComponent<Initialize>().tileList[c].gameObject.tag == "Road")
+            if (gameManager.GetComponent<Initialize>().tileList[c].gameObject.tag == "Road")
             {
                 newRoadList.Add(gameManager.GetComponent<Initialize>().tileList[c]);
-            } 
+            }
         }
     }
 }
+
