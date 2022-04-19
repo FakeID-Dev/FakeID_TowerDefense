@@ -3876,7 +3876,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 937282222}
-  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
+  m_LocalRotation: {x: 0.38268343, y: -0, z: -0, w: 0.92387956}
   m_LocalPosition: {x: 11.31, y: 10, z: -3.62}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3901,6 +3901,10 @@ MonoBehaviour:
   heightVar: 5
   minHeight: 5
   maxHeight: 25
+  minVertical: -5
+  maxVertical: 30
+  minHorizontal: 10
+  maxHorizontal: 40
   canDragCamera: 1
   touchMode: 0
 --- !u!1 &937311676
@@ -6895,6 +6899,26 @@ PrefabInstance:
         type: 3}
       propertyPath: touchMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4445219674813904862, guid: 14b188fa2bb01f340aecb8df39f8b1d0,
+        type: 3}
+      propertyPath: maxVertical
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4445219674813904862, guid: 14b188fa2bb01f340aecb8df39f8b1d0,
+        type: 3}
+      propertyPath: minVertical
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4445219674813904862, guid: 14b188fa2bb01f340aecb8df39f8b1d0,
+        type: 3}
+      propertyPath: maxHorizontal
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 4445219674813904862, guid: 14b188fa2bb01f340aecb8df39f8b1d0,
+        type: 3}
+      propertyPath: minHorizontal
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14b188fa2bb01f340aecb8df39f8b1d0, type: 3}

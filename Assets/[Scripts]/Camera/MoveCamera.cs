@@ -24,6 +24,12 @@ public class MoveCamera : MonoBehaviour
     [SerializeField] float minHeight = 5f;
     [SerializeField] float maxHeight = 15f;
 
+
+    [SerializeField] float minVertical;
+    [SerializeField] float maxVertical;
+    [SerializeField] float minHorizontal;
+    [SerializeField] float maxHorizontal;
+
     public bool canDragCamera = true;
     public bool touchMode = false;
 
@@ -150,7 +156,16 @@ public class MoveCamera : MonoBehaviour
 
             }
         }
+        
 
+        if(transform.position.x > maxHorizontal)
+            transform.position = new Vector3(maxHorizontal, transform.position.y, transform.position.z);
+        if(transform.position.x < minHorizontal)
+            transform.position = new Vector3(minHorizontal, transform.position.y, transform.position.z);
+        if(transform.position.z > maxVertical)
+            transform.position = new Vector3(transform.position.x, transform.position.y, maxVertical);
+        if(transform.position.z < minVertical)
+            transform.position = new Vector3(transform.position.x, transform.position.y, minVertical);
 
     }
 
