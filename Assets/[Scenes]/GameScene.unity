@@ -2739,7 +2739,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 611807768}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8, y: 0.25, z: 9}
+  m_LocalPosition: {x: 8, y: 0.25, z: 7.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4514,7 +4514,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 3319
+    m_Bits: 2049
   m_UseGeometry: 1
   m_DefaultArea: 0
   m_IgnoreNavMeshAgent: 1
@@ -4696,8 +4696,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   surgeSlider: {fileID: 1868707281}
   surgeTimerInt: 0
-  surgeDuration: 30
-  surgeWait: 180
+  surgeDuration: 20
+  surgeWait: 100
   enemySpawners: []
   availableUnits: 100
   availableUnitIncrementAmount: 10
@@ -4729,7 +4729,7 @@ MonoBehaviour:
   newRoadList: []
   UIcover: 1
   RoadSelect: 0
-  leftRoad: {fileID: 0}
+  cost: 0
   navMeshSurface: {fileID: 1077310629}
 --- !u!1 &1096983715
 GameObject:
@@ -7691,7 +7691,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2092494263}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.25, z: 9}
+  m_LocalPosition: {x: 0, y: 0.25, z: 7.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

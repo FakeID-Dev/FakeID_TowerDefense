@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8301934647266975778
 RectTransform:
   m_ObjectHideFlags: 0
@@ -93,7 +93,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8370125733520474916
 RectTransform:
   m_ObjectHideFlags: 0
@@ -402,9 +402,9 @@ MonoBehaviour:
   enemyPrefab: {fileID: 9159529323677799331, guid: c1e63156088cfe446946fa795c103fef,
     type: 3}
   spawnPoint: {fileID: 7434474502357880158}
-  timeBetweenWavesMin: 20
-  timeBetweenWavesMax: 40
-  enemiesInWave: 10
+  timeBetweenWavesMin: 30
+  timeBetweenWavesMax: 50
+  enemiesInWave: 4
   surgeBoost: 0
   posX: 0
   posY: 0
