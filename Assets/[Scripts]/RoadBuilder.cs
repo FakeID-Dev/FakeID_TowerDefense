@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.AI;
 
 public class RoadBuilder : MonoBehaviour
 {
@@ -14,12 +15,14 @@ public class RoadBuilder : MonoBehaviour
     private GameObject gameManager;
     private bool startBuild = false;
 
+    public NavMeshSurface navMeshSurface; 
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager = gameObject;
         GetTileList();
+        OnBuildButtonClicked();
     }
 
     // Update is called once per frame
@@ -85,6 +88,10 @@ public class RoadBuilder : MonoBehaviour
                 cost = 0;
                 startBuild = false;
 
+                Invoke("RebuildNavMesh", 3);
+                Invoke("RebuildNavMesh", 6);
+                Invoke("RebuildNavMesh", 9);
+
 
                 for (int c = 0; c < newRoadList.Count; c++)
                 {
@@ -132,6 +139,7 @@ public class RoadBuilder : MonoBehaviour
 
 
 
+
                 if (size > 0)
                 {
                     for (int g = 0; g < size; g++)
@@ -144,8 +152,8 @@ public class RoadBuilder : MonoBehaviour
                     CanBuildRoad();
                 }
 
-
             }
+
         }
     }
 
@@ -174,6 +182,13 @@ public class RoadBuilder : MonoBehaviour
             RoadSelect = false;
         }
     }
+
+    private void RebuildNavMesh()
+    {
+        navMeshSurface.BuildNavMesh();
+
+    }
+
 
     public void OnBuildButtonClicked()
     {

@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4363811712410106777
 RectTransform:
   m_ObjectHideFlags: 0
@@ -93,7 +93,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4779790191727443242
 RectTransform:
   m_ObjectHideFlags: 0
@@ -379,8 +379,8 @@ MonoBehaviour:
   posY: 0
   gameManager: {fileID: 0}
   surgeControllerInstance: {fileID: 0}
-  surgeImage: {fileID: 0}
-  spawnImage: {fileID: 0}
+  surgeImage: {fileID: 377494204514844668}
+  spawnImage: {fileID: 2706714115081869249}
 --- !u!82 &1777450355255435149
 AudioSource:
   m_ObjectHideFlags: 0

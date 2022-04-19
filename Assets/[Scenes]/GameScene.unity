@@ -4635,6 +4635,10 @@ MonoBehaviour:
     type: 3}
   roadDowRight: {fileID: 6366786572813678429, guid: 01dcd77e4604f8b48a2a32920a1a7056,
     type: 3}
+  monsterSpawner2: {fileID: 6809284223964765315, guid: 6bd43bd51d0f6874b9378975430c2651,
+    type: 3}
+  monsterSpawner3: {fileID: 8621362995298912575, guid: 7c1dda5782e247744af6bf03f25eddbb,
+    type: 3}
   monsterSpawner: {fileID: 7981016581919607046, guid: 39bc71e416eadfa4f9692dd69d116fd7,
     type: 3}
   crystalSpawner: {fileID: 4118653062076133367, guid: 69bb408002458d9459d5c0b5e032e27e,
@@ -4733,7 +4737,7 @@ MonoBehaviour:
   newRoadList: []
   UIcover: 1
   RoadSelect: 0
-  leftRoad: {fileID: 0}
+  cost: 0
   navMeshSurface: {fileID: 1077310629}
 --- !u!1 &1096983715
 GameObject:
