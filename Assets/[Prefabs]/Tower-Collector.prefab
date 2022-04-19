@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 6092413630747444041}
   - component: {fileID: 1209609711177476722}
   - component: {fileID: 907067407766059954}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: towerRound_sampleF
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -62,7 +62,7 @@ public class TowerPlacement : MonoBehaviour
 
         if (holding)
         {
-            
+
             if (canBePlaced)
             {
                 met[0].color = Color.green;
@@ -78,6 +78,7 @@ public class TowerPlacement : MonoBehaviour
         }
         else
         {
+
            
             for (int x = 0; x < 3; x++)
             {

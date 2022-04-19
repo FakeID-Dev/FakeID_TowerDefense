@@ -95,7 +95,7 @@ public class Inventory : MonoBehaviour
         {
             if (Physics.Raycast(ray, out hit))
             {
-                currentTower.transform.position = hit.point;
+                currentTower.transform.position = new Vector3(hit.point.x, 0, hit.point.z);
             }
 
             if (Input.GetMouseButtonUp(0))
