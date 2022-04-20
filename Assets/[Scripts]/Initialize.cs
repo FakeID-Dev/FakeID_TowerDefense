@@ -216,7 +216,7 @@ public class Initialize : MonoBehaviour
                 }
                 else if (Map[x, y] == 10) // Monster spawner 2
                 {
-                    GameObject temp = Instantiate(monsterSpawner2, new Vector3(x, 0, y), monsterSpawner2.transform.rotation);
+                    GameObject temp = Instantiate(monsterSpawner2, new Vector3(x, 0.203f, y), monsterSpawner2.transform.rotation);
                     temp.GetComponentInChildren<EnemySpawner>().posX = x;
                     temp.GetComponentInChildren<EnemySpawner>().posY = y;
                     tileList.Add(temp);
@@ -225,7 +225,7 @@ public class Initialize : MonoBehaviour
                 }
                 else if (Map[x, y] == 11) // Monster spawner 2
                 {
-                    GameObject temp = Instantiate(monsterSpawner3, new Vector3(x, 0, y), monsterSpawner3.transform.rotation);
+                    GameObject temp = Instantiate(monsterSpawner3, new Vector3(x, 0.203f, y), monsterSpawner3.transform.rotation);
                     temp.GetComponentInChildren<EnemySpawner>().posX = x;
                     temp.GetComponentInChildren<EnemySpawner>().posY = y;
                     tileList.Add(temp);
