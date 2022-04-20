@@ -259,6 +259,10 @@ public class Inventory : MonoBehaviour
         {
             currentTower = Instantiate(Tower_4, new Vector3(xPos, 0.2f, zPos), Quaternion.identity);
         }
+        else if (type == 4)
+        {
+            currentTower = Instantiate(Tower_5, new Vector3(xPos, 0.2f, zPos), Quaternion.identity);
+        }
         currentTower.GetComponentInChildren<TowerPlacement>().LoadPlacedTower();
         holding = false;
     }

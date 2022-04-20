@@ -73,9 +73,13 @@ public class GameSaveManager : MonoBehaviour
             {
                 data.towerData[i, 2] = 3.0f;
             }
+            else if (towers[i].name == "Tower-Collector(Clone)")
+            {
+                data.towerData[i, 2] = 4.0f;
+            }
             else
             {
-                data.towerData[i, 2] = 3.0f;
+                data.towerData[i, 2] = 1.0f;
             }
         }
 
