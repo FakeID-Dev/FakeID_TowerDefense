@@ -26,6 +26,8 @@ public class Leveling : MonoBehaviour
         {
             //Debug.Log("LEVEL UP");
             levelPanel.SetActive(true);
+
+            gameManager.GetComponent<Inventory>().expSlider.maxValue = (float)(gameManager.GetComponent<Inventory>().expSlider.maxValue * 1.2);
         }
        
     }
