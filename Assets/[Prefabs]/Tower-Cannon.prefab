@@ -161,7 +161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aimRadius: 7
   damage: 0
-  rateOfFire: 6
+  rateOfFire: 10
   storage: 0
   projectileType: {fileID: 1074240857139583382, guid: 3008e6202301354428edf51c202cc064,
     type: 3}
