@@ -53,6 +53,9 @@ public class TileOptions : MonoBehaviour
 
     public void RoadType()
     {
+
+        gameManager = GameObject.Find("GameManager");
+
         if (up || down)
         {
             if (left && right && up && down)

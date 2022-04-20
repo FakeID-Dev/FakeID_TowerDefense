@@ -210,5 +210,64 @@ public class RoadBuilder : MonoBehaviour
             }
         }
     }
+    public void FixRoadsAfterLoad()
+    {
+        int x, y, size = newRoadList.Count;
+        GameObject temp;
+
+        for (int c = 0; c < newRoadList.Count; c++)
+        {
+            x = newRoadList[c].GetComponentInParent<TileOptions>().posX;
+            y = newRoadList[c].GetComponentInParent<TileOptions>().posY;
+
+            for (int u = 0; u < newRoadList.Count; u++)
+            {
+
+                if (x == newRoadList[u].GetComponentInParent<TileOptions>().posX && y + 1 == newRoadList[u].GetComponentInParent<TileOptions>().posY)
+                {
+                    newRoadList[c].GetComponentInParent<TileOptions>().up = true;
+                    //Debug.Log("up");
+                }
+
+                if (x + 1 == newRoadList[u].GetComponentInParent<TileOptions>().posX && y == newRoadList[u].GetComponentInParent<TileOptions>().posY)
+                {
+                    newRoadList[c].GetComponentInParent<TileOptions>().right = true;
+                    //Debug.Log("right");
+                }
+
+                if (x == newRoadList[u].GetComponentInParent<TileOptions>().posX && y - 1 == newRoadList[u].GetComponentInParent<TileOptions>().posY)
+                {
+                    newRoadList[c].GetComponentInParent<TileOptions>().down = true;
+                    //Debug.Log("down");
+                }
+
+                if (x - 1 == newRoadList[u].GetComponentInParent<TileOptions>().posX && y == newRoadList[u].GetComponentInParent<TileOptions>().posY)
+                {
+                    newRoadList[c].GetComponentInParent<TileOptions>().left = true;
+                    //Debug.Log("LEFT");
+                }
+
+
+            }
+
+        }
+
+        for (int v = 0; v < newRoadList.Count; v++)
+        {
+
+            newRoadList[v].GetComponentInParent<TileOptions>().RoadType();
+
+        }
+
+
+        for (int g = 0; g < size; g++)
+        {
+            temp = newRoadList[0];
+            newRoadList.RemoveAt(0);
+            gameManager.GetComponent<Initialize>().RemoveTile(temp);
+            Destroy(temp);
+        }
+    }
+
 }
 

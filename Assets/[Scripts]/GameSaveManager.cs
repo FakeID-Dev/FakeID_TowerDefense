@@ -117,6 +117,9 @@ public class GameSaveManager : MonoBehaviour
             }
 
             Debug.Log("Game data loaded! - Binary File");
+
+            gameManager.GetComponent<RoadBuilder>().GetTileList();
+            gameManager.GetComponent<RoadBuilder>().FixRoadsAfterLoad();
         }
         else
             Debug.LogError("There is no save data!");
