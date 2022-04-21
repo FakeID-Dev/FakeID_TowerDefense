@@ -14,7 +14,6 @@ public class RoadBuilder : MonoBehaviour
     public int cost = 0;
     private GameObject gameManager;
     private bool startBuild = false;
-
     public NavMeshSurface navMeshSurface; 
 
     // Start is called before the first frame update
@@ -67,12 +66,16 @@ public class RoadBuilder : MonoBehaviour
                         {
 
                             hit.transform.gameObject.GetComponent<Renderer>().materials[1].SetColor("_Color", Color.green);
-
                             if (newRoadList[newRoadList.Count - 1] != hit.transform.gameObject)
                             {
                                 newRoadList.Add(hit.transform.gameObject);
                                 gameManager.GetComponent<Initialize>().tileList.Add(hit.transform.gameObject);
-                                cost++;
+                                
+                                if(hit.transform.gameObject.tag == "tile")
+                                {
+                                    cost++;
+                                }
+                               
                             }
                         }
                     }
@@ -81,79 +84,17 @@ public class RoadBuilder : MonoBehaviour
 
             if (touch.phase == TouchPhase.Ended)
             {
-                int x, y, size = newRoadList.Count;
-                GameObject temp;
-                bool up = false, down = false, left = false, right = false;
                 gameManager.GetComponent<Inventory>().coinInt -= cost;
                 cost = 0;
                 startBuild = false;
-
+                Invoke("RebuildNavMesh", 1);
                 Invoke("RebuildNavMesh", 3);
                 Invoke("RebuildNavMesh", 6);
                 Invoke("RebuildNavMesh", 9);
 
 
-                for (int c = 0; c < newRoadList.Count; c++)
-                {
-                    x = newRoadList[c].GetComponentInParent<TileOptions>().posX;
-                    y = newRoadList[c].GetComponentInParent<TileOptions>().posY;
-
-                    for (int u = 0; u < newRoadList.Count; u++)
-                    {
-
-                        if (x == newRoadList[u].GetComponentInParent<TileOptions>().posX && y + 1 == newRoadList[u].GetComponentInParent<TileOptions>().posY)
-                        {
-                            newRoadList[c].GetComponentInParent<TileOptions>().up = true;
-                            //Debug.Log("up");
-                        }
-
-                        if (x + 1 == newRoadList[u].GetComponentInParent<TileOptions>().posX && y == newRoadList[u].GetComponentInParent<TileOptions>().posY)
-                        {
-                            newRoadList[c].GetComponentInParent<TileOptions>().right = true;
-                            //Debug.Log("right");
-                        }
-
-                        if (x == newRoadList[u].GetComponentInParent<TileOptions>().posX && y - 1 == newRoadList[u].GetComponentInParent<TileOptions>().posY)
-                        {
-                            newRoadList[c].GetComponentInParent<TileOptions>().down = true;
-                            //Debug.Log("down");
-                        }
-
-                        if (x - 1 == newRoadList[u].GetComponentInParent<TileOptions>().posX && y == newRoadList[u].GetComponentInParent<TileOptions>().posY)
-                        {
-                            newRoadList[c].GetComponentInParent<TileOptions>().left = true;
-                            //Debug.Log("LEFT");
-                        }
-
-
-                    }
-
-                }
-
-                for (int v = 0; v < newRoadList.Count; v++)
-                {
-
-                    newRoadList[v].GetComponentInParent<TileOptions>().RoadType();
-
-                }
-
-
-
-
-                if (size > 0)
-                {
-                    for (int g = 0; g < size; g++)
-                    {
-                        temp = newRoadList[0];
-                        newRoadList.RemoveAt(0);
-                        gameManager.GetComponent<Initialize>().RemoveTile(temp);
-                        Destroy(temp);
-                    }
-                    CanBuildRoad();
-                }
-
+                FixRoadsAfterLoad();
             }
-
         }
     }
 
@@ -183,7 +124,7 @@ public class RoadBuilder : MonoBehaviour
         }
     }
 
-    private void RebuildNavMesh()
+    public void RebuildNavMesh()
     {
         navMeshSurface.BuildNavMesh();
 
@@ -226,39 +167,28 @@ public class RoadBuilder : MonoBehaviour
                 if (x == newRoadList[u].GetComponentInParent<TileOptions>().posX && y + 1 == newRoadList[u].GetComponentInParent<TileOptions>().posY)
                 {
                     newRoadList[c].GetComponentInParent<TileOptions>().up = true;
-                    //Debug.Log("up");
                 }
 
                 if (x + 1 == newRoadList[u].GetComponentInParent<TileOptions>().posX && y == newRoadList[u].GetComponentInParent<TileOptions>().posY)
                 {
                     newRoadList[c].GetComponentInParent<TileOptions>().right = true;
-                    //Debug.Log("right");
                 }
 
                 if (x == newRoadList[u].GetComponentInParent<TileOptions>().posX && y - 1 == newRoadList[u].GetComponentInParent<TileOptions>().posY)
                 {
                     newRoadList[c].GetComponentInParent<TileOptions>().down = true;
-                    //Debug.Log("down");
                 }
 
                 if (x - 1 == newRoadList[u].GetComponentInParent<TileOptions>().posX && y == newRoadList[u].GetComponentInParent<TileOptions>().posY)
                 {
                     newRoadList[c].GetComponentInParent<TileOptions>().left = true;
-                    //Debug.Log("LEFT");
                 }
 
 
             }
-
+            newRoadList[c].GetComponentInParent<TileOptions>().RoadType();
+            
         }
-
-        for (int v = 0; v < newRoadList.Count; v++)
-        {
-
-            newRoadList[v].GetComponentInParent<TileOptions>().RoadType();
-
-        }
-
 
         for (int g = 0; g < size; g++)
         {
@@ -268,6 +198,8 @@ public class RoadBuilder : MonoBehaviour
             Destroy(temp);
         }
     }
+
+    
 
 }
 

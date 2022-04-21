@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1113524945166932791}
   - component: {fileID: 662721389723588140}
   - component: {fileID: 6766192261606787816}
+  - component: {fileID: 5446863610196417265}
   m_Layer: 0
   m_Name: tile
   m_TagString: tile
@@ -62,6 +63,54 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!114 &5446863610196417265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306202603174642061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d53113d4768f504190e7763d55f4815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  posX: 0
+  posY: 0
+  up: 0
+  down: 0
+  left: 0
+  right: 0
+  corner: 0
+  canBuild: 0
+  isSelected: 0
+  UIcover: 0
+  matFoliage: {fileID: -7796859627820213912, guid: 84df8d7f7c466704598d830c15a72523,
+    type: 3}
+  matDirt: {fileID: -6126091556477775235, guid: b5906a1bf59f24d4b9b2246b2c36ef55,
+    type: 3}
+  gameManager: {fileID: 0}
+  roadDown: {fileID: 4853406232502467124, guid: 1413eb04038939a4a9db5405f58ea960,
+    type: 3}
+  roadStr: {fileID: 2231024263565004558, guid: 5501c002905cb8444a6382ccdb79cdf2, type: 3}
+  roadLeft: {fileID: 3812265909077432112, guid: ebf04be90cfbbd544ab0f4149978dcb9,
+    type: 3}
+  roadRight: {fileID: 7075760610574189369, guid: 67f3d1c25366c9b49b5288469e264d7b,
+    type: 3}
+  roadDowLeft: {fileID: 9102062336709535649, guid: 0dad4751199b17849b0411fbe1961dce,
+    type: 3}
+  roadDowRight: {fileID: 6366786572813678429, guid: 01dcd77e4604f8b48a2a32920a1a7056,
+    type: 3}
+  roadCrossing: {fileID: 4843604263267660322, guid: 49e2b955e90caae4e920043e7a12b8ea,
+    type: 3}
+  roadSplitRight: {fileID: 4548235544189444975, guid: 587a9d34331ed3942a457f3982890440,
+    type: 3}
+  roadSplitLeft: {fileID: 9125143433381273565, guid: 49757f4fbee06054298c4b65c4678f05,
+    type: 3}
+  roadSplitDown: {fileID: 6087856472348167773, guid: 9facd6811d363da4abda7b757d389632,
+    type: 3}
+  roadSplitUp: {fileID: 3183490562772315667, guid: 3dbaa0e9ece7ab84da4e4ab9aac0f9c2,
+    type: 3}
 --- !u!1 &2919216365364717434
 GameObject:
   m_ObjectHideFlags: 0
@@ -74,7 +123,6 @@ GameObject:
   - component: {fileID: 7920411956427571454}
   - component: {fileID: 2196181513689057893}
   - component: {fileID: 648149411594489100}
-  - component: {fileID: 6793473508238715016}
   m_Layer: 0
   m_Name: tile
   m_TagString: tile
@@ -161,46 +209,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.2, z: 1}
   m_Center: {x: 0, y: 0.1, z: 0}
---- !u!114 &6793473508238715016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2919216365364717434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d53113d4768f504190e7763d55f4815, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  posX: 0
-  posY: 0
-  up: 0
-  down: 0
-  left: 0
-  right: 0
-  canBuild: 0
-  isSelected: 0
-  UIcover: 0
-  gameManager: {fileID: 0}
-  roadDown: {fileID: 4853406232502467124, guid: 1413eb04038939a4a9db5405f58ea960,
-    type: 3}
-  roadStr: {fileID: 2231024263565004558, guid: 5501c002905cb8444a6382ccdb79cdf2, type: 3}
-  roadLeft: {fileID: 3812265909077432112, guid: ebf04be90cfbbd544ab0f4149978dcb9,
-    type: 3}
-  roadRight: {fileID: 7075760610574189369, guid: 67f3d1c25366c9b49b5288469e264d7b,
-    type: 3}
-  roadDowLeft: {fileID: 9102062336709535649, guid: 0dad4751199b17849b0411fbe1961dce,
-    type: 3}
-  roadDowRight: {fileID: 6366786572813678429, guid: 01dcd77e4604f8b48a2a32920a1a7056,
-    type: 3}
-  roadCrossing: {fileID: 4843604263267660322, guid: 49e2b955e90caae4e920043e7a12b8ea,
-    type: 3}
-  roadSplitRight: {fileID: 4548235544189444975, guid: 587a9d34331ed3942a457f3982890440,
-    type: 3}
-  roadSplitLeft: {fileID: 9125143433381273565, guid: 49757f4fbee06054298c4b65c4678f05,
-    type: 3}
-  roadSplitDown: {fileID: 6087856472348167773, guid: 9facd6811d363da4abda7b757d389632,
-    type: 3}
-  roadSplitUp: {fileID: 3183490562772315667, guid: 3dbaa0e9ece7ab84da4e4ab9aac0f9c2,
-    type: 3}

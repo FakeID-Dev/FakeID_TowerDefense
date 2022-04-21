@@ -8,10 +8,14 @@ public class TileOptions : MonoBehaviour
     public int posX;
     public int posY;
     public bool up = false, down = false, left = false, right = false;
+    public bool corner = false;
 
     public bool canBuild = false;
     public bool isSelected = false;
     public bool UIcover = false;
+
+    public Material matFoliage;
+    public Material matDirt;
 
     public GameObject gameManager;
 
@@ -35,6 +39,20 @@ public class TileOptions : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.Find("GameManager");
+
+       
+        if (corner)
+        {
+            gameObject.GetComponentInChildren<Renderer>().materials[2].color = matFoliage.color;
+            gameObject.GetComponentInChildren<Renderer>().materials[1].color = matDirt.color;
+        }
+        else
+        {
+            gameObject.GetComponentInChildren<Renderer>().materials[1].color = matFoliage.color;
+        }
+               
+        
+      
     }
  
 
@@ -184,14 +202,12 @@ public class TileOptions : MonoBehaviour
         }
 
 
-
-
-
-
         temp.GetComponentInChildren<RoadCord>().PosX = posX;
         temp.GetComponentInChildren<RoadCord>().PosY = posY;
         temp.GetComponentInChildren<TileOptions>().posX = posX;
         temp.GetComponentInChildren<TileOptions>().posY = posY;
+        
+
     }
 
 }
