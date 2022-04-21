@@ -120,7 +120,7 @@ public class EnemyController : MonoBehaviour
 
     public void SlowEnemySpeed()
     {
-        navMeshAgent.speed = navMeshAgent.speed * 0.2f;
+        navMeshAgent.speed = navMeshAgent.speed * 0.5f;
     }
 
     public void RestoreEnemySpeed()

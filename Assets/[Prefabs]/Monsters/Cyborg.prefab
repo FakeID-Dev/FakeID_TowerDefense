@@ -106,8 +106,8 @@ MonoBehaviour:
   enemyMaxHealth: 6
   enemySpeed: 1
   enemyCurrentHealth: 0
-  coinReward: 30
-  expReward: 5
+  coinReward: 4
+  expReward: 4
   unitCost: 0
   surgeControllerInstance: {fileID: 0}
   rewardMultiplier: 1

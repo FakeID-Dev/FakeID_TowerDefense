@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slowPercent: 20
-  radius: 3
+  radius: 5
   coldSphere: {fileID: 1870832412501556703}
 --- !u!1 &3443534826755157302
 GameObject:
