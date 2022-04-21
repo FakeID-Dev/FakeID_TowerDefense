@@ -13,7 +13,7 @@ public class EnemySpawner : MonoBehaviour
     public int timeBetweenWavesMax = 60;
     private float timeBetweenWaves;
 
-    private float countDown = 5.0f;
+    private float countDown = 10.0f;
     public int enemiesInWave = 5;
     public int surgeBoost;
 

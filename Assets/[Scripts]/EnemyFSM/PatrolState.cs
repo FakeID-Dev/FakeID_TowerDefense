@@ -40,9 +40,24 @@ public class PatrolState : EnemyState
             return;
         }
 
+       // enemyController.navMeshAgent.destination = enemyController.waypoints[enemyController.startingPointIndex].position;
+       // enemyController.startingPointIndex = (enemyController.startingPointIndex + 1) % enemyController.waypoints.Length;
+
+
+        if ((enemyController.startingPointIndex + 1) <= enemyController.waypoints.Length)
+        {
+            enemyController.startingPointIndex = (enemyController.startingPointIndex + 1) % enemyController.waypoints.Length;
+        }
+        else
+        {
+            //Debug.Log("ZERO");
+            enemyController.startingPointIndex = 0;
+        }
+
+        //Debug.Log(enemyController.startingPointIndex);
+
         enemyController.navMeshAgent.destination = enemyController.waypoints[enemyController.startingPointIndex].position;
-        enemyController.startingPointIndex = (enemyController.startingPointIndex + 1) % enemyController.waypoints.Length;
-       
+
     }
 
 }

@@ -62,5 +62,14 @@ public class ToggleMapCamera : MonoBehaviour
 
     }
 
+    public void CameraZoomIn()
+    {
+        currentCamera.GetComponent<MoveCamera>().ZoomIn();
+    }
+
+    public void CameraZoomOut()
+    {
+        currentCamera.GetComponent<MoveCamera>().ZoomOut();
+    }
 
 }
