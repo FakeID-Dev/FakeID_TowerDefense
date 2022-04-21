@@ -79,7 +79,7 @@ public class GameSaveManager : MonoBehaviour
             }
             else
             {
-                data.towerData[i, 2] = 1.0f;
+                data.towerData[i, 2] = 5.0f;
             }
         }
 
