@@ -1,9 +1,9 @@
 {
     "m_SelectedDeviceId": "emulator-5554",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "emulator-5554",
+        "name": "ca.fakeid.idletd",
+        "processId": 3160,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -30,6 +30,12 @@
             "deviceId": "emulator-5554",
             "name": "com.ldmnq.launcher3",
             "processId": 1805,
+            "exited": false
+        },
+        {
+            "deviceId": "emulator-5554",
+            "name": "ca.fakeid.idletd",
+            "processId": 3160,
             "exited": false
         }
     ],
