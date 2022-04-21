@@ -2972,7 +2972,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 611807768}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8, y: 0.25, z: 7.65}
+  m_LocalPosition: {x: 7, y: -0.042, z: 0.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5004,9 +5004,9 @@ MonoBehaviour:
     type: 3}
   roadDowRight: {fileID: 6366786572813678429, guid: 01dcd77e4604f8b48a2a32920a1a7056,
     type: 3}
-  monsterSpawner2: {fileID: 6809284223964765315, guid: 6bd43bd51d0f6874b9378975430c2651,
+  monsterSpawner2: {fileID: 8921822048839507519, guid: 45d3f961ba233764185a769dd519bf18,
     type: 3}
-  monsterSpawner3: {fileID: 8621362995298912575, guid: 7c1dda5782e247744af6bf03f25eddbb,
+  monsterSpawner3: {fileID: 5786461521422599649, guid: 25aeb89e315a61f48b77b14ea5d800df,
     type: 3}
   monsterSpawner: {fileID: 7981016581919607046, guid: 39bc71e416eadfa4f9692dd69d116fd7,
     type: 3}
@@ -6640,7 +6640,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1389275728}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.92, y: 0.25, z: 17.23}
+  m_LocalPosition: {x: 22.92, y: 0.221, z: 20.602}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7288,7 +7288,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1665663556}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8, y: 0.25, z: 0}
+  m_LocalPosition: {x: 3.25, y: 0.01, z: -3.625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8672,7 +8672,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2092494263}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.25, z: 7.65}
+  m_LocalPosition: {x: 3.8, y: -0.017, z: 4.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

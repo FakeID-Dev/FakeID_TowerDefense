@@ -21,7 +21,7 @@ public class PathfindState : EnemyState
 
     public void Update(EnemyController enemyController)
     {
-        if (!enemyController.navMeshAgent.pathPending && enemyController.navMeshAgent.remainingDistance < 0.5f)
+        if (!enemyController.navMeshAgent.pathPending && enemyController.navMeshAgent.remainingDistance < 0.75f)
         {
             enemyController.enemyStateMachine.ChangeState(EnemyStateId.PatrolPath);
         }
