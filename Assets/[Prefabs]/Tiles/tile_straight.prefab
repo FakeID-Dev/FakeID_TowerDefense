@@ -200,9 +200,14 @@ MonoBehaviour:
   down: 0
   left: 0
   right: 0
+  corner: 0
   canBuild: 0
   isSelected: 0
   UIcover: 0
+  matFoliage: {fileID: -7796859627820213912, guid: 84df8d7f7c466704598d830c15a72523,
+    type: 3}
+  matDirt: {fileID: -6126091556477775235, guid: 5e2d3f19f6744694a9113f1b91fda50d,
+    type: 3}
   gameManager: {fileID: 0}
   roadDown: {fileID: 4853406232502467124, guid: 1413eb04038939a4a9db5405f58ea960,
     type: 3}
